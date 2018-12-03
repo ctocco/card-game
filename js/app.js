@@ -73,3 +73,32 @@ deck.shuffle();
 deck.print_deck();
 // console.log(deck.deal());
 
+
+
+// Cards & Unicodes
+
+let aceOfSpades = '\U+1F0A1';
+let aceOfHearts = '\U+1F0B1';
+let aceOfDiamonds = '\U+1F0C1';
+let aceOfClubs = '\U+1F0D1';
+
+let twoOfSpades = '\U+1F0D1';
+let twoOfHearts = '\U+1F0B2';
+let twoOfDiamonds = '\U+1F0C2';
+let twoOfClubs = '\U+1F0D2';
+
+let threeOfSpades = '\U+1F0A3';
+let threeOfHearts = '\U+1F0B3';
+let threeOfDiamonds = '\U+1F0C3';
+let threeOfClubs = '\U+1F0D3';
+
+let fourOfSpades = '\U+1F0A4';
+let fourOfHearts = '\U+1F0B4';
+let fourOfDiamonds = '\U+1F0C4';
+let fourOfClubs = '\U+1F0D4';
+
+let fiveOfSpades = '\U+1F0A5';
+let fiveOfHearts = '\U+1F0B5';
+let fiveOfDiamonds = '\U+1F0C5';
+let fiveOfClubs = '\U+1F0D5';
+ 
