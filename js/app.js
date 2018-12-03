@@ -61,22 +61,37 @@ class Player {
     deck.dealt_cards.push(discarded_card);
     return discarded_card;
   }
+
+  add_hand() {
+    for (let i = 0; i < 5; i++) {
+      let drawn_card = deck.deck.shift();
+      this.cards.push(drawn_card);
+    }
+  }
 }
 
+// Game simulation
+
+// Game SetUp
 let deck = new Deck();
 let playerOne = new Player("Julian");
 let playerTwo = new Player("Claudio");
 
 deck.generate_deck();
 deck.shuffle();
+playerOne.add_hand();
+playerTwo.add_hand();
 deck.first_discard();
-playerOne.draw();
-playerTwo.draw();
-playerOne.draw();
-playerTwo.draw();
-playerOne.draw();
-playerTwo.draw();
-playerOne.discard();
+
+// GamePlay
+
+// playerOne.draw();
+// playerTwo.draw();
+// playerOne.draw();
+// playerTwo.draw();
+// playerOne.draw();
+// playerTwo.draw();
+// playerOne.discard();
 
 console.log(playerOne);
 console.log(playerTwo);
