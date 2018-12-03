@@ -23,6 +23,20 @@ class Deck {
     }
   }
 
+  shuffle() {
+    let current_index = this.deck.length,
+      temp_val,
+      random_index;
+
+    while (0 != current_index) {
+      random_index = Math.floor(Math.random() * current_index);
+      current_index -= 1;
+      temp_val = this.deck[current_index];
+      this.deck[current_index] = this.deck[random_index];
+      this.deck[random_index] = temp_val;
+    }
+  }
+
   first_discard() {
     let dealt_card = this.deck.shift();
     this.dealt_cards.push(dealt_card);
@@ -54,6 +68,7 @@ let playerOne = new Player("Julian");
 let playerTwo = new Player("Claudio");
 
 deck.generate_deck();
+deck.shuffle();
 deck.first_discard();
 playerOne.draw();
 playerTwo.draw();
