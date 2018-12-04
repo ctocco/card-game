@@ -1,0 +1,55 @@
+div {
+  border: 1px solid blue;
+}
+
+#container {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+#playerOne,
+#playerTwo {
+  height: 33.3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#deckContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33.3vh;
+}
+
+.exampleCard {
+  width: 6vw;
+  height: 18vh;
+  margin: 2px;
+}
+
+#deck {
+  width: 6vw;
+  height: 18vh;
+  border: 1px solid red;
+  background-color: red;
+}
+
+#discarded {
+  width: 6vw;
+  height: 18vh;
+  border: 1px solid red;
+  margin: 2px;
+}
+
+#deck:hover {
+  border: 2px solid black;
+}
+
+#start {
+  margin: 2px;
+}
+
+.hide {
+  display: none;
+}
