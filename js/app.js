@@ -85,7 +85,9 @@ function startGame() {
   deck.generate_deck();
   deck.shuffle();
   playerOne.add_hand();
+  renderPlayerOne();
   playerTwo.add_hand();
+  renderPlayerTwo();
   deck.first_discard();
   console.log(deck);
   console.log(playerOne);
@@ -94,6 +96,27 @@ function startGame() {
 }
 
 //Rendering
+function renderPlayerOne() {
+  playerOne.cards.forEach(function(element) {
+    let card = document.createElement("div");
+    card.classList.add("exampleCard");
+    let playerOneContainer = document.getElementById("playerOne");
+    playerOneContainer.appendChild(card);
+    card.textContent = element.name;
+  });
+}
+
+function renderPlayerTwo() {
+  playerTwo.cards.forEach(function(element) {
+    let card = document.createElement("div");
+    card.classList.add("exampleCard");
+    let playerTwoContainer = document.getElementById("playerTwo");
+    playerTwoContainer.appendChild(card);
+    card.textContent = element.name;
+  });
+
+  function renderDiscarded() {}
+}
 
 // Game simulation
 
