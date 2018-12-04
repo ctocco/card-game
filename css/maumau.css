@@ -42,3 +42,13 @@ body {
 .my-flex-item3 {
   border: 2px solid orange;
 }
+
+#discarded,
+#deck {
+  min-height: 100%;
+}
+
+#mau,
+#maumau {
+  margin: 0 100px;
+}
