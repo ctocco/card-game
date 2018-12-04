@@ -72,7 +72,7 @@ class Player {
   }
 }
 
-// Gane Setup
+// Game Setup
 
 let startButton = document.getElementById("start");
 startButton.addEventListener("click", startGame);
@@ -89,6 +89,7 @@ function startGame() {
   playerTwo.add_hand();
   renderPlayerTwo();
   deck.first_discard();
+  renderDiscarded();
   console.log(deck);
   console.log(playerOne);
   console.log(playerTwo);
@@ -114,8 +115,12 @@ function renderPlayerTwo() {
     playerTwoContainer.appendChild(card);
     card.textContent = element.name;
   });
+}
 
-  function renderDiscarded() {}
+function renderDiscarded() {
+  let discardedPile = document.getElementById("discarded");
+  discardedPile.textContent =
+    deck.dealt_cards[deck.dealt_cards.length - 1].name;
 }
 
 // Game simulation
