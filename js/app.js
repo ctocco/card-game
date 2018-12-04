@@ -1,3 +1,4 @@
+// Deck setup and methods
 class Deck {
   constructor() {
     this.deck = [];
@@ -44,6 +45,7 @@ class Deck {
   }
 }
 
+// player setup and methods
 class Player {
   constructor(name) {
     this.name = name; // this name needs to come from an input field
@@ -70,18 +72,41 @@ class Player {
   }
 }
 
-// Game simulation
+// Gane Setup
 
-// Game SetUp
+let startButton = document.getElementById("start");
+startButton.addEventListener("click", startGame);
+
 let deck = new Deck();
 let playerOne = new Player("Julian");
 let playerTwo = new Player("Claudio");
 
-deck.generate_deck();
-deck.shuffle();
-playerOne.add_hand();
-playerTwo.add_hand();
-deck.first_discard();
+function startGame() {
+  deck.generate_deck();
+  deck.shuffle();
+  playerOne.add_hand();
+  playerTwo.add_hand();
+  deck.first_discard();
+  console.log(deck);
+  console.log(playerOne);
+  console.log(playerTwo);
+  removeButton();
+}
+
+//Rendering
+
+// Game simulation
+
+// Game SetUp
+// let deck = new Deck();
+// let playerOne = new Player("Julian");
+// let playerTwo = new Player("Claudio");
+
+// deck.generate_deck();
+// deck.shuffle();
+// playerOne.add_hand();
+// playerTwo.add_hand();
+// deck.first_discard();
 
 // GamePlay
 
@@ -93,10 +118,16 @@ deck.first_discard();
 // playerTwo.draw();
 // playerOne.discard();
 
-console.log(playerOne);
-console.log(playerTwo);
-console.log(deck);
+// console.log(playerOne);
+// console.log(playerTwo);
+// console.log(deck);
 
 // Thoughts
 
 // if card matches suits value or value value to latest in discarded array then player discard method can be executed
+
+//extra
+
+function removeButton() {
+  startButton.classList.add("hide");
+}
