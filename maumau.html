@@ -65,7 +65,7 @@
     <div class="container-top">
             <div class="d-flex flex-row my-flex-container-top playerOne p-2">
                     <h1 class="text-center">Mau Mau</h1> 
-                    <div id="discarded"><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Reset</a></button></div>
+                    <div><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Reset</a></button></div>
                 </div>
          
       
@@ -73,23 +73,23 @@
     
     <div class="container" id="container">
             <h2 class="text-left mt-2">Player 1</h2>
-        <div class="d-flex flex-row my-flex-container playerOne p-2">
-            <div class="p-2 my-flex-item">one</div>
-            <div class="p-2 my-flex-item">two</div>
+        <div id="playerOne" class="d-flex flex-row my-flex-container p-2">
+            <!-- <div class="p-2 my-flex-item">one</div>
+            <div class="p-2 my-flex-item">two</div> -->
         </div>
-        <div class="d-flex flex-row my-flex-container deckContainer justify-content-center">
-                <div id="discarded" class="align"><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Mau</a></button></div>
+        <div id="deckContainer" class="d-flex flex-row my-flex-container justify-content-center">
+                <div id="mau" class="align"><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Mau</a></button></div>
             <div class="p-2 my-flex-item" id="deck">Draw Pile</div>
-            <div class="p-2 my-flex-item" id="discarded">Disgarded Pile</div>
-            <div id="discarded"><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Mau Mau</a></button></div>
+            <div class="p-2 my-flex-item" id="discarded"></div>
+            <div id="maumau"><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Mau Mau</a></button></div>
             
             
         </div>
         <h2 class="text-right mt-2">Player 2</h2>
-        <div class="d-flex flex-row-reverse my-flex-container playerTwo p-2">
-            <div class="p-2 my-flex-item">one</div>
+        <div id="playerTwo" class="d-flex flex-row-reverse my-flex-container p-2">
+            <!-- <div class="p-2 my-flex-item">one</div>
             <div class="p-2 my-flex-item">two</div>
-            <div class="p-2 my-flex-item">three</div>
+            <div class="p-2 my-flex-item">three</div> -->
         </div>
 
     </div>
