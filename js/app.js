@@ -94,6 +94,7 @@ function startGame() {
   console.log(playerOne);
   console.log(playerTwo);
   removeButton();
+  searchValidCardsPlayerOne(); // would be executed on new turn
 }
 
 //Rendering
@@ -119,9 +120,26 @@ function renderPlayerTwo() {
 
 function renderDiscarded() {
   let discardedPile = document.getElementById("discarded");
-  discardedPile.textContent =
-    deck.dealt_cards[deck.dealt_cards.length - 1].name;
+  const lastCard = deck.dealt_cards.length - 1;
+  discardedPile.textContent = deck.dealt_cards[lastCard].name;
 }
+
+// experiment
+// select all cards by class . if onclick value or suit of discarded pile equals value or suit of one card in player hand then let execute discard method then render
+
+function searchValidCardsPlayerOne() {
+  const validCards = playerOne.cards.filter(function(card) {
+    return (
+      card.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit ||
+      card.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
+    );
+  });
+
+  console.log(validCards);
+}
+
+// if (deck.dealt_cards[deck.dealt_cards.length - 1].value == playerOne.cards[i]) {
+// }
 
 // Game simulation
 
