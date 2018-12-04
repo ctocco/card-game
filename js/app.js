@@ -1,3 +1,28 @@
+// input listeners for name
+document.getElementById("form-1").addEventListener("submit", addPlayer);
+
+function addPlayer(evt) {
+  evt.preventDefault();
+  let playerName = document.getElementById("inputPlayer1");
+  let playerNameValue = playerName.value;
+  console.log(playerNameValue);
+  document.getElementById(
+    "playerOneHeader"
+  ).textContent = `Player 1: ${playerNameValue}`;
+}
+
+document.getElementById("form-2").addEventListener("submit", addPlayer2);
+
+function addPlayer2(evt) {
+  evt.preventDefault();
+  let playerName = document.getElementById("inputPlayer2");
+  let playerNameValue = playerName.value;
+  console.log(playerNameValue);
+  document.getElementById(
+    "playerTwoHeader"
+  ).textContent = `Player 2: ${playerNameValue}`;
+}
+
 // Deck setup and methods
 class Deck {
   constructor() {
@@ -149,7 +174,3 @@ function renderDiscarded() {
 // if card matches suits value or value value to latest in discarded array then player discard method can be executed
 
 //extra
-
-function removeButton() {
-  startButton.classList.add("hide");
-}
