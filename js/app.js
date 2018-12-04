@@ -7,7 +7,7 @@ class Deck {
 
   generate_deck() {
     let card = (suit, value) => {
-      this.name = `${value} of ${suit}`;
+      this.name = `${value}_of_${suit}`;
       this.suit = suit;
       this.value = value;
 
@@ -59,7 +59,7 @@ class Player {
   }
 
   discard() {
-    let discarded_card = this.cards.shift(); // this value needs to be flexible
+    let discarded_card = this.cards[i]; // this value needs to be flexible // index of the card i want to discard
     deck.dealt_cards.push(discarded_card);
     return discarded_card;
   }
@@ -78,23 +78,6 @@ let deck = new Deck();
 let playerOne = new Player("Julian");
 let playerTwo = new Player("Claudio");
 
-<<<<<<< HEAD
-function startGame() {
-  deck.generate_deck();
-  deck.shuffle();
-  playerOne.add_hand();
-  renderPlayerOne();
-  playerTwo.add_hand();
-  renderPlayerTwo();
-  deck.first_discard();
-  renderDiscarded();
-  console.log(deck);
-  console.log(playerOne);
-  console.log(playerTwo);
-  removeButton();
-  searchValidCardsPlayerOne(); // would be executed on new turn
-}
-=======
 deck.generate_deck();
 deck.shuffle();
 playerOne.add_hand();
@@ -103,51 +86,90 @@ playerTwo.add_hand();
 renderPlayerTwo();
 deck.first_discard();
 renderDiscarded();
+// searchValidCardsPlayerOne(); // !!
 console.log(deck);
 console.log(playerOne);
 console.log(playerTwo);
->>>>>>> master
 
 //Rendering
 function renderPlayerOne() {
   playerOne.cards.forEach(function(element) {
     let card = document.createElement("div");
-    card.classList.add("exampleCard");
+    card.classList.add(
+      "exampleCard",
+      element.suit,
+      element.value,
+      "handPlayerOne"
+    );
     let playerOneContainer = document.getElementById("playerOne");
     playerOneContainer.appendChild(card);
-    card.textContent = element.name;
+    card.textContent = element.name.replace(/_/g, " ");
+    card.id = element.name;
   });
 }
 
 function renderPlayerTwo() {
   playerTwo.cards.forEach(function(element) {
     let card = document.createElement("div");
-    card.classList.add("exampleCard");
+    card.classList.add(
+      "exampleCard",
+      element.suit,
+      element.value,
+      "handPlayerTwo"
+    );
     let playerTwoContainer = document.getElementById("playerTwo");
     playerTwoContainer.appendChild(card);
-    card.textContent = element.name;
+    card.textContent = element.name.replace(/_/g, " ");
   });
 }
 
 function renderDiscarded() {
   let discardedPile = document.getElementById("discarded");
   const lastCard = deck.dealt_cards.length - 1;
-  discardedPile.textContent = deck.dealt_cards[lastCard].name;
+  discardedPile.textContent = deck.dealt_cards[lastCard].name.replace(
+    /_/g,
+    " "
+  );
 }
 
-// experiment
+document.getElementById("playerNameOne").innerText = `Player 1: ${
+  playerOne.name
+}`;
+document.getElementById("playerNameTwo").innerText = `Player 2: ${
+  playerTwo.name
+}`;
+
+// experimental
 // select all cards by class . if onclick value or suit of discarded pile equals value or suit of one card in player hand then let execute discard method then render
 
-function searchValidCardsPlayerOne() {
-  const validCards = playerOne.cards.filter(function(card) {
-    return (
-      card.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit ||
-      card.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
-    );
-  });
+// function searchValidCardsPlayerOne() {
+//   const validCards = playerOne.cards.filter(function(card) {
+//     return (
+//       card.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit ||
+//       card.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
+//     );
+//   });
 
-  console.log(validCards);
+//   console.log(validCards);
+// }
+
+let rightSuit = document.getElementsByClassName(
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit
+);
+let rightValue = document.getElementsByClassName(
+  deck.dealt_cards[deck.dealt_cards.length - 1].value
+);
+
+for (element of rightSuit) {
+  element.classList.add("color");
 }
+
+for (element of rightValue) {
+  element.classList.add("color");
+}
+
+console.log(rightSuit);
+console.log(rightValue);
 
 // if (deck.dealt_cards[deck.dealt_cards.length - 1].value == playerOne.cards[i]) {
 // }

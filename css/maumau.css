@@ -3,42 +3,42 @@ body {
 }
 
 .container {
-  border: 1px solid yellowgreen;
   width: 80vw !important;
   height: 1000px;
 }
 .my-flex-container {
-  border: 2px solid red;
   height: 25vh;
 }
 
 .my-flex-container-top {
-  border: 2px solid red;
   height: auto;
 }
 
 .my-flex-column {
-  border: 2px solid blue;
 }
 
 .exampleCard {
-  border: 2px solid orange;
   width: 150px;
   margin: 0 10px 0 10px;
   background: orange;
 }
 
 .my-flex-item {
-  border: 2px solid orange;
   width: 150px;
   margin: 0 10px 0 10px;
   background: orange;
 }
 
 .my-flex-item2 {
-  border: 2px solid orange;
 }
 
 .my-flex-item3 {
-  border: 2px solid orange;
+}
+
+#deckContainer {
+  margin: 20px 0;
+}
+
+.color {
+  background-color: red;
 }
