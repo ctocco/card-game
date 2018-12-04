@@ -11,12 +11,13 @@
     />
 
     <link rel="stylesheet" href="css/style.css" />
-    <title>The Game Center</title>
+    <link rel="stylesheet" href="css/maumau.css" />
+    <title>MauMau</title>
   </head>
   <body>
-  
+<!--             NAV BAR                -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">The Game Center</a>
+      <a class="navbar-brand" href="index.html">The Game Center</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -32,7 +33,7 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="index.html"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
@@ -56,21 +57,43 @@
           <label class="btn btn-primary">
             <input type="checkbox" autocomplete="off"> EN
           </label>
-        
         </div>
-      
     </nav>
-    <div class="jumbotron game-intro m-3">
-      <h1 class="display-3">THE GAME CENTER</h1>
-      <p class="lead">Welcome to a collection of wonderful card games for you to enjoy at home</p>
-      <hr class="my-4">
-      <p>If you want to learn more about the history and the rules of the games just click below</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </p>
+<!--             NAV BAR END               -->
+
+
+    <div class="container-top">
+            <div class="d-flex flex-row my-flex-container-top playerOne p-2">
+                    <h1 class="text-center">Mau Mau</h1> 
+                    <div id="discarded"><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Reset</a></button></div>
+                </div>
+         
+      
     </div>
-    <h1>Mau Mau</h1>  <p>dare to win?</p>
-    <a href="maumau.html" class="btn btn-success btn-lg" id="start">Enter Game</a>
+    
+    <div class="container" id="container">
+            <h2 class="text-left mt-2">Player 1</h2>
+        <div class="d-flex flex-row my-flex-container playerOne p-2">
+            <div class="p-2 my-flex-item">one</div>
+            <div class="p-2 my-flex-item">two</div>
+        </div>
+        <div class="d-flex flex-row my-flex-container deckContainer justify-content-center">
+                <div id="discarded" class="align"><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Mau</a></button></div>
+            <div class="p-2 my-flex-item" id="deck">Draw Pile</div>
+            <div class="p-2 my-flex-item" id="discarded">Disgarded Pile</div>
+            <div id="discarded"><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Mau Mau</a></button></div>
+            
+            
+        </div>
+        <h2 class="text-right mt-2">Player 2</h2>
+        <div class="d-flex flex-row-reverse my-flex-container playerTwo p-2">
+            <div class="p-2 my-flex-item">one</div>
+            <div class="p-2 my-flex-item">two</div>
+            <div class="p-2 my-flex-item">three</div>
+        </div>
+
+    </div>
+    
   
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
