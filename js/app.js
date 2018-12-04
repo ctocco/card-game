@@ -74,13 +74,11 @@ class Player {
 
 // Game Setup
 
-let startButton = document.getElementById("start");
-startButton.addEventListener("click", startGame);
-
 let deck = new Deck();
 let playerOne = new Player("Julian");
 let playerTwo = new Player("Claudio");
 
+<<<<<<< HEAD
 function startGame() {
   deck.generate_deck();
   deck.shuffle();
@@ -96,6 +94,19 @@ function startGame() {
   removeButton();
   searchValidCardsPlayerOne(); // would be executed on new turn
 }
+=======
+deck.generate_deck();
+deck.shuffle();
+playerOne.add_hand();
+renderPlayerOne();
+playerTwo.add_hand();
+renderPlayerTwo();
+deck.first_discard();
+renderDiscarded();
+console.log(deck);
+console.log(playerOne);
+console.log(playerTwo);
+>>>>>>> master
 
 //Rendering
 function renderPlayerOne() {
