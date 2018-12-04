@@ -21,6 +21,13 @@ body {
   border: 2px solid blue;
 }
 
+.exampleCard {
+  border: 2px solid orange;
+  width: 150px;
+  margin: 0 10px 0 10px;
+  background: orange;
+}
+
 .my-flex-item {
   border: 2px solid orange;
   width: 150px;
