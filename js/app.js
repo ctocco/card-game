@@ -58,40 +58,15 @@ class Player {
     return drawn_card;
   }
 
-//   function getAllIndexes(arr, suit, value) {
-//     let indexes = [], i;
-//     for(i = 0; i < arr.length; i++)
-//         if (arr[i].suit === suit || arr[i].value === value )
-//             indexes.push(i);
-//     return indexes;
-// }
+  playerOneDiscard(q) {
+    // let indexArray = getAllIndexes(
+    //   playerOne.cards,
+    //   deck.dealt_cards[deck.dealt_cards.length - 1].suit,
+    //   deck.dealt_cards[deck.dealt_cards.length - 1].value
+    // );
 
-// let indexArray = getAllIndexes(cards, pile[0].suit, pile[0].value)
-
-    
-// let removed = [];
-// for (let j = indexArray.length -1; j >= 0; j--){
-//    removed.push(cards.splice(indexArray[j],1));
-// }
-
-// console.log(indexArray)
-// console.log(cards)
-// console.log(removed)
-
-
-
-  playerOneDiscard() {
-    let indexArray = getAllIndexes(playerOne.cards, deck.dealt_cards[deck.dealt_cards.length - 1].suit, deck.dealt_cards[deck.dealt_cards.length - 1].value);
-    
-    let temp = [];
-    for (let j = indexArray.length -1; j >= 0; j--){
-         temp.unshift(playerOne.cards.splice(indexArray[j],1));
-      }
-    temp.forEach(function(el) {
-      deck.dealt_cards.push(el[0])
-    })
-
-  
+    let spliced = playerOne.cards.splice(q, 1);
+    deck.dealt_cards.push(spliced[0]);
   }
 
   add_hand() {
@@ -110,15 +85,19 @@ let playerTwo = new Player("Claudio");
 
 deck.generate_deck();
 deck.shuffle();
+deck.first_discard();
+renderDiscarded();
 playerOne.add_hand();
 renderPlayerOne();
 playerTwo.add_hand();
 renderPlayerTwo();
-deck.first_discard();
-renderDiscarded();
-playerOne.playerOneDiscard();
-renderPlayerOne()
-renderDiscarded()
+
+// document.getElementById("container").addEventListener("click", function() {
+//   playerOne.playerOneDiscard();
+//   renderPlayerOne();
+//   renderDiscarded();
+// });
+
 // searchValidCardsPlayerOne(); // !!
 console.log(deck);
 console.log(playerOne);
@@ -131,18 +110,30 @@ function renderPlayerOne() {
   while (playerOneContainer.firstChild) {
     playerOneContainer.removeChild(playerOneContainer.firstChild);
   }
+
   playerOne.cards.forEach(function(element) {
-     let card = document.createElement("div");
+    let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
       element.suit,
       element.value,
       "handPlayerOne"
     );
-    
+
     playerOneContainer.appendChild(card);
+
     card.textContent = element.name.replace(/_/g, " ");
     card.id = element.name;
+    if (
+      card.classList.contains(
+        deck.dealt_cards[deck.dealt_cards.length - 1].suit
+      ) ||
+      card.classList.contains(
+        deck.dealt_cards[deck.dealt_cards.length - 1].value
+      )
+    ) {
+      card.setAttribute("onclick", "reply_click(this.id)");
+    }
   });
 }
 
@@ -164,7 +155,7 @@ function renderPlayerTwo() {
 function renderDiscarded() {
   let discardedPile = document.getElementById("discarded");
   const lastCard = deck.dealt_cards.length - 1;
-  discardedPile.textContent = deck.dealt_cards[lastCard].name
+  discardedPile.textContent = deck.dealt_cards[lastCard].name;
 }
 
 document.getElementById("playerNameOne").innerText = `Player 1: ${
@@ -174,75 +165,6 @@ document.getElementById("playerNameTwo").innerText = `Player 2: ${
   playerTwo.name
 }`;
 
-// experimental
-// select all cards by class . if onclick value or suit of discarded pile equals value or suit of one card in player hand then let execute discard method then render
-
-// function searchValidCardsPlayerOne() {
-//   const validCards = playerOne.cards.filter(function(card) {
-//     return (
-//       card.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit ||
-//       card.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
-//     );
-//   });
-
-//   console.log(validCards);
-// }
-
-let rightSuit = document.getElementsByClassName(
-  deck.dealt_cards[deck.dealt_cards.length - 1].suit
-);
-let rightValue = document.getElementsByClassName(
-  deck.dealt_cards[deck.dealt_cards.length - 1].value
-);
-
-for (element of rightSuit) {
-  element.classList.add("color");
-}
-
-for (element of rightValue) {
-  element.classList.add("color");
-}
-
-console.log(rightSuit);
-console.log(rightValue);
-
-
-if(playerOne.cards.value)
-
-// if (deck.dealt_cards[deck.dealt_cards.length - 1].value == playerOne.cards[i]) {
-// }
-
-// Game simulation
-
-// Game SetUp
-// let deck = new Deck();
-// let playerOne = new Player("Julian");
-// let playerTwo = new Player("Claudio");
-
-// deck.generate_deck();
-// deck.shuffle();
-// playerOne.add_hand();
-// playerTwo.add_hand();
-// deck.first_discard();
-
-// GamePlay
-
-// playerOne.draw();
-// playerTwo.draw();
-// playerOne.draw();
-// playerTwo.draw();
-// playerOne.draw();
-// playerTwo.draw();
-// playerOne.discard();
-
-// console.log(playerOne);
-// console.log(playerTwo);
-// console.log(deck);
-
-// Thoughts
-
-// if card matches suits value or value value to latest in discarded array then player discard method can be executed
-
 //extra
 
 function removeButton() {
@@ -250,9 +172,18 @@ function removeButton() {
 }
 
 function getAllIndexes(arr, suit, value) {
-      let indexes = [], i;
-      for(i = 0; i < arr.length; i++)
-          if (arr[i].suit === suit || arr[i].value === value )
-              indexes.push(i);
-      return indexes;
-  }
+  let indexes = [],
+    i;
+  for (i = 0; i < arr.length; i++)
+    if (arr[i].suit === suit || arr[i].value === value) indexes.push(i);
+  return indexes;
+}
+
+function reply_click(theId) {
+  let index = playerOne.cards.findIndex(x => x.name == theId);
+  console.log(index);
+  let spliced = playerOne.cards.splice(index, 1);
+  deck.dealt_cards.push(spliced[0]);
+  renderPlayerOne();
+  renderDiscarded();
+}
