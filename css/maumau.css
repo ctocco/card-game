@@ -1,5 +1,7 @@
+html,
 body {
   background: lightgoldenrodyellow;
+  box-sizing: border-box;
 }
 
 .container {
@@ -21,27 +23,29 @@ body {
   border: 2px solid blue;
 }
 
-.exampleCard {
-  border: 2px solid orange;
-  width: 150px;
-  margin: 0 10px 0 10px;
-  background: orange;
-}
-
+.exampleCard,
 .my-flex-item {
   border: 2px solid orange;
-  width: 150px;
+  min-width: 100px;
+  min-height: auto;
   margin: 0 10px 0 10px;
   background: orange;
 }
 
-.my-flex-item2 {
+/* .my-flex-item {
+  border: 2px solid orange;
+  width: 150px;
+  margin: 0 10px 0 10px;
+  background: orange;
+} */
+
+/* .my-flex-item2 {
   border: 2px solid orange;
 }
 
 .my-flex-item3 {
   border: 2px solid orange;
-}
+} */
 
 #discarded,
 #deck {
@@ -51,4 +55,12 @@ body {
 #mau,
 #maumau {
   margin: 0 10px;
+}
+
+.styleImage {
+  background-image: no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  line-height: 750%;
+  color: rgb(0, 38, 255);
 }

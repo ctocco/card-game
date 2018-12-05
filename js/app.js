@@ -40,7 +40,7 @@ class Deck {
 
   generate_deck() {
     let card = (suit, value) => {
-      this.name = `${value} of ${suit}`;
+      this.name = `${value}_of_${suit}`;
       this.suit = suit;
       this.value = value;
 
@@ -73,7 +73,6 @@ class Deck {
 
   first_discard() {
     let dealt_card = this.deck.shift();
-
     this.dealt_cards.push(dealt_card);
     return dealt_card;
   }
@@ -92,10 +91,40 @@ class Player {
     return drawn_card;
   }
 
-  discard() {
-    let discarded_card = this.cards.shift(); // this value needs to be flexible
-    deck.dealt_cards.push(discarded_card);
-    return discarded_card;
+//   function getAllIndexes(arr, suit, value) {
+//     let indexes = [], i;
+//     for(i = 0; i < arr.length; i++)
+//         if (arr[i].suit === suit || arr[i].value === value )
+//             indexes.push(i);
+//     return indexes;
+// }
+
+// let indexArray = getAllIndexes(cards, pile[0].suit, pile[0].value)
+
+    
+// let removed = [];
+// for (let j = indexArray.length -1; j >= 0; j--){
+//    removed.push(cards.splice(indexArray[j],1));
+// }
+
+// console.log(indexArray)
+// console.log(cards)
+// console.log(removed)
+
+
+
+  playerOneDiscard() {
+    let indexArray = getAllIndexes(playerOne.cards, deck.dealt_cards[deck.dealt_cards.length - 1].suit, deck.dealt_cards[deck.dealt_cards.length - 1].value);
+    
+    let temp = [];
+    for (let j = indexArray.length -1; j >= 0; j--){
+         temp.unshift(playerOne.cards.splice(indexArray[j],1));
+      }
+    temp.forEach(function(el) {
+      deck.dealt_cards.push(el[0])
+    })
+
+  
   }
 
   add_hand() {
@@ -120,44 +149,104 @@ playerTwo.add_hand();
 renderPlayerTwo();
 deck.first_discard();
 renderDiscarded();
+//playerOne.playerOneDiscard();
+//renderPlayerOne()
+//renderDiscarded()
+// searchValidCardsPlayerOne(); // !!
 console.log(deck);
 console.log(playerOne);
 console.log(playerTwo);
 
 //Rendering
 function renderPlayerOne() {
+  //remove all children
   let playerOneContainer = document.getElementById("playerOne");
   while (playerOneContainer.firstChild) {
     playerOneContainer.removeChild(playerOneContainer.firstChild);
   }
   playerOne.cards.forEach(function(element) {
-    let card = document.createElement("div");
-    card.classList.add("exampleCard");
-    let playerOneContainer = document.getElementById("playerOne");
+     let card = document.createElement("div");
+    card.classList.add(
+      "exampleCard",
+      element.suit,
+      element.value,
+      "handPlayerOne",
+      "styleImage"
+    );
+    
     playerOneContainer.appendChild(card);
-    card.textContent = element.name;
+    card.textContent = element.name.replace(/_/g, " ");
+    card.id = element.name;
+    card.setAttribute("onclick","playerOne.playerOneDiscard(); renderPlayerOne(); renderDiscarded();");
+    card.setAttribute("style","background-image: url(img/" + element.name + ".jpg);");
   });
 }
 
 function renderPlayerTwo() {
-  let playerTwoContainer = document.getElementById("playerTwo");
-  while (playerTwoContainer.firstChild) {
-    playerTwoContainer.removeChild(playerTwoContainer.firstChild);
-  }
   playerTwo.cards.forEach(function(element) {
     let card = document.createElement("div");
-    card.classList.add("exampleCard");
+    card.classList.add(
+      "exampleCard",
+      element.suit,
+      element.value,
+      "handPlayerTwo"
+    );
     let playerTwoContainer = document.getElementById("playerTwo");
     playerTwoContainer.appendChild(card);
-    card.textContent = element.name;
+    card.textContent = element.name.replace(/_/g, " ");
   });
 }
 
 function renderDiscarded() {
   let discardedPile = document.getElementById("discarded");
-  discardedPile.textContent =
-    deck.dealt_cards[deck.dealt_cards.length - 1].name;
+  const lastCard = deck.dealt_cards.length - 1;
+  discardedPile.textContent = deck.dealt_cards[lastCard].name
 }
+
+document.getElementById("playerNameOne").innerText = `Player 1: ${
+  playerOne.name
+}`;
+document.getElementById("playerNameTwo").innerText = `Player 2: ${
+  playerTwo.name
+}`;
+
+// experimental
+// select all cards by class . if onclick value or suit of discarded pile equals value or suit of one card in player hand then let execute discard method then render
+
+// function searchValidCardsPlayerOne() {
+//   const validCards = playerOne.cards.filter(function(card) {
+//     return (
+//       card.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit ||
+//       card.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
+//     );
+//   });
+
+//   console.log(validCards);
+// }
+
+let rightSuit = document.getElementsByClassName(
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit
+);
+let rightValue = document.getElementsByClassName(
+  deck.dealt_cards[deck.dealt_cards.length - 1].value
+);
+
+for (element of rightSuit) {
+  element.classList.add("color");
+}
+
+for (element of rightValue) {
+  element.classList.add("color");
+}
+
+console.log(rightSuit);
+console.log(rightValue);
+
+
+if(playerOne.cards.value)
+
+// if (deck.dealt_cards[deck.dealt_cards.length - 1].value == playerOne.cards[i]) {
+// }
 
 // Game simulation
 
@@ -191,3 +280,15 @@ function renderDiscarded() {
 // if card matches suits value or value value to latest in discarded array then player discard method can be executed
 
 //extra
+
+function removeButton() {
+  startButton.classList.add("hide");
+}
+
+function getAllIndexes(arr, suit, value) {
+      let indexes = [], i;
+      for(i = 0; i < arr.length; i++)
+          if (arr[i].suit === suit || arr[i].value === value )
+              indexes.push(i);
+      return indexes;
+  }
