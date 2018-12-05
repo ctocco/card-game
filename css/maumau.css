@@ -1,0 +1,62 @@
+body {
+  background: lightgoldenrodyellow;
+}
+
+.container {
+  width: 80vw !important;
+  height: 1000px;
+}
+.my-flex-container {
+  height: 25vh;
+}
+
+.my-flex-container-top {
+  height: auto;
+}
+
+.my-flex-column {
+}
+
+.exampleCard, .my-flex-item {
+  min-width: 85px;
+  min-height: 128px;
+  margin: 0 10px 0 10px;
+  background: orange;
+}
+
+.my-flex-item2 {
+}
+
+.my-flex-item3 {
+}
+
+#deckContainer {
+  margin: 20px 0;
+}
+
+.color {
+  background-color: red;
+}
+
+.styleImage {
+ background-image: no-repeat center center fixed;
+ background-size: cover;
+ text-align: center;
+ line-height: 750%;
+ color: rgb(0, 38, 255);
+}
+
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
