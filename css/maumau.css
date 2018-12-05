@@ -9,7 +9,7 @@ body {
 }
 .my-flex-container {
   border: 2px solid red;
-  height: 25vh;
+  height: 22vh;
 }
 
 .my-flex-container-top {
@@ -50,5 +50,5 @@ body {
 
 #mau,
 #maumau {
-  margin: 0 100px;
+  margin: 0 10px;
 }

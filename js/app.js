@@ -23,6 +23,14 @@ function addPlayer2(evt) {
   ).textContent = `Player 2: ${playerNameValue}`;
 }
 
+document.getElementById("reset").addEventListener("click", reset);
+
+function reset(evt) {
+  evt.preventDefault();
+  console.log("hello");
+  window.location.reload();
+}
+
 // Deck setup and methods
 class Deck {
   constructor() {
@@ -65,6 +73,7 @@ class Deck {
 
   first_discard() {
     let dealt_card = this.deck.shift();
+
     this.dealt_cards.push(dealt_card);
     return dealt_card;
   }
@@ -117,6 +126,10 @@ console.log(playerTwo);
 
 //Rendering
 function renderPlayerOne() {
+  let playerOneContainer = document.getElementById("playerOne");
+  while (playerOneContainer.firstChild) {
+    playerOneContainer.removeChild(playerOneContainer.firstChild);
+  }
   playerOne.cards.forEach(function(element) {
     let card = document.createElement("div");
     card.classList.add("exampleCard");
@@ -127,6 +140,10 @@ function renderPlayerOne() {
 }
 
 function renderPlayerTwo() {
+  let playerTwoContainer = document.getElementById("playerTwo");
+  while (playerTwoContainer.firstChild) {
+    playerTwoContainer.removeChild(playerTwoContainer.firstChild);
+  }
   playerTwo.cards.forEach(function(element) {
     let card = document.createElement("div");
     card.classList.add("exampleCard");

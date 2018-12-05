@@ -84,14 +84,23 @@
                           <input id="inputPlayer2" class="form-control mr-sm-2 ml-5" type="text" placeholder="Enter name of player 2">
                           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Enter</button>
                       </form>
-                      <div><button type="button" class="btn btn-success btn-sm reset"><a class="nav-link" href="#">Reset</a></button></div>
+                      
+                      <div><button type="button" class="btn btn-success btn-sm reset" id="reset"><a class="nav-link" href="#">Reset</a></button></div>
               </div>     
           </div>
     </div>
     <!--      top contain with inputs END      -->
-
-    <div class="container" id="container">
-            <h2 id="playerOneHeader" class="text-left mt-2">Player 1:</h2>
+    <div class="container-fluid" id="container">
+        <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+          
+        <h2 id="playerOneHeader" class="text-left mt-2">Player 1:</h2>
+        <div><button type="button" class="btn btn-warning btn-sm endTurn" id="endTurn"><a class="nav-link" href="#">End Turn</a></button></div>
+    </div>
+      </div>
+    
+    
+    <div class="container-fluid" id="container">
+           
         <div id="playerOne" class="d-flex flex-row my-flex-container p-2">
             <!-- <div class="p-2 my-flex-item">one</div>
             <div class="p-2 my-flex-item">two</div> -->
@@ -111,7 +120,13 @@
             <div class="p-2 my-flex-item">two</div>
             <div class="p-2 my-flex-item">three</div> -->
         </div>
-        <h2 id="playerTwoHeader" class="text-right mt-2">Player 2</h2>
+
+     
+    </div>
+    <div class="container-fluid" id="container">
+        <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+    <h2 id="playerTwoHeader" class="text-right mt-2">Player 2</h2>
+    </div>
     </div>
     
   
