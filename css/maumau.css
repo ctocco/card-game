@@ -1,62 +1,66 @@
+html,
 body {
   background: lightgoldenrodyellow;
+  box-sizing: border-box;
 }
 
 .container {
+  border: 1px solid yellowgreen;
   width: 80vw !important;
   height: 1000px;
 }
 .my-flex-container {
-  height: 25vh;
+  border: 2px solid red;
+  height: 22vh;
 }
 
 .my-flex-container-top {
+  border: 2px solid red;
   height: auto;
 }
 
 .my-flex-column {
+  border: 2px solid blue;
 }
 
-.exampleCard, .my-flex-item {
-  min-width: 85px;
-  min-height: 128px;
+.exampleCard,
+.my-flex-item {
+  border: 2px solid orange;
+  min-width: 100px;
+  min-height: auto;
   margin: 0 10px 0 10px;
   background: orange;
 }
 
-.my-flex-item2 {
+/* .my-flex-item {
+  border: 2px solid orange;
+  width: 150px;
+  margin: 0 10px 0 10px;
+  background: orange;
+} */
+
+/* .my-flex-item2 {
+  border: 2px solid orange;
 }
 
 .my-flex-item3 {
+  border: 2px solid orange;
+} */
+
+#discarded,
+#deck {
+  min-height: 100%;
 }
 
-#deckContainer {
-  margin: 20px 0;
-}
-
-.color {
-  background-color: red;
+#mau,
+#maumau {
+  margin: 0 10px;
 }
 
 .styleImage {
- background-image: no-repeat center center fixed;
- background-size: cover;
- text-align: center;
- line-height: 750%;
- color: rgb(0, 38, 255);
-}
-
-img.bg {
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
-	
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
-	
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
+  background-image: no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  line-height: 750%;
+  color: rgb(0, 38, 255);
 }
