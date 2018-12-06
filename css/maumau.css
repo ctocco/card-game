@@ -23,7 +23,7 @@ body {
 .exampleCard,
 .my-flex-item {
   border: 2px solid orange;
-  min-width: 100px;
+  min-width: 90px;
   min-height: auto;
   margin: 0 10px 0 10px;
   background: orange;
