@@ -58,7 +58,7 @@ body {
   color: rgb(0, 38, 255);
 
   /* This hides the cards under the cover card */
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 /* experimenting with putting a cover over the cards when it is not the player's turn */
