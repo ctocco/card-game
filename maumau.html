@@ -13,7 +13,8 @@
   <title>MauMau</title>
 </head>
 
-<body>
+
+<body onload="displayNames()">
   <!--             NAV BAR                -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="index.html">The Game Center</a>
@@ -29,6 +30,19 @@
         </li>
         <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">Games</a>
+          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+            <a class="dropdown-item" href="maumau.html">Mau Mau</a>
+            <a class="dropdown-item" href="#">Black Jack</a>
+            <a class="dropdown-item" href="#">Jim Rummy</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Affiliates</a>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
       </ul>
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-primary active">
@@ -113,6 +127,62 @@
       </div>
     </div>
 
+    <!--      top container with inputs       -->
+    <div class="container-top">
+      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+        <h1 class="text-center">Mau Mau</h1>
+        <!--      player input fields       -->
+        <div><button type="button" class="btn btn-success btn-sm reset" id="reset"><a class="nav-link" href="#">Reset</a></button></div>
+      </div>
+    </div>
+  </div>
+  <!-- Player One Name Display -->
+  <div class="container-fluid" id="container">
+    <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+        <h2 id="playerOneHeader" class="text-left mt-2"></h2>
+        <div class="d-flex"></div>
+      </div>
+      <div><button type="button" class="btn btn-warning btn-sm endTurn" id="endTurn"><a class="nav-link" href="#">End
+            Turn</a></button></div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid" id="container">
+
+    <div id="playerOne" class="d-flex flex-row my-flex-container p-2">
+      <!-- <div class="p-2 my-flex-item">one</div>
+            <div class="p-2 my-flex-item">two</div> -->
+    </div>
+
+    <div id="deckContainer" class="d-flex flex-row my-flex-container justify-content-center align-items-center p-2">
+      <div id="mau" class="align-items-center"><button type="button" class="btn btn-danger btn-sm reset"><a class="nav-link"
+            href="#">Mau</a></button></div>
+      <div class="p-2 my-flex-item" id="deck">Draw Pile</div>
+      <div class="p-2 my-flex-item" id="discarded"></div>
+      <div id="maumau"><button type="button" class="btn btn-info btn-sm reset"><a class="nav-link" href="#">Mau Mau</a></button></div>
+
+
+    </div>
+
+    <div id="playerTwo" class="d-flex flex-row-reverse my-flex-container p-2">
+      <!-- <div class="p-2 my-flex-item">one</div>
+            <div class="p-2 my-flex-item">two</div>
+            <div class="p-2 my-flex-item">three</div> -->
+    </div>
+
+
+  </div>
+  <div class="container-fluid" id="container">
+    <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+      <div><button type="button" class="btn btn-warning btn-sm endTurn" id="endTurn"><a class="nav-link" href="#">End
+            Turn</a></button></div>
+      <!-- Player Two Name Display -->
+      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+        <h2 id="playerTwoHeader" class="text-right mt-2"></h2>
+      </div>
+    </div>
   </div>
 
 

@@ -27,3 +27,15 @@ body {
     box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
     background: #FFF4E0;
 }
+
+#playerOne {
+    padding: 5px;
+}
+
+#playerTwo {
+    padding: 5px;
+}
+
+.btn btn-success btn-lg {
+    text-align: center;
+}
