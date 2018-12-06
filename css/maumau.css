@@ -7,8 +7,9 @@ body {
 .container {
   border: 1px solid yellowgreen;
   width: 80vw !important;
-  height: 1000px;
+  height: 1000px !important;
 }
+
 .my-flex-container {
   border: 2px solid red;
   height: 22vh;
@@ -25,11 +26,15 @@ body {
 
 .exampleCard,
 .my-flex-item {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   min-width: 100px;
   min-height: auto;
   margin: 0 10px 0 10px;
   background: orange;
+  -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  border-radius: 7%;
 }
 
 /* .my-flex-item {
@@ -59,8 +64,12 @@ body {
 
 .styleImage {
   background-image: no-repeat center center fixed;
-  background-size: cover;
+  background-size: 100%;
   text-align: center;
   line-height: 750%;
   color: rgb(0, 38, 255);
+}
+
+#card-cover {
+  background: #000 !important;
 }

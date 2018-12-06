@@ -117,7 +117,8 @@ function renderPlayerOne() {
       "exampleCard",
       element.suit,
       element.value,
-      "handPlayerOne"
+      "handPlayerOne",
+      "styleImage"
     );
 
     playerOneContainer.appendChild(card);
