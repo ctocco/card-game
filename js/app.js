@@ -133,6 +133,11 @@ function renderPlayerOne() {
       )
     ) {
       card.setAttribute("onclick", "reply_click(this.id)");
+
+      card.setAttribute(
+        "style",
+        "background-image: url(img/" + element.name + ".jpg);"
+      );
     }
   });
 }
