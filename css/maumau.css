@@ -1,0 +1,66 @@
+html,
+body {
+  background: lightgoldenrodyellow;
+  box-sizing: border-box;
+}
+
+.container {
+  border: 1px solid yellowgreen;
+  width: 80vw !important;
+  height: 1000px;
+}
+.my-flex-container {
+  border: 2px solid red;
+  height: 22vh;
+}
+
+.my-flex-container-top {
+  border: 2px solid red;
+  height: auto;
+}
+
+.my-flex-column {
+  border: 2px solid blue;
+}
+
+.exampleCard,
+.my-flex-item {
+  border: 2px solid orange;
+  min-width: 100px;
+  min-height: auto;
+  margin: 0 10px 0 10px;
+  background: orange;
+}
+
+/* .my-flex-item {
+  border: 2px solid orange;
+  width: 150px;
+  margin: 0 10px 0 10px;
+  background: orange;
+} */
+
+/* .my-flex-item2 {
+  border: 2px solid orange;
+}
+
+.my-flex-item3 {
+  border: 2px solid orange;
+} */
+
+#discarded,
+#deck {
+  min-height: 100%;
+}
+
+#mau,
+#maumau {
+  margin: 0 10px;
+}
+
+.styleImage {
+  background-image: no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  line-height: 750%;
+  color: rgb(0, 38, 255);
+}

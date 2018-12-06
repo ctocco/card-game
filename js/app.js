@@ -1,104 +1,194 @@
-alert("hello");
-
-
-// Building a card deck
-
+// Deck setup and methods
 class Deck {
-    constructor() {
-        this.deck = []
-        this.dealt_cards = []
-    }
-    generate_deck() {
-        let card = (suit, value) => {
-            this.name = value + ' of ' + suit;
-            this.suit = suit;
-            this.value = value;
+  constructor() {
+    this.deck = [];
+    this.dealt_cards = [];
+  }
 
-            return {
-                name: this.name,
-                suit: this.suit,
-                value: this.value
-            }
-        }
+  generate_deck() {
+    let card = (suit, value) => {
+      this.name = `${value}_of_${suit}`;
+      this.suit = suit;
+      this.value = value;
 
-        let values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-        let suits = ['Clubs', 'Diamonds', 'Spades', 'Hearts'];
+      return { name: this.name, suit: this.suit, value: this.value };
+    };
 
-        for (let s = 0; s < suits.length; s++) {
-            for (let v = 0; v < values.length; v++) {
-                this.deck.push(card(suits[s], values[v]))
+    let values = ["7", "8", "9", "10", "J", "Q", "K", "A"];
+    let suits = ["Clubs", "Diamonds", "Spades", "Hearts"];
 
-            }
-        }
+    for (let s = 0; s < suits.length; s++) {
+      for (let v = 0; v < values.length; v++) {
+        this.deck.push(card(suits[s], values[v]));
+      }
     }
-    print_deck() {
-        if (this.deck.length == 0) {
-            console.log('The deck has been generated')
-        } else {
-            for (let c = 0; c < this.deck.length; c++) {
-                console.log(this.deck[c])
-            }
-        }
-    }
-    shuffle() {
-        let current_index = this.deck.length,
-            temp_val, random_index
+  }
 
-        while (0 != current_index) {
-            random_index = Math.floor(Math.random() * current_index)
-            current_index -= 1
-            temp_val = this.deck[current_index]
-            this.deck[current_index] = this.deck[random_index]
-            this.deck[random_index] = temp_val
-        }
+  shuffle() {
+    let current_index = this.deck.length,
+      temp_val,
+      random_index;
+
+    while (0 != current_index) {
+      random_index = Math.floor(Math.random() * current_index);
+      current_index -= 1;
+      temp_val = this.deck[current_index];
+      this.deck[current_index] = this.deck[random_index];
+      this.deck[random_index] = temp_val;
     }
-    deal() {
-        let dealt_card = this.deck.shift()
-        this.dealt_cards.push(dealt_card)
-        return dealt_card
-    }
-    replace() {
-        this.deck.unshift(this.dealt_cards.shift())
-    }
-    clear_deck() {
-        this.deck = []
-    }
+  }
+
+  first_discard() {
+    let dealt_card = this.deck.shift();
+    this.dealt_cards.push(dealt_card);
+    return dealt_card;
+  }
 }
 
-deck = new Deck();
+// player setup and methods
+class Player {
+  constructor(name) {
+    this.name = name; // this name needs to come from an input field
+    this.cards = [];
+  }
+
+  draw() {
+    let drawn_card = deck.deck.shift();
+    this.cards.push(drawn_card);
+    return drawn_card;
+  }
+
+  playerOneDiscard(q) {
+    // let indexArray = getAllIndexes(
+    //   playerOne.cards,
+    //   deck.dealt_cards[deck.dealt_cards.length - 1].suit,
+    //   deck.dealt_cards[deck.dealt_cards.length - 1].value
+    // );
+
+    let spliced = playerOne.cards.splice(q, 1);
+    deck.dealt_cards.push(spliced[0]);
+  }
+
+  add_hand() {
+    for (let i = 0; i < 5; i++) {
+      let drawn_card = deck.deck.shift();
+      this.cards.push(drawn_card);
+    }
+  }
+}
+
+// Game Setup
+
+let deck = new Deck();
+let playerOne = new Player("Julian");
+let playerTwo = new Player("Claudio");
 
 deck.generate_deck();
-// deck.print_deck();
 deck.shuffle();
-deck.print_deck();
-// console.log(deck.deal());
+deck.first_discard();
+renderDiscarded();
+playerOne.add_hand();
+renderPlayerOne();
+playerTwo.add_hand();
+renderPlayerTwo();
 
+// document.getElementById("container").addEventListener("click", function() {
+//   playerOne.playerOneDiscard();
+//   renderPlayerOne();
+//   renderDiscarded();
+// });
 
+// searchValidCardsPlayerOne(); // !!
+console.log(deck);
+console.log(playerOne);
+console.log(playerTwo);
 
-// Cards & Unicodes
+//Rendering
+function renderPlayerOne() {
+  //remove all children
+  let playerOneContainer = document.getElementById("playerOne");
+  while (playerOneContainer.firstChild) {
+    playerOneContainer.removeChild(playerOneContainer.firstChild);
+  }
 
-let aceOfSpades = '\U+1F0A1';
-let aceOfHearts = '\U+1F0B1';
-let aceOfDiamonds = '\U+1F0C1';
-let aceOfClubs = '\U+1F0D1';
+  playerOne.cards.forEach(function(element) {
+    let card = document.createElement("div");
+    card.classList.add(
+      "exampleCard",
+      element.suit,
+      element.value,
+      "handPlayerOne"
+    );
 
-let twoOfSpades = '\U+1F0D1';
-let twoOfHearts = '\U+1F0B2';
-let twoOfDiamonds = '\U+1F0C2';
-let twoOfClubs = '\U+1F0D2';
+    playerOneContainer.appendChild(card);
 
-let threeOfSpades = '\U+1F0A3';
-let threeOfHearts = '\U+1F0B3';
-let threeOfDiamonds = '\U+1F0C3';
-let threeOfClubs = '\U+1F0D3';
+    card.textContent = element.name.replace(/_/g, " ");
+    card.id = element.name;
+    if (
+      card.classList.contains(
+        deck.dealt_cards[deck.dealt_cards.length - 1].suit
+      ) ||
+      card.classList.contains(
+        deck.dealt_cards[deck.dealt_cards.length - 1].value
+      )
+    ) {
+      card.setAttribute("onclick", "reply_click(this.id)");
 
-let fourOfSpades = '\U+1F0A4';
-let fourOfHearts = '\U+1F0B4';
-let fourOfDiamonds = '\U+1F0C4';
-let fourOfClubs = '\U+1F0D4';
+      card.setAttribute(
+        "style",
+        "background-image: url(img/" + element.name + ".jpg);"
+      );
+    }
+  });
+}
 
-let fiveOfSpades = '\U+1F0A5';
-let fiveOfHearts = '\U+1F0B5';
-let fiveOfDiamonds = '\U+1F0C5';
-let fiveOfClubs = '\U+1F0D5';
- 
+function renderPlayerTwo() {
+  playerTwo.cards.forEach(function(element) {
+    let card = document.createElement("div");
+    card.classList.add(
+      "exampleCard",
+      element.suit,
+      element.value,
+      "handPlayerTwo"
+    );
+    let playerTwoContainer = document.getElementById("playerTwo");
+    playerTwoContainer.appendChild(card);
+    card.textContent = element.name.replace(/_/g, " ");
+  });
+}
+
+function renderDiscarded() {
+  let discardedPile = document.getElementById("discarded");
+  const lastCard = deck.dealt_cards.length - 1;
+  discardedPile.textContent = deck.dealt_cards[lastCard].name;
+}
+
+document.getElementById("playerNameOne").innerText = `Player 1: ${
+  playerOne.name
+}`;
+document.getElementById("playerNameTwo").innerText = `Player 2: ${
+  playerTwo.name
+}`;
+
+//extra
+
+function removeButton() {
+  startButton.classList.add("hide");
+}
+
+function getAllIndexes(arr, suit, value) {
+  let indexes = [],
+    i;
+  for (i = 0; i < arr.length; i++)
+    if (arr[i].suit === suit || arr[i].value === value) indexes.push(i);
+  return indexes;
+}
+
+function reply_click(theId) {
+  let index = playerOne.cards.findIndex(x => x.name == theId);
+  console.log(index);
+  let spliced = playerOne.cards.splice(index, 1);
+  deck.dealt_cards.push(spliced[0]);
+  renderPlayerOne();
+  renderDiscarded();
+}
