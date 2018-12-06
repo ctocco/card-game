@@ -141,7 +141,7 @@ function renderPlayerOne() {
 
       card.setAttribute(
         "style",
-        "background-image: url(img/" + element.name + ".jpg);"
+        "background-image: url(../img/" + element.name + ".jpg);"
       );
     }
   });
