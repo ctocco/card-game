@@ -27,8 +27,8 @@
         <li class="nav-item active">
           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
       </ul>
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-primary active">
@@ -50,7 +50,7 @@
     <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
       <h1 class="text-center">Mau Mau</h1>
       <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-        <div id="mau" class="align-items-center"><button type="button" class="btn btn-danger btn-sm reset"><a class="nav-link"
+        <div id="mau" class="align-items-center"><button type="button" class="btn btn-danger btn-sm"><a class="nav-link"
               href="#">Mau</a></button></div>
         <div><button type="button" class="btn btn-success btn-sm reset" id="reset"><a class="nav-link" href="#">Reset</a></button></div>
       </div>
@@ -60,38 +60,38 @@
   <!--           -->
 
   <!-- Player one container with end turn and name -->
-
-  <div class="container-fluid" id="container">
-    <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+  <div class="cover-card">
+    <div class="container-fluid" id="container">
       <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-        <h2 id="playerOneHeader" class="text-left mt-2">Player 1:</h2>
-        <div class="d-flex"></div>
+        <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+          <h2 id="playerOneHeader" class="text-left mt-2">Player 1:</h2>
+          <div class="d-flex"></div>
 
-        <!-- player one input -->
-        <!-- <form id="form-1" class="form-inline my-2 my-lg-0">
+          <!-- player one input -->
+          <!-- <form id="form-1" class="form-inline my-2 my-lg-0">
           <input id="inputPlayer1" class="form-control mr-sm-2" type="text" placeholder="Enter name of player 1">
           <button id="btnClick1" class="btn btn-secondary my-2 my-sm-0 mr-5" type="submit">Enter</button>
         </form> -->
+        </div>
 
+        <div><button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnOne"><a class="nav-link" href="#">End
+              Turn</a></button></div>
       </div>
-      <div><button type="button" class="btn btn-warning btn-sm endTurn" id="endTurn"><a class="nav-link" href="#">End
-            Turn</a></button></div>
     </div>
-  </div>
+    <!-- Card CONTAINERS -->
 
-  <!-- Card CONTAINERS -->
 
-  <div class="container-fluid" id="container">
     <!-- player1 -->
-    <div id="playerOne" class="d-flex flex-row my-flex-container p-2"></div>
 
-    <!-- draw pile container -->
-    <div id="deckContainer" class="d-flex flex-row my-flex-container justify-content-center align-items-center p-2">
-      <div class="p-2 my-flex-item" id="deck">Draw Pile</div>
-      <div class="p-2 my-flex-item" id="discarded"></div>
-    </div>
-    <!-- player2 -->
-    <div id="playerTwo" class="d-flex flex-row-reverse my-flex-container p-2"></div>
+    <div id="playerOne" class="d-flex flex-row my-flex-container p-2"></div>
+  </div>
+  <!-- draw pile container -->
+  <div id="deckContainer" class="d-flex flex-row my-flex-container justify-content-center align-items-center p-2">
+    <div class="p-2 my-flex-item" id="deck">Draw Pile</div>
+    <div class="p-2 my-flex-item" id="discarded"></div>
+  </div>
+  <!-- player2 -->
+  <div id="playerTwo" class="d-flex flex-row-reverse my-flex-container p-2"></div>
   </div>
 
   <!-- player two input -->
@@ -99,7 +99,7 @@
   <div class="container-fluid" id="container">
 
     <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-      <div><button type="button" class="btn btn-warning btn-sm endTurn" id="endTurn"><a class="nav-link" href="#">End
+      <div><button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnTwo"><a class="nav-link" href="#">End
             Turn</a></button></div>
       <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
         <h2 id="playerTwoHeader" class="text-right mt-2">Player 2:</h2>

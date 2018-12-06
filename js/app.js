@@ -11,7 +11,11 @@ class Deck {
       this.suit = suit;
       this.value = value;
 
-      return { name: this.name, suit: this.suit, value: this.value };
+      return {
+        name: this.name,
+        suit: this.suit,
+        value: this.value
+      };
     };
 
     let values = ["7", "8", "9", "10", "J", "Q", "K", "A"];
@@ -111,7 +115,7 @@ function renderPlayerOne() {
     playerOneContainer.removeChild(playerOneContainer.firstChild);
   }
 
-  playerOne.cards.forEach(function(element) {
+  playerOne.cards.forEach(function (element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
@@ -144,7 +148,7 @@ function renderPlayerOne() {
 }
 
 function renderPlayerTwo() {
-  playerTwo.cards.forEach(function(element) {
+  playerTwo.cards.forEach(function (element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
