@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+  border: 1px solid yellowgreen;
   width: 80vw !important;
   height: 1000px;
 }
@@ -14,16 +15,18 @@ body {
 }
 
 .my-flex-container-top {
+  border: 2px solid red;
   height: auto;
 }
 
 .my-flex-column {
+  border: 2px solid blue;
 }
 
 .exampleCard,
 .my-flex-item {
   border: 2px solid orange;
-  min-width: 90px;
+  min-width: 100px;
   min-height: auto;
   margin: 0 10px 0 10px;
   background: orange;
