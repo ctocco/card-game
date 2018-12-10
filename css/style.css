@@ -1,5 +1,9 @@
 html,
 body {
+    background: lightgoldenrodyellow;
+}
+
+.container {
     height: 100%;
 }
 
@@ -8,7 +12,6 @@ body {
     height: auto !important;
     /* cross-browser */
     /* cross-browser */
-    background: lightgoldenrodyellow;
 }
 
 .master-container {
