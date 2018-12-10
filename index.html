@@ -9,17 +9,18 @@
   <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css" />
 
   <link rel="stylesheet" href="css/style.css" />
-  <title>The Game Center</title>
+  <title id="lTitle1"></title>
+  <script src="js/language.js"></script>
 </head>
 
-<body>
+<body onload="page='index'; switchLanguage();">
   <div class="fill-height">
     <div class="container-fluid master-container">
 
       <!-- NAV BAR -->
 
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="index.html">The Game Center</a>
+        <a id="lTitle2" class="navbar-brand" href="index.html"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -27,18 +28,14 @@
 
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item active"><a id="lHome" class="nav-link" href="index.html"><span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a id="lHelp" class="nav-link" href="help.html"></a></li>
+            <li class="nav-item"><a id="lAbout" class="nav-link" href="about.html"></a></li>
           </ul>
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-primary active">
-              <input type="checkbox" checked="" autocomplete="off"> DE
+            <label id="buttonDE" class="btn btn-primary active" onclick="language='DE'; saveLanguage();">DE
             </label>
-            <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"> EN
+            <label id="buttonEN"class="btn btn-primary" onclick="language='EN'; saveLanguage();">EN
             </label>
           </div>
         </div>
@@ -46,12 +43,12 @@
 
 
       <div class="jumbotron game-intro m-3">
-        <h1 class="display-3">THE GAME CENTER</h1>
-        <p class="lead">Welcome to a collection of wonderful card games for you to enjoy at home</p>
+        <h1 id="lTitle3" class="display-3"></h1>
+        <p id="lContent1" class="lead"></p>
         <hr class="my-4">
-        <p>If you want to learn more about the history and the rules of the games just click below</p>
+        <p id="lContent2"></p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" href="help.html" role="button">Learn more</a>
+          <a id="lLearnMore" class="btn btn-primary btn-lg" href="help.html" role="button"></a>
         </p>
       </div>
       <div class="text-center">
@@ -59,7 +56,7 @@
         <!-- Modal/enter game -->
 
         <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#playerModal" data-target="modal"
-          id="start">Enter Game
+          id="start">
         </button>
 
         <!-- Modal -->
@@ -69,34 +66,32 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="" id="exampleModalLabel">Please enter the name of each player</h5>
+                <h5 class="" id="exampleModalLabel">Enter Names/Namen Eingeben</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <input type="text" id="playerOne" placeholder="Enter name of player 1">
-                <input type="text" id="playerTwo" placeholder="Enter name of player 2">
+                <input type="text" id="playerOne" placeholder="Player/Spieler 1">
+                <input type="text" id="playerTwo" placeholder="Player/Spieler 2">
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" onclick="submitName()">Save changes</button>
+                <button id="lClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close/Schliessen</button>
+                <button id="lSave" type="button" class="btn btn-success" onclick="submitName()">Save/Speichern</button>
               </div>
             </div>
           </div>
         </div>
         <h1>Mau Mau</h1>
-        <p>dare to win?</p>
+        <p id="lContent3"></p>
 
       </div>
-
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-      <script src="js/deck.js"></script>
       <script src="js/ui.js"></script>
 
 
