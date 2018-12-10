@@ -57,7 +57,7 @@ body {
 
 .styleImage {
   background-image: no-repeat center center fixed;
-  background-size: 100%;
+  background-size: 100% 100%;
   text-align: center;
   line-height: 750%;
   color: rgb(0, 38, 255);

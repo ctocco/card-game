@@ -1,3 +1,9 @@
+//Card Values
+
+let values = ["7", "8", "9", "10", "J", "Q", "K", "A"];
+let suits = ["Clubs", "Diamonds", "Spades", "Hearts"];
+
+
 // Deck setup and methods
 class Deck {
   constructor() {
@@ -17,9 +23,6 @@ class Deck {
         value: this.value
       };
     };
-
-    let values = ["7", "8", "9", "10", "J", "Q", "K", "A"];
-    let suits = ["Clubs", "Diamonds", "Spades", "Hearts"];
 
     for (let s = 0; s < suits.length; s++) {
       for (let v = 0; v < values.length; v++) {
@@ -129,21 +132,8 @@ function renderPlayerOne() {
 
     card.textContent = element.name.replace(/_/g, " ");
     card.id = element.name;
-    if (
-      card.classList.contains(
-        deck.dealt_cards[deck.dealt_cards.length - 1].suit
-      ) ||
-      card.classList.contains(
-        deck.dealt_cards[deck.dealt_cards.length - 1].value
-      )
-    ) {
-      card.setAttribute("onclick", "reply_click(this.id)");
-
-      card.setAttribute(
-        "style",
-        "background-image: url(../img/" + element.name + ".jpg);"
-      );
-    }
+    card.setAttribute("onclick", "reply_click(this.id)"); //adding onclick Event HTML
+    card.setAttribute("style", "background-image: url(../img/" + element.name + ".jpg);"); //adding Card Image
   });
 }
 
@@ -154,11 +144,14 @@ function renderPlayerTwo() {
       "exampleCard",
       element.suit,
       element.value,
-      "handPlayerTwo"
+      "handPlayerTwo",
+      "styleImage"
     );
     let playerTwoContainer = document.getElementById("playerTwo");
     playerTwoContainer.appendChild(card);
     card.textContent = element.name.replace(/_/g, " ");
+    card.setAttribute("onclick", "reply_click(this.id)"); //adding onclick Event HTML
+    card.setAttribute("style", "background-image: url(../img/" + element.name + ".jpg);"); //adding Card Image
   });
 }
 
