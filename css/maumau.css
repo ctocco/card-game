@@ -35,6 +35,11 @@ body {
   -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   border-radius: 7%;
+
+}
+
+.cover {
+  z-index: -1;
 }
 
 /* Styling for the draw pile and deck  */
@@ -64,6 +69,15 @@ body {
 /* experimenting with putting a cover over the cards when it is not the player's turn */
 
 .cover-card {
+  background-image: url("/img/coverBackground.png");
+  z-index: 40;
+  margin: 10px 20px;
+  -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+}
+
+.cover-card2 {
   background-image: url("/img/coverBackground.png");
   z-index: 1000;
   margin: 10px 20px;
