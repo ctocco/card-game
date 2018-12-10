@@ -1,4 +1,5 @@
 let counterPlayerOne = 0;
+let counterPlayerTwo = 0;
 
 // Deck setup and methods
 class Deck {
@@ -95,7 +96,7 @@ playerTwo.add_hand();
 renderPlayerTwo();
 setTimeout(() => {
   nextTurnPlayerOne();
-}, 5000);
+}, 2000);
 // console.log(deck);
 // console.log(playerOne);
 // console.log(playerTwo);
@@ -121,6 +122,7 @@ function renderPlayerOne() {
 
     card.textContent = element.name.replace(/_/g, " ");
     card.id = element.name;
+
     if (
       card.classList.contains(
         deck.dealt_cards[deck.dealt_cards.length - 1].suit
@@ -129,13 +131,13 @@ function renderPlayerOne() {
         deck.dealt_cards[deck.dealt_cards.length - 1].value
       )
     ) {
-      card.setAttribute("onclick", "reply_click(this.id)");
-
-      card.setAttribute(
-        "style",
-        "background-image: url(img/" + element.name + ".jpg);"
-      );
+      card.classList.add("playable");
     }
+
+    card.setAttribute(
+      "style",
+      "background-image: url(img/" + element.name + ".jpg);"
+    );
   });
 }
 
@@ -144,6 +146,7 @@ function renderPlayerTwo() {
   while (playerTwoContainer.firstChild) {
     playerTwoContainer.removeChild(playerTwoContainer.firstChild);
   }
+
   playerTwo.cards.forEach(function(element) {
     let card = document.createElement("div");
     card.classList.add(
@@ -156,6 +159,7 @@ function renderPlayerTwo() {
     playerTwoContainer.appendChild(card);
     card.textContent = element.name.replace(/_/g, " ");
     card.id = element.name;
+
     if (
       card.classList.contains(
         deck.dealt_cards[deck.dealt_cards.length - 1].suit
@@ -164,13 +168,13 @@ function renderPlayerTwo() {
         deck.dealt_cards[deck.dealt_cards.length - 1].value
       )
     ) {
-      card.setAttribute("onclick", "reply_click(this.id)");
-
-      card.setAttribute(
-        "style",
-        "background-image: url(img/" + element.name + ".jpg);"
-      );
+      card.classList.add("playable");
     }
+
+    card.setAttribute(
+      "style",
+      "background-image: url(img/" + element.name + ".jpg);"
+    );
   });
 }
 
@@ -276,22 +280,25 @@ function nextTurnPlayerOne() {
       renderPlayerTwo();
       renderDiscarded();
       nextTurnPlayerTwo();
-    }, 2000);
+    }, 1000);
   } else {
-    function resolveAfter2Seconds() {
-      return new Promise(resolve => {
-        resolve();
+    renderPlayerOne();
+    let parentNode = document.getElementById("playerOne");
+    let elementList = parentNode.querySelectorAll(".playable");
+    let elementListArray = Array.from(elementList);
+
+    elementListArray.forEach(function(el) {
+      el.addEventListener("click", function() {
+        let index = playerOne.cards.findIndex(x => x.name == this.id);
+        console.log(index);
+        let spliced = playerOne.cards.splice(index, 1);
+        deck.dealt_cards.push(spliced[0]);
+        renderPlayerOne();
+        renderPlayerTwo();
+        renderDiscarded();
+        nextTurnPlayerTwo();
       });
-    }
-
-    async function asyncCall() {
-      console.log("calling");
-      var result = await resolveAfter2Seconds();
-      console.log(result);
-      // expected output: 'resolved'
-    }
-
-    asyncCall();
+    });
   }
 
   counterPlayerOne++;
@@ -299,10 +306,6 @@ function nextTurnPlayerOne() {
 }
 
 function nextTurnPlayerTwo() {
-  let rightIndex = function reply_click(theId) {
-    return theId;
-  };
-
   if (
     playerTwo.cards.findIndex(
       x => x.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit
@@ -314,28 +317,32 @@ function nextTurnPlayerTwo() {
     setTimeout(() => {
       playerTwo.draw();
       // console.log(
-      //   `playerTwo drew ${playerTwo.cards[playerTwo.cards.length - 1].name}`
+      //   `playerOne drew ${playerOne.cards[playerOne.cards.length - 1].name}`
       // );
       renderPlayerOne();
       renderPlayerTwo();
       renderDiscarded();
       nextTurnPlayerOne();
-    }, 2000);
+    }, 1000);
   } else {
-    setTimeout(() => {
-      let index = playerTwo.cards.findIndex(x => x.name == rightIndex);
-      // console.log(index);
-      // console.log(
-      //   `playerTwo discarded ${
-      //     deck.dealt_cards[deck.dealt_cards.length - 1].name
-      //   }`
-      // );
-      let spliced = playerTwo.cards.splice(index, 1);
-      deck.dealt_cards.push(spliced[0]);
-      renderPlayerOne();
-      renderPlayerTwo();
-      renderDiscarded();
-      nextTurnPlayerOne();
-    }, 2000);
+    let parentNode = document.getElementById("playerTwo");
+    let elementList = parentNode.querySelectorAll(".playable");
+    let elementListArray = Array.from(elementList);
+
+    elementListArray.forEach(function(el) {
+      el.addEventListener("click", function() {
+        let index = playerTwo.cards.findIndex(x => x.name == this.id);
+        console.log(index);
+        let spliced = playerTwo.cards.splice(index, 1);
+        deck.dealt_cards.push(spliced[0]);
+        renderPlayerOne();
+        renderPlayerTwo();
+        renderDiscarded();
+        nextTurnPlayerOne();
+      });
+    });
   }
+
+  counterPlayerTwo++;
+  // console.log(counterPlayerOne);
 }
