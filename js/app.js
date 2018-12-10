@@ -1,4 +1,4 @@
-// Deck setup and methods
+//Classes
 class Deck {
   constructor() {
     this.deck = [];
@@ -11,11 +11,12 @@ class Deck {
       this.suit = suit;
       this.value = value;
 
-      return { name: this.name, suit: this.suit, value: this.value };
+      return {
+        name: this.name,
+        suit: this.suit,
+        value: this.value
+      };
     };
-
-    let values = ["7", "8", "9", "10", "J", "Q", "K", "A"];
-    let suits = ["Clubs", "Diamonds", "Spades", "Hearts"];
 
     for (let s = 0; s < suits.length; s++) {
       for (let v = 0; v < values.length; v++) {
@@ -76,12 +77,22 @@ class Player {
     }
   }
 }
+//__________________________________________________________________________________________________________________________________
+//Variables
 
-// Game Setup
+//Card Values
+let values = ["7", "8", "9", "10", "J", "Q", "K", "A"];
+let suits = ["Clubs", "Diamonds", "Spades", "Hearts"];
 
+//Deck Creation Variables
 let deck = new Deck();
-let playerOne = new Player("Julian");
-let playerTwo = new Player("Claudio");
+let playerOne = new Player("Deck1");
+let playerTwo = new Player("Deck2");
+
+//Rendering Variables
+
+//__________________________________________________________________________________________________________________________________
+// Game Setup
 
 deck.generate_deck();
 deck.shuffle();
@@ -103,7 +114,9 @@ console.log(deck);
 console.log(playerOne);
 console.log(playerTwo);
 
-//Rendering
+
+//__________________________________________________________________________________________________________________________________
+//Rendering Functions
 function renderPlayerOne() {
   //remove all children
   let playerOneContainer = document.getElementById("playerOne");
@@ -111,49 +124,40 @@ function renderPlayerOne() {
     playerOneContainer.removeChild(playerOneContainer.firstChild);
   }
 
-  playerOne.cards.forEach(function(element) {
+  playerOne.cards.forEach(function (element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
       element.suit,
       element.value,
-      "handPlayerOne"
+      "handPlayerOne",
+      "styleImage"
     );
 
     playerOneContainer.appendChild(card);
 
     card.textContent = element.name.replace(/_/g, " ");
     card.id = element.name;
-    if (
-      card.classList.contains(
-        deck.dealt_cards[deck.dealt_cards.length - 1].suit
-      ) ||
-      card.classList.contains(
-        deck.dealt_cards[deck.dealt_cards.length - 1].value
-      )
-    ) {
-      card.setAttribute("onclick", "reply_click(this.id)");
-
-      card.setAttribute(
-        "style",
-        "background-image: url(img/" + element.name + ".jpg);"
-      );
-    }
+    card.setAttribute("onclick", "reply_click(this.id)"); //adding onclick Event HTML
+    card.setAttribute("style", "background-image: url(../img/" + element.name + ".jpg);"); //adding Card Image
   });
 }
 
 function renderPlayerTwo() {
-  playerTwo.cards.forEach(function(element) {
+  playerTwo.cards.forEach(function (element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
       element.suit,
       element.value,
-      "handPlayerTwo"
+      "handPlayerTwo",
+      "styleImage"
     );
     let playerTwoContainer = document.getElementById("playerTwo");
     playerTwoContainer.appendChild(card);
     card.textContent = element.name.replace(/_/g, " ");
+    card.setAttribute("onclick", "reply_click(this.id)"); //adding onclick Event HTML
+    card.setAttribute("style", "background-image: url(../img/" + element.name + ".jpg);"); //adding Card Image
   });
 }
 
@@ -163,15 +167,11 @@ function renderDiscarded() {
   discardedPile.textContent = deck.dealt_cards[lastCard].name;
 }
 
-document.getElementById("playerNameOne").innerText = `Player 1: ${
-  playerOne.name
-}`;
-document.getElementById("playerNameTwo").innerText = `Player 2: ${
-  playerTwo.name
-}`;
 
-//extra
+//__________________________________________________________________________________________________________________________________
+//Functions
 
+//This Button will only appear when you have one or two cards in your deck *not finished*
 function removeButton() {
   startButton.classList.add("hide");
 }
