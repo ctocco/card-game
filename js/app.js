@@ -230,7 +230,18 @@ function nextTurnPlayerOne() {
         renderPlayerOne();
         renderPlayerTwo();
         renderDiscarded();
-        nextTurnPlayerTwo();
+
+        // special value cards
+        if (spliced[0].value == "8") {
+          nextTurnPlayerOne();
+        } else if (spliced[0].value == "7") {
+          playerTwo.draw();
+          playerTwo.draw();
+          renderPlayerTwo();
+          nextTurnPlayerTwo();
+        } else {
+          nextTurnPlayerTwo();
+        }
       });
     });
   }
@@ -272,7 +283,18 @@ function nextTurnPlayerTwo() {
         renderPlayerOne();
         renderPlayerTwo();
         renderDiscarded();
-        nextTurnPlayerOne();
+
+        // special value cards
+        if (spliced[0].value == "8") {
+          nextTurnPlayerTwo();
+        } else if (spliced[0].value == "7") {
+          playerOne.draw();
+          playerOne.draw();
+          renderPlayerOne();
+          nextTurnPlayerOne();
+        } else {
+          nextTurnPlayerOne();
+        }
       });
     });
   }
