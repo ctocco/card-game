@@ -301,6 +301,11 @@ function nextTurnPlayerOne() {
     });
   }
 
+  if (playerOne.cards.length == 0) {
+    alert(`${playerOne.name} won`);
+  } else if (playerTwo.cards.length == 0) {
+    alert(`${playerTwo.name} won`);
+  }
   counterPlayerOne++;
   // console.log(counterPlayerOne);
 }
@@ -343,6 +348,11 @@ function nextTurnPlayerTwo() {
     });
   }
 
+  if (playerOne.cards.length == 0) {
+    alert(`${playerOne.name} won`);
+  } else if (playerTwo.cards.length == 0) {
+    alert(`${playerTwo.name} won`);
+  }
   counterPlayerTwo++;
   // console.log(counterPlayerOne);
 }
