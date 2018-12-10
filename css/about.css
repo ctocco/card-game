@@ -1,0 +1,86 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+}
+
+div {
+    /* border: 1px solid red; */
+}
+
+.container {
+    background: #FFFAFA;
+
+}
+
+.img {
+    height: 60vh;
+    background-image: url(/img/dummy_team.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imgMember {
+    height: 150px;
+    width: 150px;
+    background-image: url(/img/dummy_team.jpg);
+    border-radius: 50%;
+    margin: 0 auto;
+
+}
+
+.imgContainer {
+    height: 200px;
+
+}
+
+.paddingTopRemove {
+    padding-top: 0 !important;
+}
+
+.paddingBotRemove {
+    padding-bottom: 0 !important;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: goldenrod;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+
+i {
+    font-size: 1.5rem;
+    padding: .2rem;
+}
+
+i:hover {
+    color: goldenrod;
+}
+
+.mapouter {
+
+    margin: 0 auto;
+}
+
+.mapresponsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}

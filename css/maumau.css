@@ -5,17 +5,18 @@ body {
 }
 
 .container {
-  border: 1px solid yellowgreen;
+  /* border: 1px solid yellowgreen; */
   width: 80vw !important;
-  height: 1000px;
+  height: 1000px !important;
 }
+
 .my-flex-container {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: 22vh;
 }
 
 .my-flex-container-top {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: auto;
 }
 
@@ -25,33 +26,31 @@ body {
 
 .exampleCard,
 .my-flex-item {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   min-width: 100px;
   min-height: auto;
   margin: 0 10px 0 10px;
   background: orange;
+  -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  border-radius: 7%;
+
+
 }
 
-/* .my-flex-item {
-  border: 2px solid orange;
-  width: 150px;
-  margin: 0 10px 0 10px;
-  background: orange;
-} */
-
-/* .my-flex-item2 {
-  border: 2px solid orange;
+.covered {
+  z-index: -1;
 }
 
-.my-flex-item3 {
-  border: 2px solid orange;
-} */
+/* Styling for the draw pile and deck  */
 
 #discarded,
 #deck {
   min-height: 100%;
 }
 
+/* styling for the mau mau button */
 #mau,
 #maumau {
   margin: 0 10px;
@@ -59,8 +58,31 @@ body {
 
 .styleImage {
   background-image: no-repeat center center fixed;
-  background-size: cover;
+  background-size: 100% 100%;
   text-align: center;
   line-height: 750%;
   color: rgb(0, 38, 255);
+  z-index: 100;
+  /* This hides the cards under the cover card */
+  /* z-index: -1; */
+}
+
+/* experimenting with putting a cover over the cards when it is not the player's turn */
+
+.cover-card {
+  background-image: url("/img/coverBackground.png");
+  z-index: 40;
+  margin: 10px 20px;
+  -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+}
+
+.cover-card2 {
+  background-image: url("/img/coverBackground.png");
+  z-index: 1000;
+  margin: 10px 20px;
+  -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
 }

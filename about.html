@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/about.css">
+    <script src="js/language.js"></script>
+    <title id="lTitle1"></title>
+
+</head>
+
+<body onload="page='about'; switchLanguage();">
+    <div class="fill-height">
+        <div class="container-fluid master-container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="index.html">The Game Center</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a id="lHome" class="nav-link" href="index.html"><span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item"><a id="lHelp" class="nav-link" href="help.html"></a></li>
+                        <li class="nav-item"><a id="lAbout" class="nav-link" href="about.html"></a></li>
+                      </ul>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label id="buttonDE" class="btn btn-primary active" onclick="language='DE'; saveLanguage();">DE
+                        </label>
+                        <label id="buttonEN"class="btn btn-primary" onclick="language='EN'; saveLanguage();">EN
+                        </label>
+                    </div>
+
+            </nav>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <span class="row"></span>
+        <h1 id="lContent1" class="row justify-content-center mt-5"></h1>
+        <h3 id="lContent2" class="row justify-content-center"></h3>
+        <div class="img"></div>
+
+        <div class="row mt-5 pl-5 pr-5">
+            <p id="lText1"></p>
+        </div>
+    </div>
+
+    <div class="container mt-2">
+        <span class="row"></span>
+        <h1 id="lTalent1" class="row justify-content-center mt-5"></h1>
+        <h3 id="lTalent2" class="row justify-content-center mb-5"></h3>
+
+        <div class="container">
+
+            <div class="row align-content-center p-5 paddingTopRemove paddingBotRemove">
+                <div class="col-lg-6 col-sm-12 p-4">
+                    <div class="imgMember mb-3 "></div>
+                    <p id="lText2" class="text-center"></p>
+                </div>
+                <div class="col-lg-6 col-sm-12 p-4">
+                    <div class="imgMember mb-3"></div>
+                    <p id="lText3" class="text-center"></p>
+                </div>
+            </div>
+            <div class="row align-content-center p-5 paddingTopRemove">
+                <div class="col-lg-6 col-sm-12 p-4">
+                    <div class="imgMember mb-3 "></div>
+                    <p id="lText4" class="text-center"></p>
+                </div>
+                <div class="col-lg-6 col-sm-12 p-4">
+                    <div class="imgMember mb-3"></div>
+                    <p id="lText5" class="text-center"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+
+    <div class="container mt-2">
+        <span class="row"></span>
+        <h1 id="lLocation" class="row justify-content-center mt-5"></h1>
+
+
+        <div class="row m-5 pl-5 pr-5">
+            <div class="col-lg-3 col-sm-12">
+                <p>Our office is located in Berlin, Germany</p>
+                <br>Berlin (Headquaters)
+                <br><strong>Digital Career Institute</strong>
+                <br>Vulkanstraße 1
+                <br>1st Floor
+                <br>10367 Berlin
+                <p class="mt-4">Connect</p>
+                <p class="mt-2"><i class="fab fa-facebook-square"></i><i class="fab fa-instagram"></i><i class="fas fa-envelope"></i>
+                    <i class="fab fa-github"></i><i class="fab fa-linkedin"></i></p>
+            </div>
+            <div class="col-lg-9 col-sm-12 pb-5">
+                <div class="mapouter ">
+                    <div class="gmap_canvas mapresponsive"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.5385476912916!2d13.484203415664965!3d52.523689643708416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e9ab16b3c6b%3A0x762910f63c9bc487!2sVulkanstra%C3%9Fe+1%2C+10367+Berlin!5e0!3m2!1sen!2sde!4v1544450643601"
+                            width="700" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+
+                </div>
+            </div>
+            <button id="myBtn" title="Go to top">Top</button>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script src="/js/about.js"></script>
+    <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

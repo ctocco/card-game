@@ -1,0 +1,49 @@
+html,
+body {
+    /* height: 100%; */
+    background: lightgoldenrodyellow;
+}
+
+.container {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+}
+
+.fill-height {
+    min-height: 100%;
+    height: auto !important;
+    /* cross-browser */
+    /* cross-browser */
+}
+
+.master-container {
+    min-height: 100%;
+    height: inherit;
+}
+
+.footer {
+    margin-top: 70px;
+    padding: 0 !important;
+}
+
+.jumbotron {
+    -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+    -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+    box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+    background: #FFF4E0;
+}
+
+#playerOne {
+    padding: 5px;
+}
+
+#playerTwo {
+    padding: 5px;
+}
+
+.btn btn-success btn-lg {
+    text-align: center;
+}

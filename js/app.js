@@ -2,6 +2,7 @@ let counterPlayerOne = 0;
 let counterPlayerTwo = 0;
 
 // Deck setup and methods
+//Classes
 class Deck {
   constructor() {
     this.deck = [];
@@ -14,11 +15,12 @@ class Deck {
       this.suit = suit;
       this.value = value;
 
-      return { name: this.name, suit: this.suit, value: this.value };
+      return {
+        name: this.name,
+        suit: this.suit,
+        value: this.value
+      };
     };
-
-    let values = ["7", "8", "9", "10", "J", "Q", "K", "A"];
-    let suits = ["Clubs", "Diamonds", "Spades", "Hearts"];
 
     for (let s = 0; s < suits.length; s++) {
       for (let v = 0; v < values.length; v++) {
@@ -79,12 +81,22 @@ class Player {
     }
   }
 }
+//__________________________________________________________________________________________________________________________________
+//Variables
 
-// Game Setup
+//Card Values
+let values = ["7", "8", "9", "10", "J", "Q", "K", "A"];
+let suits = ["Clubs", "Diamonds", "Spades", "Hearts"];
 
+//Deck Creation Variables
 let deck = new Deck();
-let playerOne = new Player("Julian");
-let playerTwo = new Player("Claudio");
+let playerOne = new Player("Deck1");
+let playerTwo = new Player("Deck2");
+
+//Rendering Variables
+
+//__________________________________________________________________________________________________________________________________
+// Game Setup
 
 deck.generate_deck();
 deck.shuffle();
@@ -97,11 +109,9 @@ renderPlayerTwo();
 setTimeout(() => {
   nextTurnPlayerOne();
 }, 2000);
-// console.log(deck);
-// console.log(playerOne);
-// console.log(playerTwo);
 
-//Rendering
+//__________________________________________________________________________________________________________________________________
+//Rendering Functions
 function renderPlayerOne() {
   //remove all children
   let playerOneContainer = document.getElementById("playerOne");
@@ -115,12 +125,13 @@ function renderPlayerOne() {
       "exampleCard",
       element.suit,
       element.value,
-      "handPlayerOne"
+      "handPlayerOne",
+      "styleImage"
     );
 
     playerOneContainer.appendChild(card);
 
-    card.textContent = element.name.replace(/_/g, " ");
+    // card.textContent = element.name.replace(/_/g, " ");
     card.id = element.name;
 
     if (
@@ -136,8 +147,8 @@ function renderPlayerOne() {
 
     card.setAttribute(
       "style",
-      "background-image: url(img/" + element.name + ".jpg);"
-    );
+      "background-image: url(../img/" + element.name + ".jpg);"
+    ); //adding Card Image
   });
 }
 
@@ -153,11 +164,12 @@ function renderPlayerTwo() {
       "exampleCard",
       element.suit,
       element.value,
-      "handPlayerTwo"
+      "handPlayerTwo",
+      "styleImage"
     );
 
     playerTwoContainer.appendChild(card);
-    card.textContent = element.name.replace(/_/g, " ");
+    // card.textContent = element.name.replace(/_/g, " ");
     card.id = element.name;
 
     if (
@@ -173,94 +185,32 @@ function renderPlayerTwo() {
 
     card.setAttribute(
       "style",
-      "background-image: url(img/" + element.name + ".jpg);"
-    );
+      "background-image: url(../img/" + element.name + ".jpg);"
+    ); //adding Card Image
   });
 }
 
 function renderDiscarded() {
   let discardedPile = document.getElementById("discarded");
+  discardedPile.classList.add("styleImage");
   const lastCard = deck.dealt_cards.length - 1;
   discardedPile.setAttribute(
     "style",
     "background-image: url(img/" + deck.dealt_cards[lastCard].name + ".jpg);"
   );
-  discardedPile.textContent = deck.dealt_cards[lastCard].name.replace(
-    /_/g,
-    " "
-  );
+  // discardedPile.textContent = deck.dealt_cards[lastCard].name.replace(
+  //   /_/g,
+  //   " "
+  // );
 }
 
-document.getElementById("playerNameOne").innerText = `Player 1: ${
-  playerOne.name
-}`;
-document.getElementById("playerNameTwo").innerText = `Player 2: ${
-  playerTwo.name
-}`;
+//__________________________________________________________________________________________________________________________________
+//Functions
 
-//extra
-
-// function getAllIndexes(arr, suit, value) {
-//   let indexes = [],
-//     i;
-//   for (i = 0; i < arr.length; i++)
-//     if (arr[i].suit === suit || arr[i].value === value) indexes.push(i);
-//   return indexes;
-// }
-
-// function playerOne_click(theId) {
-//   let index = playerOne.cards.findIndex(x => x.name == theId);
-//   console.log(index);
-//   let spliced = playerOne.cards.splice(index, 1);
-//   deck.dealt_cards.push(spliced[0]);
-//   renderPlayerOne();
-//   renderPlayerTwo();
-//   renderDiscarded();
-
-//   setTimeout(() => {
-//     if (
-//       playerOne.cards.findIndex(
-//         x => x.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit
-//       ) === -1 &&
-//       playerOne.cards.findIndex(
-//         x => x.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
-//       ) === -1
-//     ) {
-//       console.log("hello");
-//       playerOne.draw();
-//       renderPlayerOne();
-//       renderPlayerTwo();
-//       renderDiscarded();
-//     }
-//   }, 1500);
-// }
-
-// function playerTwo_click(theId) {
-//   let index = playerTwo.cards.findIndex(x => x.name == theId);
-//   console.log(index);
-//   let spliced = playerTwo.cards.splice(index, 1);
-//   deck.dealt_cards.push(spliced[0]);
-//   renderPlayerOne();
-//   renderPlayerTwo();
-//   renderDiscarded();
-// }
-
-// setTimeout(() => {
-//   if (
-//     playerOne.cards.findIndex(
-//       x => x.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit
-//     ) === -1 &&
-//     playerOne.cards.findIndex(
-//       x => x.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
-//     ) === -1
-//   ) {
-//     console.log("hello");
-//     playerOne.draw();
-//     renderPlayerOne();
-//     renderPlayerTwo();
-//     renderDiscarded();
-//   }
-// }, 1500);
+//This Button will only appear when you have one or two cards in your deck *not finished*
+function removeButton() {
+  startButton.classList.add("hide");
+}
 
 function nextTurnPlayerOne() {
   if (
@@ -273,16 +223,12 @@ function nextTurnPlayerOne() {
   ) {
     setTimeout(() => {
       playerOne.draw();
-      // console.log(
-      //   `playerOne drew ${playerOne.cards[playerOne.cards.length - 1].name}`
-      // );
       renderPlayerOne();
       renderPlayerTwo();
       renderDiscarded();
       nextTurnPlayerTwo();
     }, 1000);
   } else {
-    renderPlayerOne();
     let parentNode = document.getElementById("playerOne");
     let elementList = parentNode.querySelectorAll(".playable");
     let elementListArray = Array.from(elementList);
@@ -307,7 +253,6 @@ function nextTurnPlayerOne() {
     alert(`${playerTwo.name} won`);
   }
   counterPlayerOne++;
-  // console.log(counterPlayerOne);
 }
 
 function nextTurnPlayerTwo() {
@@ -321,9 +266,6 @@ function nextTurnPlayerTwo() {
   ) {
     setTimeout(() => {
       playerTwo.draw();
-      // console.log(
-      //   `playerOne drew ${playerOne.cards[playerOne.cards.length - 1].name}`
-      // );
       renderPlayerOne();
       renderPlayerTwo();
       renderDiscarded();
@@ -354,5 +296,4 @@ function nextTurnPlayerTwo() {
     alert(`${playerTwo.name} won`);
   }
   counterPlayerTwo++;
-  // console.log(counterPlayerOne);
 }
