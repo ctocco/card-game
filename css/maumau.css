@@ -36,9 +36,10 @@ body {
   box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   border-radius: 7%;
 
+
 }
 
-.cover {
+.covered {
   z-index: -1;
 }
 
@@ -61,7 +62,7 @@ body {
   text-align: center;
   line-height: 750%;
   color: rgb(0, 38, 255);
-
+  z-index: 100;
   /* This hides the cards under the cover card */
   /* z-index: -1; */
 }
