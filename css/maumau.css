@@ -35,6 +35,12 @@ body {
   -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   border-radius: 7%;
+
+
+}
+
+.covered {
+  z-index: -1;
 }
 
 /* Styling for the draw pile and deck  */
@@ -56,7 +62,7 @@ body {
   text-align: center;
   line-height: 750%;
   color: rgb(0, 38, 255);
-
+  z-index: 100;
   /* This hides the cards under the cover card */
   /* z-index: -1; */
 }
@@ -65,26 +71,18 @@ body {
 
 .cover-card {
   background-image: url("/img/coverBackground.png");
-  z-index: 1000;
+  z-index: 40;
   margin: 10px 20px;
   -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
 }
 
-/* These were originally the stylings for the cards  */
-
-/* .my-flex-item {
-  border: 2px solid orange;
-  width: 150px;
-  margin: 0 10px 0 10px;
-  background: orange;
-} */
-
-/* .my-flex-item2 {
-  border: 2px solid orange;
+.cover-card2 {
+  background-image: url("/img/coverBackground.png");
+  z-index: 1000;
+  margin: 10px 20px;
+  -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
 }
-
-.my-flex-item3 {
-  border: 2px solid orange;
-} */
