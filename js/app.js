@@ -63,17 +63,6 @@ class Player {
     return drawn_card;
   }
 
-  // playerOneDiscard(q) {
-  //   let indexArray = getAllIndexes(
-  //     playerOne.cards,
-  //     deck.dealt_cards[deck.dealt_cards.length - 1].suit,
-  //     deck.dealt_cards[deck.dealt_cards.length - 1].value
-  //   );
-
-  //   let spliced = playerOne.cards.splice(q, 1);
-  //   deck.dealt_cards.push(spliced[0]);
-  // }
-
   add_hand() {
     for (let i = 0; i < 5; i++) {
       let drawn_card = deck.deck.shift();
@@ -236,7 +225,6 @@ function nextTurnPlayerOne() {
     elementListArray.forEach(function(el) {
       el.addEventListener("click", function() {
         let index = playerOne.cards.findIndex(x => x.name == this.id);
-        console.log(index);
         let spliced = playerOne.cards.splice(index, 1);
         deck.dealt_cards.push(spliced[0]);
         renderPlayerOne();
@@ -279,7 +267,6 @@ function nextTurnPlayerTwo() {
     elementListArray.forEach(function(el) {
       el.addEventListener("click", function() {
         let index = playerTwo.cards.findIndex(x => x.name == this.id);
-        console.log(index);
         let spliced = playerTwo.cards.splice(index, 1);
         deck.dealt_cards.push(spliced[0]);
         renderPlayerOne();
