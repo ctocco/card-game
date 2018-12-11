@@ -42,7 +42,7 @@ function switchLanguage(){
                 lContent1.innerText = 'Welcome to a collection of wonderful card games for you to enjoy at home';
                 lContent2.innerText = 'If you want to learn more about the history and the rules of the games just click below';
                 lContent3.innerText = 'Dare to win?';
-                lLearnMore.innerTextL = 'Learn more';
+                lLearnMore.innerText = 'Learn more';
                 lStart.innerText = 'Enter Game';
                 lModalContent.innerText = 'Please enter the name of each player';
                 lClose.innerText = 'Close';
