@@ -241,6 +241,12 @@ function nextTurnPlayerOne() {
           playerTwo.draw();
           renderPlayerTwo();
           nextTurnPlayerTwo();
+        } else if (spliced[0].value == "J") {
+          let container = document.createElement("div");
+
+          container.innerHTML = `<div id="buttonContainer" class=" d-flex flex-column"> <button id="Hearts" onclick="playerOneWishHearts()" >Hearts</button> <button onclick="playerOneWishDiamonds()"id="Diamonds">Diamonds</button>  <button onclick="playerOneWishClubs()" id="Clubs">Clubs</button>  <button onclick="playerOneWishSpades()"  id="Spades">Spades</button> </div>`;
+
+          document.getElementById("playerOne").appendChild(container);
         } else {
           nextTurnPlayerTwo();
         }
@@ -296,6 +302,12 @@ function nextTurnPlayerTwo() {
           playerOne.draw();
           renderPlayerOne();
           nextTurnPlayerOne();
+        } else if (spliced[0].value == "J") {
+          let container = document.createElement("div");
+
+          container.innerHTML = `<div id="buttonContainer2" class=" d-flex flex-column"> <button id="Hearts" onclick="playerTwoWishHearts()" >Hearts</button> <button onclick="playerTwoWishDiamonds()"id="Diamonds">Diamonds</button>  <button onclick="playerTwoWishClubs()" id="Clubs">Clubs</button>  <button onclick="playerTwoWishSpades()"  id="Spades">Spades</button> </div>`;
+
+          document.getElementById("playerTwo").appendChild(container);
         } else {
           nextTurnPlayerOne();
         }
@@ -332,5 +344,79 @@ function restackDeck() {
     });
 
     deck.shuffle();
+  }
+}
+
+// Jack functions player one
+function playerOneWishHearts() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Hearts";
+  renderPlayerTwo();
+  nextTurnPlayerTwo();
+  while (buttonContainer.firstChild) {
+    buttonContainer.removeChild(buttonContainer.firstChild);
+  }
+}
+
+function playerOneWishDiamonds() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Diamonds";
+  renderPlayerTwo();
+  nextTurnPlayerTwo();
+  while (buttonContainer.firstChild) {
+    buttonContainer.removeChild(buttonContainer.firstChild);
+  }
+}
+
+function playerOneWishClubs() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Clubs";
+  renderPlayerTwo();
+  nextTurnPlayerTwo();
+  while (buttonContainer.firstChild) {
+    buttonContainer.removeChild(buttonContainer.firstChild);
+  }
+}
+
+function playerOneWishSpades() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Spades";
+  renderPlayerTwo();
+  nextTurnPlayerTwo();
+  while (buttonContainer.firstChild) {
+    buttonContainer.removeChild(buttonContainer.firstChild);
+  }
+}
+
+// Jack functions player two
+function playerTwoWishHearts() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Hearts";
+  renderPlayerOne();
+  nextTurnPlayerOne();
+  while (buttonContainer2.firstChild) {
+    buttonContainer2.removeChild(buttonContainer2.firstChild);
+  }
+}
+
+function playerTwoWishDiamonds() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Diamonds";
+  renderPlayerOne();
+  nextTurnPlayerOne();
+  while (buttonContainer2.firstChild) {
+    buttonContainer2.removeChild(buttonContainer2.firstChild);
+  }
+}
+
+function playerTwoWishClubs() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Clubs";
+  renderPlayerOne();
+  nextTurnPlayerOne();
+  while (buttonContainer2.firstChild) {
+    buttonContainer2.removeChild(buttonContainer2.firstChild);
+  }
+}
+
+function playerTwoWishSpades() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Spades";
+  renderPlayerOne();
+  nextTurnPlayerOne();
+  while (buttonContainer2.firstChild) {
+    buttonContainer2.removeChild(buttonContainer2.firstChild);
   }
 }
