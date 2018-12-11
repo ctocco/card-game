@@ -245,19 +245,83 @@ function switchLanguage(){
         else if (page=='impressum'){
             //Get Elements
             let lTitle1 = document.getElementById("lTitle1");
+            let lImpressum = document.getElementById("lImpressum");
+            let lAdress = document.getElementById("lAdress");
+            let lAdress1 = document.getElementById("lAdress1");
+            let lAdress2 = document.getElementById("lAdress2");
+            let lAdress3 = document.getElementById("lAdress3");
+            let lContact = document.getElementById("lContact");
+            let lContact1 = document.getElementById("lContact1");
+            let lContent = document.getElementById("lContent");
+            let lContent1 = document.getElementById("lContent1");
+            let lLinks = document.getElementById("lLinks");
+            let lLinks1 = document.getElementById("lLinks1");
+            let lCopyright = document.getElementById("lCopyright");
+            let lCopyright1 = document.getElementById("lCopyright1");
+            let lDisclaimer = document.getElementById("lDisclaimer");
 
             switch (language) {
             case "EN":
                 //change Content
+                lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
                 lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = `Imprint`;
+                lAdress.innerText = `Adress`;
+                lAdress1.innerText = `Digital Career Institute`;
+                lAdress2.innerText = `Vulkanstraße 1`;
+                lAdress3.innerText = `10367 Berlin`;
+                lContact.innerText = `Contact`;
+                lContact1.innerText = `maumauers@gmail.com`;
+                lContent.innerText = `Liability for contents`;
+                lContent1.innerText = `As a service provider, we are responsible in accordance with § 7 paragraph 1 of TMG for our own contents on these sites under the general laws. However, in accordance with §§ 8 to 10 TMG (German Teleservices Act), we - as service providers - are not obliged to monitor transmitted or stored information from third parties or to investigate circumstances that indicate illegal activity.
+                Obligation to remove or block the use of information under the general laws remains unaffected. Nevertheless, liability in this regard is possible only from the moment that knowledge of the specific breach of law is obtained. We will remove the content as soon as we become aware of the relevant infringement.`;
+                lLinks.innerText = `Liability for links`;
+                lLinks1.innerText = `Our site contains links to external third-party websites over which we have no control. Therefore, we cannot accept any responsibility for this external content. The respective service provider or operator of the sites is always responsible for the contents of linked sites. The linked sites were checked at the time of linking for any infringement. Illegal contents were not noticeable at the time of linking.
+                However, permanent monitoring of the content of linked sites is unreasonable without concrete evidence of infringement. We will remove the content as soon as we become aware of the infringement.`;
+                lCopyright.innerText = `Copyright`;
+                lCopyright1.innerText = `The content created by the site operator, as well as posting on these sites are subject to German copyright. Reproduction, editing, distribution or any kind of use outside the scope of copyright require the written consent of the author or editor. Downloads and copies of this site are permitted only for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyright of third parties is respected. In particular, third-party content is marked as such. However, should you become aware of any copyright infringement, we would request that you notify us accordingly. We will remove such content as soon as we become aware of the infringement.`;
                 break;
             case "DE":
                 //change Content
+                lDisclaimer.innerText = `!Dieses Impressum ist nur ein Platzhalter!`;
                 lTitle1.innerText = 'Das Spiel Center';
+                lImpressum.innerText = `Impressum`;
+                lAdress.innerText = `Adresse`;
+                lAdress1.innerText = `Digital Career Institute`;
+                lAdress2.innerText = `Vulkanstraße 1`;
+                lAdress3.innerText = `10367 Berlin`;
+                lContact.innerText = `Kontakt`;
+                lContact1.innerText = `maumauers@gmail.com`;
+                lContent.innerText = `Haftung für Inhalte`;
+                lContent1.innerText = `Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.`;
+                lLinks.innerText = `Haftung für Links`;
+                lLinks1.innerText = `Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+                Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechts-verletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.`;
+                lCopyright.innerText = `Urheberrecht`;
+                lCopyright1.innerText = `Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+                Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.`;
                 break;
             default:
                 //change Content
+                lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
                 lTitle1.innerText = 'The Game Center';
-                break;}
+                lImpressum.innerText = `Imprint`;
+                lAdress.innerText = `Adress`;
+                lAdress1.innerText = `Digital Career Institute`;
+                lAdress2.innerText = `Vulkanstraße 1`;
+                lAdress3.innerText = `10367 Berlin`;
+                lContact.innerText = `Contact`;
+                lContact1.innerText = `maumauers@gmail.com`;
+                lContent.innerText = `Liability for contents`;
+                lContent1.innerText = `As a service provider, we are responsible in accordance with § 7 paragraph 1 of TMG for our own contents on these sites under the general laws. However, in accordance with §§ 8 to 10 TMG (German Teleservices Act), we - as service providers - are not obliged to monitor transmitted or stored information from third parties or to investigate circumstances that indicate illegal activity.
+                Obligation to remove or block the use of information under the general laws remains unaffected. Nevertheless, liability in this regard is possible only from the moment that knowledge of the specific breach of law is obtained. We will remove the content as soon as we become aware of the relevant infringement.`;
+                lLinks.innerText = `Liability for links`;
+                lLinks1.innerText = `Our site contains links to external third-party websites over which we have no control. Therefore, we cannot accept any responsibility for this external content. The respective service provider or operator of the sites is always responsible for the contents of linked sites. The linked sites were checked at the time of linking for any infringement. Illegal contents were not noticeable at the time of linking.
+                However, permanent monitoring of the content of linked sites is unreasonable without concrete evidence of infringement. We will remove the content as soon as we become aware of the infringement.`;
+                lCopyright.innerText = `Copyright`;
+                lCopyright1.innerText = `The content created by the site operator, as well as posting on these sites are subject to German copyright. Reproduction, editing, distribution or any kind of use outside the scope of copyright require the written consent of the author or editor. Downloads and copies of this site are permitted only for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyright of third parties is respected. In particular, third-party content is marked as such. However, should you become aware of any copyright infringement, we would request that you notify us accordingly. We will remove such content as soon as we become aware of the infringement.`;
+                break;
+            }
         };
-}
+};
