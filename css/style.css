@@ -4,13 +4,14 @@ body {
     background: lightgoldenrodyellow;
 }
 
-.container {
-    height: 100%;
+div {
+    /* border: 1px solid red; */
 }
 
 .container {
     height: 100%;
 }
+
 
 .fill-height {
     min-height: 100%;
@@ -34,6 +35,10 @@ body {
     -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
     box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
     background: #FFF4E0;
+}
+
+.homeCard {
+    width: 250px;
 }
 
 #playerOne {
