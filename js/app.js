@@ -180,6 +180,10 @@ function renderPlayerTwo() {
       "style",
       "background-image: url(../img/" + element.name + ".jpg);"
     ); //adding Card Image
+
+    if (element.value == "J") {
+      card.classList.add("playable");
+    }
   });
 }
 
@@ -445,4 +449,19 @@ function playerTwoWishSpades() {
   while (buttonContainer2.firstChild) {
     buttonContainer2.removeChild(buttonContainer2.firstChild);
   }
+}
+
+document.getElementById("hideCard1").addEventListener("click", change);
+
+function change(evt) {
+  evt.preventDefault();
+  console.log("hello");
+  let changeBack = document.getElementById("playerOne");
+  let nodeList = changeBack.querySelectorAll("div");
+
+  let arrayList = Array.from(nodeList);
+  console.log(arrayList);
+  arrayList.forEach(function(element) {
+    element.classList.toggle("hideStyle");
+  });
 }

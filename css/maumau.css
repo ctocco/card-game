@@ -40,7 +40,6 @@ body {
   -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   border-radius: 7%;
-
 }
 
 .covered {
@@ -91,4 +90,6 @@ body {
   box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
 }
 
-.playable {}
+.hideStyle {
+  background-image: url(../img/cardbackvintage.jpg) !important;
+}
