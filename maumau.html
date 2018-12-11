@@ -13,9 +13,8 @@
   <title>MauMau</title>
 </head>
 
-
 <body onload="displayNames()">
-  <!--             NAV BAR                -->
+  <!-- NAV BAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="index.html">The Game Center</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
@@ -28,41 +27,47 @@
         <li class="nav-item active">
           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a id="lImpressum" class="nav-link" href="impressum.html"></a></li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <a class="nav-link" href="help.html">Help</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item dropdown"></li>
       </ul>
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-primary active">
-          <input type="checkbox" checked="" autocomplete="off"> DE
+          <input type="checkbox" checked="" autocomplete="off" /> DE
         </label>
         <label class="btn btn-primary">
-          <input type="checkbox" autocomplete="off"> EN
+          <input type="checkbox" autocomplete="off" /> EN
         </label>
       </div>
     </div>
-
-
   </nav>
-  <!--             NAV BAR END               -->
+  <!-- NAV BAR END -->
 
-
-  <!--      top container with reset and MAU buttons    -->
+  <!-- top container with reset and MAU buttons -->
   <div class="container-top">
     <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
       <h1 class="text-center">Mau Mau</h1>
+      <h2 id="turn"></h2>
       <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-        <div id="mau" class="align-items-center"><button type="button" class="btn btn-danger btn-sm"><a class="nav-link"
-              href="#">Mau</a></button></div>
-        <div><button type="button" class="btn btn-success btn-sm reset" id="reset"><a class="nav-link" href="#">Reset</a></button></div>
+        <div id="mau" class="align-items-center">
+          <button type="button" class="btn btn-danger btn-sm">
+            <a class="nav-link" href="#">Mau</a>
+          </button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-success btn-sm reset" id="reset">
+            <a class="nav-link" href="#">Reset</a>
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!--           -->
+  <!---->
 
   <!-- Player one container with end turn and name -->
   <div class="cover-card">
@@ -73,18 +78,25 @@
           <div class="d-flex"></div>
 
           <!-- player one input -->
-          <!-- <form id="form-1" class="form-inline my-2 my-lg-0">
-          <input id="inputPlayer1" class="form-control mr-sm-2" type="text" placeholder="Enter name of player 1">
-          <button id="btnClick1" class="btn btn-secondary my-2 my-sm-0 mr-5" type="submit">Enter</button>
-        </form> -->
+          <!--
+              <form id="form-1" class="form-inline my-2 my-lg-0">
+                <input id="inputPlayer1" class="form-control mr-sm-2" type="text" placeholder="Enter name of player 1">
+                <button id="btnClick1" class="btn btn-secondary my-2 my-sm-0 mr-5" type="submit">Enter</button>
+              </form>
+            -->
         </div>
 
-        <div><button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnOne"><a class="nav-link" href="#">End
-              Turn</a></button></div>
+        <div>
+          <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnOne">
+            <a class="nav-link" href="#">End Turn</a>
+          </button>
+          <button type="button" class="btn btn-info btn-sm hideCard" id="hideCard1">
+            <a class="nav-link" href="#">Hide Cards</a>
+          </button>
+        </div>
       </div>
     </div>
     <!-- Card CONTAINERS -->
-
 
     <!-- player1 -->
 
@@ -96,8 +108,7 @@
     <div class="p-2 my-flex-item" id="discarded"></div>
   </div>
 
-  <!-- Player two Container-->
-
+  <!-- Player two Container -->
 
   <div class="cover-card2">
     <div class="container-fluid " id="container">
@@ -107,22 +118,21 @@
     <!-- Player two Name and Buttons -->
 
     <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-      <div><button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnTwo"><a class="nav-link" href="#">End
-            Turn</a></button></div>
-      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-        <h2 id="playerTwoHeader" class="text-right mt-2">Player 2:</h2>
+      <div>
+        <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnTwo">
+          <a class="nav-link" href="#">End Turn</a>
+        </button>
+        <button type="button" class="btn btn-info btn-sm hideCard" id="hideCard2">
+          <a class="nav-link" href="#">Hide Cards</a>
+        </button>
 
-        <!-- player two input form -->
-        <!-- <form id="form-2" class="form-inline my-2 my-lg-0">
-          <input id="inputPlayer2" class="form-control mr-sm-2" type="text" placeholder="Enter name of player 2">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Enter</button>
-        </form> -->
+      </div>
+      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+        <h2 id="playerTwoHeader" class="text-right">Player 2:</h2>
 
       </div>
     </div>
   </div>
-
-
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

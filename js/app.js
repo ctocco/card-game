@@ -108,14 +108,14 @@ function renderPlayerOne() {
     playerOneContainer.removeChild(playerOneContainer.firstChild);
   }
 
-  playerOne.cards.forEach(function(element) {
+  playerOne.cards.forEach(function (element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
       element.suit,
       element.value,
       "handPlayerOne",
-      "styleImage"
+      "styleImage",
     );
 
     playerOneContainer.appendChild(card);
@@ -138,6 +138,10 @@ function renderPlayerOne() {
       "style",
       "background-image: url(../img/" + element.name + ".jpg);"
     ); //adding Card Image
+
+    if (element.value == "J") {
+      card.classList.add("playable");
+    }
   });
 }
 
@@ -147,7 +151,7 @@ function renderPlayerTwo() {
     playerTwoContainer.removeChild(playerTwoContainer.firstChild);
   }
 
-  playerTwo.cards.forEach(function(element) {
+  playerTwo.cards.forEach(function (element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
@@ -204,6 +208,10 @@ function removeButton() {
 function nextTurnPlayerOne() {
   restackDeck();
 
+  // Turn Display
+  let turn = document.getElementById("turn");
+  turn.textContent = "Turn Player One";
+
   if (
     playerOne.cards.findIndex(
       x => x.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit
@@ -224,8 +232,8 @@ function nextTurnPlayerOne() {
     let elementList = parentNode.querySelectorAll(".playable");
     let elementListArray = Array.from(elementList);
 
-    elementListArray.forEach(function(el) {
-      el.addEventListener("click", function() {
+    elementListArray.forEach(function (el) {
+      el.addEventListener("click", function () {
         let index = playerOne.cards.findIndex(x => x.name == this.id);
         let spliced = playerOne.cards.splice(index, 1);
         deck.dealt_cards.push(spliced[0]);
@@ -241,12 +249,25 @@ function nextTurnPlayerOne() {
           playerTwo.draw();
           renderPlayerTwo();
           nextTurnPlayerTwo();
+        } else if (spliced[0].value == "J") {
+          let container = document.createElement("div");
+
+          container.innerHTML = `<div id="buttonContainer" class=" d-flex flex-column "> <button id="Hearts" onclick="playerOneWishHearts()" >Hearts</button> <button onclick="playerOneWishDiamonds()"id="Diamonds">Diamonds</button>  <button onclick="playerOneWishClubs()" id="Clubs">Clubs</button>  <button onclick="playerOneWishSpades()"  id="Spades">Spades</button> </div>`;
+
+          document.getElementById("playerOne").appendChild(container);
         } else {
           nextTurnPlayerTwo();
         }
       });
     });
   }
+
+  let endTurnOne = document.getElementById("endTurnOne");
+  endTurnOne.addEventListener("click", function () {
+    renderPlayerOne();
+    renderPlayerTwo();
+    nextTurnPlayerTwo();
+  });
 
   if (playerOne.cards.length == 0) {
     alert(`${playerOne.name} won`);
@@ -258,6 +279,10 @@ function nextTurnPlayerOne() {
 
 function nextTurnPlayerTwo() {
   restackDeck();
+
+  // Turn Display
+  let turn = document.getElementById("turn");
+  turn.textContent = "Turn Player Two";
 
   if (
     playerTwo.cards.findIndex(
@@ -279,8 +304,8 @@ function nextTurnPlayerTwo() {
     let elementList = parentNode.querySelectorAll(".playable");
     let elementListArray = Array.from(elementList);
 
-    elementListArray.forEach(function(el) {
-      el.addEventListener("click", function() {
+    elementListArray.forEach(function (el) {
+      el.addEventListener("click", function () {
         let index = playerTwo.cards.findIndex(x => x.name == this.id);
         let spliced = playerTwo.cards.splice(index, 1);
         deck.dealt_cards.push(spliced[0]);
@@ -296,12 +321,25 @@ function nextTurnPlayerTwo() {
           playerOne.draw();
           renderPlayerOne();
           nextTurnPlayerOne();
+        } else if (spliced[0].value == "J") {
+          let container = document.createElement("div");
+
+          container.innerHTML = `<div id="buttonContainer2" class=" d-flex flex-column"> <button id="Hearts" onclick="playerTwoWishHearts()" >Hearts</button> <button onclick="playerTwoWishDiamonds()"id="Diamonds">Diamonds</button>  <button onclick="playerTwoWishClubs()" id="Clubs">Clubs</button>  <button onclick="playerTwoWishSpades()"  id="Spades">Spades</button> </div>`;
+
+          document.getElementById("playerTwo").appendChild(container);
         } else {
           nextTurnPlayerOne();
         }
       });
     });
   }
+
+  let endTurnTwo = document.getElementById("endTurnTwo");
+  endTurnTwo.addEventListener("click", function () {
+    renderPlayerOne();
+    renderPlayerTwo();
+    nextTurnPlayerOne();
+  });
 
   if (playerOne.cards.length == 0) {
     alert(`${playerOne.name} won`);
@@ -322,15 +360,89 @@ function restackDeck() {
     deck.deck.splice(index, 1);
 
     //delete the double cards that equal to the players current hand cards
-    playerOne.cards.forEach(function(el) {
+    playerOne.cards.forEach(function (el) {
       let index = deck.deck.findIndex(x => x.name == el.name);
       deck.deck.splice(index, 1);
     });
-    playerTwo.cards.forEach(function(el) {
+    playerTwo.cards.forEach(function (el) {
       let index = deck.deck.findIndex(x => x.name == el.name);
       deck.deck.splice(index, 1);
     });
 
     deck.shuffle();
+  }
+}
+
+// Jack functions player one
+function playerOneWishHearts() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Hearts";
+  renderPlayerTwo();
+  nextTurnPlayerTwo();
+  while (buttonContainer.firstChild) {
+    buttonContainer.removeChild(buttonContainer.firstChild);
+  }
+}
+
+function playerOneWishDiamonds() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Diamonds";
+  renderPlayerTwo();
+  nextTurnPlayerTwo();
+  while (buttonContainer.firstChild) {
+    buttonContainer.removeChild(buttonContainer.firstChild);
+  }
+}
+
+function playerOneWishClubs() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Clubs";
+  renderPlayerTwo();
+  nextTurnPlayerTwo();
+  while (buttonContainer.firstChild) {
+    buttonContainer.removeChild(buttonContainer.firstChild);
+  }
+}
+
+function playerOneWishSpades() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Spades";
+  renderPlayerTwo();
+  nextTurnPlayerTwo();
+  while (buttonContainer.firstChild) {
+    buttonContainer.removeChild(buttonContainer.firstChild);
+  }
+}
+
+// Jack functions player two
+function playerTwoWishHearts() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Hearts";
+  renderPlayerOne();
+  nextTurnPlayerOne();
+  while (buttonContainer2.firstChild) {
+    buttonContainer2.removeChild(buttonContainer2.firstChild);
+  }
+}
+
+function playerTwoWishDiamonds() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Diamonds";
+  renderPlayerOne();
+  nextTurnPlayerOne();
+  while (buttonContainer2.firstChild) {
+    buttonContainer2.removeChild(buttonContainer2.firstChild);
+  }
+}
+
+function playerTwoWishClubs() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Clubs";
+  renderPlayerOne();
+  nextTurnPlayerOne();
+  while (buttonContainer2.firstChild) {
+    buttonContainer2.removeChild(buttonContainer2.firstChild);
+  }
+}
+
+function playerTwoWishSpades() {
+  deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Spades";
+  renderPlayerOne();
+  nextTurnPlayerOne();
+  while (buttonContainer2.firstChild) {
+    buttonContainer2.removeChild(buttonContainer2.firstChild);
   }
 }

@@ -1,4 +1,3 @@
-
 //Reset Button *not finished*
 document.getElementById("reset").addEventListener("click", reset);
 
@@ -44,3 +43,20 @@ function displayNames() {
   document.getElementById("playerOneHeader").innerHTML = "Player 1: " + storedName1;
   document.getElementById("playerTwoHeader").innerHTML = "Player 2: " + storedName2;
 }
+
+
+// document.getElementById("hideCard1").addEventListener("click", change);
+
+// function change(evt) {
+//   evt.preventDefault();
+//   console.log("hello");
+//   let changeBack = document.getElementById("playerOne");
+//   let nodeList = changeBack.querySelectorAll("div");
+
+//   let arrayList = Array.from(nodeList);
+//   console.log(arrayList);
+//   arrayList.forEach(function (element) {
+//     element.classList.toggle("hideStyle");
+
+//   })
+// }
