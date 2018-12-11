@@ -1,29 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/language.js"></script>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/impressum.css">
     <title id="lTitle1"></title>
 </head>
+
 <body onload="page='impressum'; switchLanguage();">
-    <h2 id="lImpressum"></h2>
-    <div>
-        <h4 id="lAdress"></h4>
-        <p id="lAdress1"></p>
-        <p id="lAdress2"></p>
-        <p id="lAdress3"></p>
-        <h4 id="lContact"></h4>
-        <p id="lContact1"></p>
+    <div class="fill-height">
+        <div class="container-fluid master-container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="index.html">The Game Center</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a id="lHome" class="nav-link" href="index.html"><span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item"><a id="lHelp" class="nav-link" href="help.html"></a></li>
+                        <li class="nav-item"><a id="lAbout" class="nav-link" href="about.html"></a></li>
+                    </ul>
+                    </ul>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label id="buttonDE" class="btn btn-primary active" onclick="language='DE'; saveLanguage();">DE
+                        </label>
+                        <label id="buttonEN" class="btn btn-primary" onclick="language='EN'; saveLanguage();">EN
+                        </label>
+                    </div>
+            </nav>
+
+            <div id="impressContainer" class="container mt-5">
+                <span class="row"></span>
+
+            <h2 id="lImpressum" class="row justify-content-center mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+            <div>
+                <h4 id="lAdress" class="row justify-content-center mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                <div class="row pl-5 pr-5">
+                <p id="lAdress1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p id="lAdress2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p id="lAdress3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+                <h4 id="lContact" class="row justify-content-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                <p id="lContact1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <br>
+            <div class="row pl-5 pr-5 mb-5">
+                <h4 id="lContent" class="row justify-content-center mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                <p id="lContent1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h4 id="lLinks" class="row justify-content-center mt-5"></h4>
+                <p id="lLinks1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h4 id="lCopyright"class="row justify-content-center mt-5"></h4>
+                <p id="lCopyright1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            </div>
+        </div>
+        <button id="myBtn" title="Go to top">Top</button>
     </div>
-    <div>
-        <h4 id="lContent"></h4>
-        <p id="lContent"></p>
-        <h4 id="lLinks"></h4>
-        <p id="lLinks1"></p>
-        <h4 id="lCopyright"></h4>
-        <p id="lCopyright1"></p>
-    </div>
+            <script src="js/about.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
 </body>
+
 </html>

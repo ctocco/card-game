@@ -241,7 +241,7 @@ function switchLanguage(){
                 lText4.innerText = lorem2;
                 lText5.innerText = lorem2;
                 break;}
-        };
+        }
         else if (page=='impressum'){
             //Get Elements
             let lTitle1 = document.getElementById("lTitle1");
