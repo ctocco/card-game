@@ -22,14 +22,36 @@ div {
     background-size: cover;
 }
 
+/* dummy pictures  */
 .imgMember {
     height: 150px;
     width: 150px;
     background-image: url(/img/dummy_team.jpg);
     border-radius: 50%;
     margin: 0 auto;
+    object-fit: contain;
+}
+
+
+.imgMember1 {
+    height: 150px;
+    width: 150px;
+    background-image: url(/img/claudiocrop.jpg);
+    border-radius: 50%;
+    margin: 0 auto;
 
 }
+
+#member1 {
+    height: 150px;
+    width: 150px;
+    background-image: url(/img/claudiocrop.jpg);
+    border-radius: 50%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 .imgContainer {
     height: 200px;
