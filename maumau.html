@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="https://bootswatch.com/4/sketchy/bootstrap.min.css"
-    />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/maumau.css" />
-    <title>MauMau</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css" />
 
-  <body onload="displayNames()">
-    <!-- NAV BAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="index.html">The Game Center</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarColor01"
-        aria-controls="navbarColor01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/maumau.css" />
+  <title>MauMau</title>
+</head>
 
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="help.html">Help</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item dropdown"></li>
-        </ul>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-primary active">
-            <input type="checkbox" checked="" autocomplete="off" /> DE
-          </label>
-          <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off" /> EN
-          </label>
-        </div>
+
+<body onload="displayNames()">
+  <!--             NAV BAR                -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="index.html">The Game Center</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a id="lImpressum" class="nav-link" href="impressum.html"></a></li>
+        <li class="nav-item dropdown">
+        </li>
+
+      </ul>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="checkbox" checked="" autocomplete="off"> DE
+        </label>
+        <label class="btn btn-primary">
+          <input type="checkbox" autocomplete="off"> EN
+        </label>
+      </div>
+    </div>
+
+
+  </nav>
+  <!--             NAV BAR END               -->
+
+
+  <!--      top container with reset and MAU buttons    -->
+  <div class="container-top">
+    <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+      <h1 class="text-center">Mau Mau</h1>
+      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+        <div id="mau" class="align-items-center"><button type="button" class="btn btn-danger btn-sm"><a class="nav-link"
+              href="#">Mau</a></button></div>
+        <div><button type="button" class="btn btn-success btn-sm reset" id="reset"><a class="nav-link" href="#">Reset</a></button></div>
       </div>
     </nav>
     <!-- NAV BAR END -->

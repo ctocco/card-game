@@ -19,6 +19,7 @@ function switchLanguage(){
             let lHome = document.getElementById("lHome");
             let lHelp = document.getElementById("lHelp");
             let lAbout = document.getElementById("lAbout");
+            let lImpressum = document.getElementById("lImpressum");
             let lTitle1 = document.getElementById("lTitle1");
             let lTitle2 = document.getElementById("lTitle2");
             let lTitle3 = document.getElementById("lTitle3");
@@ -36,6 +37,7 @@ function switchLanguage(){
                 lTitle1.innerText = 'The Game Center';
                 lTitle2.innerText = 'The Game Center';
                 lTitle3.innerText = 'THE GAME CENTER';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -54,6 +56,7 @@ function switchLanguage(){
                 lTitle2.innerText = 'Das Spiel Center';
                 lTitle3.innerText = 'DAS SPIEL CENTER';
                 lHome.innerText = 'Start';
+                lImpressum.innerText = 'Impressum';
                 lHelp.innerText = 'Hilfe';
                 lAbout.innerText = 'Über Uns';
                 lContent1.innerText = 'Willkommen zu unserer kleinen Kollektion von wundervollen Kartenspielen. Ein Spaß für die ganze Familie';
@@ -70,6 +73,7 @@ function switchLanguage(){
                 lTitle1.innerText = 'The Game Center';
                 lTitle2.innerText = 'The Game Center';
                 lTitle3.innerText = 'THE GAME CENTER';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -90,6 +94,7 @@ function switchLanguage(){
             let lHome = document.getElementById("lHome");
             let lHelp = document.getElementById("lHelp");
             let lAbout = document.getElementById("lAbout");
+            let lImpressum = document.getElementById("lImpressum");
             let lRules = document.getElementById("lRules");
             let lRules1 = document.getElementById("lRules1");
             let lRules2 = document.getElementById("lRules2");
@@ -108,6 +113,7 @@ function switchLanguage(){
             case "EN":
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -130,7 +136,9 @@ function switchLanguage(){
                 //change Content
                 lTitle1.innerText = 'Das Spiel Center';
                 lHome.innerText = 'Start';
+                lImpressum.innerText = 'Impressum';
                 lHelp.innerText = 'Hilfe';
+                lAbout.innerText = 'Über Uns';
                 lRules.innerText = 'Basis Regeln für Mau Mau';
                 lRules1.innerText = `Das Spiel wird mit einem regülarem Kartendeck gespielt. Jeder Spieler zieht 5 Karten. Der Rest wird verdeckt auf in die Mitte gelegt als Ziehstapel. Am Anfang wird die oberste Karte offen in die Mitte gelegt als Start-Karte, danach dürfen die Spieler ihre Karten spielen.`;
                 lRules2.innerText = `Man kann nur Karten spielen die entweder die selbe Augenzahl wie die aufgedeckte Karte aufweisen oder demselben Set(Herz,Karo,Pik und Kreuz) angehören. Wenn kein Spielzug möglich ist muss eine Karte gezogen werden. Wenn der Spieler die gezogene Karte spielen kann darf er sie sofort ausspielen, wenn nicht muss der Spieler seinen Zug beenden. Wenn der Ziehstapel leer ist werden alle gespielten Karten bis auf die letzte neu gemischt und als neuer Stapel platziert`;
@@ -149,8 +157,10 @@ function switchLanguage(){
             default:
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
+                lAbout.innerText = 'About';
                 lRules.innerText = 'The basic rules of Mau Mau';
                 lRules1.innerText = `The game is played with a regular deck of playing cards. The players are dealt each a hand of cards (usually 5). The rest are placed face down as the drawing stack. At the beginning of the game the topmost card is revealed, then the players each get a turn to play cards.`;
                 lRules2.innerText = `One can play a card if it corresponds to the suit or value of the open card. E.g. on a 10 of spades, only other spades can be played or other 10s. If a player is not able to, they draw one card from the stack. If he can play this card, he may do so, otherwise he keeps the drawn card and passes his turn. If the drawing stack is empty, the playing stack (except for the topmost card) is shuffled and turned over to serve as new drawing stack.`;
@@ -174,6 +184,7 @@ function switchLanguage(){
             let lHome = document.getElementById("lHome");
             let lHelp = document.getElementById("lHelp");
             let lAbout = document.getElementById("lAbout");
+            let lImpressum = document.getElementById("lImpressum");
             let lContent1 = document.getElementById("lContent1");
             let lContent2 = document.getElementById("lContent2");
             let lText1 = document.getElementById("lText1");
@@ -193,6 +204,7 @@ function switchLanguage(){
             case "EN":
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -211,6 +223,7 @@ function switchLanguage(){
                 //change Content
                 lTitle1.innerText = 'Das Spiel Center';
                 lHome.innerText = 'Start';
+                lImpressum.innerText = 'Impressum';
                 lHelp.innerText = 'Hilfe';
                 lAbout.innerText = 'Über Uns';
                 lContent1.innerText = '- UNSERE MISSION -';
@@ -227,6 +240,7 @@ function switchLanguage(){
             default:
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -245,6 +259,10 @@ function switchLanguage(){
         else if (page=='impressum'){
             //Get Elements
             let lTitle1 = document.getElementById("lTitle1");
+            let lHome = document.getElementById("lHome");
+            let lHelp = document.getElementById("lHelp");
+            let lAbout = document.getElementById("lAbout");
+            let lImpressum1 = document.getElementById("lImpressum1");
             let lImpressum = document.getElementById("lImpressum");
             let lAdress = document.getElementById("lAdress");
             let lAdress1 = document.getElementById("lAdress1");
@@ -263,6 +281,10 @@ function switchLanguage(){
             switch (language) {
             case "EN":
                 //change Content
+                lImpressum.innerText = 'Imprint';
+                lHome.innerText = 'Home';
+                lHelp.innerText = 'Help';
+                lAbout.innerText = 'About';
                 lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
                 lTitle1.innerText = 'The Game Center';
                 lImpressum.innerText = `Imprint`;
@@ -283,6 +305,10 @@ function switchLanguage(){
                 break;
             case "DE":
                 //change Content
+                lHome.innerText = 'Start';
+                lImpressum.innerText = 'Impressum';
+                lHelp.innerText = 'Hilfe';
+                lAbout.innerText = 'Über Uns';
                 lDisclaimer.innerText = `!Dieses Impressum ist nur ein Platzhalter!`;
                 lTitle1.innerText = 'Das Spiel Center';
                 lImpressum.innerText = `Impressum`;
@@ -304,6 +330,11 @@ function switchLanguage(){
                 break;
             default:
                 //change Content
+                lImpressum.innerText = 'Imprint';
+                lHome.innerText = 'Home';
+                lHelp.innerText = 'Help';
+                lAbout.innerText = 'About';
+
                 lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
                 lTitle1.innerText = 'The Game Center';
                 lImpressum.innerText = `Imprint`;
