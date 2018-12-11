@@ -138,6 +138,10 @@ function renderPlayerOne() {
       "style",
       "background-image: url(../img/" + element.name + ".jpg);"
     ); //adding Card Image
+
+    if (element.value == "J") {
+      card.classList.add("playable");
+    }
   });
 }
 
@@ -204,6 +208,10 @@ function removeButton() {
 function nextTurnPlayerOne() {
   restackDeck();
 
+  // Turn Display
+  let turn = document.getElementById("turn");
+  turn.textContent = "Turn Player One";
+
   if (
     playerOne.cards.findIndex(
       x => x.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit
@@ -244,7 +252,7 @@ function nextTurnPlayerOne() {
         } else if (spliced[0].value == "J") {
           let container = document.createElement("div");
 
-          container.innerHTML = `<div id="buttonContainer" class=" d-flex flex-column"> <button id="Hearts" onclick="playerOneWishHearts()" >Hearts</button> <button onclick="playerOneWishDiamonds()"id="Diamonds">Diamonds</button>  <button onclick="playerOneWishClubs()" id="Clubs">Clubs</button>  <button onclick="playerOneWishSpades()"  id="Spades">Spades</button> </div>`;
+          container.innerHTML = `<div id="buttonContainer" class=" d-flex flex-column "> <button id="Hearts" onclick="playerOneWishHearts()" >Hearts</button> <button onclick="playerOneWishDiamonds()"id="Diamonds">Diamonds</button>  <button onclick="playerOneWishClubs()" id="Clubs">Clubs</button>  <button onclick="playerOneWishSpades()"  id="Spades">Spades</button> </div>`;
 
           document.getElementById("playerOne").appendChild(container);
         } else {
@@ -253,6 +261,13 @@ function nextTurnPlayerOne() {
       });
     });
   }
+
+  let endTurnOne = document.getElementById("endTurnOne");
+  endTurnOne.addEventListener("click", function() {
+    renderPlayerOne();
+    renderPlayerTwo();
+    nextTurnPlayerTwo();
+  });
 
   if (playerOne.cards.length == 0) {
     alert(`${playerOne.name} won`);
@@ -264,6 +279,10 @@ function nextTurnPlayerOne() {
 
 function nextTurnPlayerTwo() {
   restackDeck();
+
+  // Turn Display
+  let turn = document.getElementById("turn");
+  turn.textContent = "Turn Player Two";
 
   if (
     playerTwo.cards.findIndex(
@@ -314,6 +333,13 @@ function nextTurnPlayerTwo() {
       });
     });
   }
+
+  let endTurnTwo = document.getElementById("endTurnTwo");
+  endTurnTwo.addEventListener("click", function() {
+    renderPlayerOne();
+    renderPlayerTwo();
+    nextTurnPlayerOne();
+  });
 
   if (playerOne.cards.length == 0) {
     alert(`${playerOne.name} won`);
