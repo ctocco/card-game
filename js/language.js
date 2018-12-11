@@ -241,6 +241,23 @@ function switchLanguage(){
                 lText4.innerText = lorem2;
                 lText5.innerText = lorem2;
                 break;}
+        };
+        else if (page=='impressum'){
+            //Get Elements
+            let lTitle1 = document.getElementById("lTitle1");
 
+            switch (language) {
+            case "EN":
+                //change Content
+                lTitle1.innerText = 'The Game Center';
+                break;
+            case "DE":
+                //change Content
+                lTitle1.innerText = 'Das Spiel Center';
+                break;
+            default:
+                //change Content
+                lTitle1.innerText = 'The Game Center';
+                break;}
         };
 }
