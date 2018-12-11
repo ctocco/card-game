@@ -211,6 +211,8 @@ function removeButton() {
 
 function nextTurnPlayerOne() {
   restackDeck();
+  endTurnOne.disabled = false;
+  endTurnTwo.disabled = true;
 
   // Turn Display
   let turn = document.getElementById("turn");
@@ -222,7 +224,8 @@ function nextTurnPlayerOne() {
     ) === -1 &&
     playerOne.cards.findIndex(
       x => x.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
-    ) === -1
+    ) === -1 &&
+    playerOne.cards.findIndex(x => x.value === "J") === -1
   ) {
     setTimeout(() => {
       playerOne.draw();
@@ -266,23 +269,17 @@ function nextTurnPlayerOne() {
     });
   }
 
-  let endTurnOne = document.getElementById("endTurnOne");
-  endTurnOne.addEventListener("click", function() {
-    renderPlayerOne();
-    renderPlayerTwo();
-    nextTurnPlayerTwo();
-  });
-
   if (playerOne.cards.length == 0) {
     alert(`${playerOne.name} won`);
   } else if (playerTwo.cards.length == 0) {
     alert(`${playerTwo.name} won`);
   }
-  counterPlayerOne++;
 }
 
 function nextTurnPlayerTwo() {
   restackDeck();
+  endTurnOne.disabled = true;
+  endTurnTwo.disabled = false;
 
   // Turn Display
   let turn = document.getElementById("turn");
@@ -294,7 +291,8 @@ function nextTurnPlayerTwo() {
     ) === -1 &&
     playerTwo.cards.findIndex(
       x => x.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
-    ) === -1
+    ) === -1 &&
+    playerTwo.cards.findIndex(x => x.value === "J") === -1
   ) {
     setTimeout(() => {
       playerTwo.draw();
@@ -338,12 +336,13 @@ function nextTurnPlayerTwo() {
     });
   }
 
-  let endTurnTwo = document.getElementById("endTurnTwo");
-  endTurnTwo.addEventListener("click", function() {
-    renderPlayerOne();
-    renderPlayerTwo();
-    nextTurnPlayerOne();
-  });
+  // let endTurnTwo = document.getElementById("endTurnTwo");
+  // endTurnTwo.addEventListener("click", function() {
+  //   playerTwo.draw();
+  //   renderPlayerOne();
+  //   renderPlayerTwo();
+  //   nextTurnPlayerOne();
+  // });
 
   if (playerOne.cards.length == 0) {
     alert(`${playerOne.name} won`);
@@ -465,3 +464,18 @@ function change(evt) {
     element.classList.toggle("hideStyle");
   });
 }
+
+// next turn button
+let endTurnOne = document.getElementById("endTurnOne");
+endTurnOne.addEventListener("click", function() {
+  playerOne.draw();
+  renderPlayerOne();
+  nextTurnPlayerTwo();
+});
+
+let endTurnTwo = document.getElementById("endTurnTwo");
+endTurnTwo.addEventListener("click", function() {
+  playerTwo.draw();
+  renderPlayerTwo();
+  nextTurnPlayerOne();
+});
