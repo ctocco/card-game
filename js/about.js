@@ -18,3 +18,19 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+/*
+//Send E-mail
+function sendMail() {
+let user = document.getElementById("name");
+let mail = document.getElementById("email");
+let message = document.getElementById("message");
+
+    var link = "mailto:maumauers@gmail.com"
+             + `?cc=${mail}`
+             + "&subject=" + user
+             + "&body=" + message.value
+    ;
+
+    window.location.href = link;
+}
+*/

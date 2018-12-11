@@ -45,44 +45,30 @@
 
                 <img id="maugif" src="./img/maumau.gif">
 
-                <h2 class="row justify-content-center mt-5">The basic rules of Mau Mau</h2>
+                <h2 id="lRules" class="row justify-content-center mt-5">The basic rules of Mau Mau</h2>
                 <br>
                 <div class="row pl-5 pr-5">
-                    <p>The game is played with a regular deck of playing cards. The players are dealt each a hand of
-                        cards (usually 5). The rest are placed face down as the drawing stack. At the beginning of the
-                        game the topmost card is revealed, then the players each get a turn to play cards.</p>
-                    <p>One can play a card if it corresponds to the suit or value of the open card. E.g. on a 10 of
-                        spades, only other spades can be played or other 10s. If a player is not able to, they draw one
-                        card from the stack. If he can play this card, he may do so, otherwise he keeps the drawn card
-                        and passes his turn. If the drawing stack is empty, the playing stack (except for the topmost
-                        card) is shuffled and turned over to serve as new drawing stack.</p>
-                    <p>One can play a card if it corresponds to the suit or value of the open card. E.g. on a 10 of
-                        spades, only other spades can be played or other 10s. If a player is not able to, they draw one
-                        card from the stack. If he can play this card, he may do so, otherwise he keeps the drawn card
-                        and passes his turn. If the drawing stack is empty, the playing stack (except for the topmost
-                        card) is shuffled and turned over to serve as new drawing stack.</p>
+                    <p id="lRules1"></p>
+                    <p id="lRules2"></p>
+                    <p id="lRules3"></p>
                 </div>
-                <h6>– Wikipedia - Mau Mau</h6><br>
-                <h3 class="row justify-content-center">Special rules</h3>
+                <h6>- Wikipedia - Mau Mau *modified*</h6><br>
+                <h3 id="lSpecial" class="row justify-content-center"></h3>
                 <br>
                 <div class="row pl-5 pr-5">
-                    <p>We add the three most common additional rules:</p>
-                    <p>If an eight is played the next player is skipped if a seven is played, the next player has to
-                        draw two cards. The next player can put another seven down and instead the following player
-                        will have to draw four cards (and so on). A Jack can can be put on anything and the player who
-                        played it can ask for a different suite to be played</p>
+                    <p id="lSpecial1"></p>
+                    <p id="lSpecial2"></p>
                 </div>
-                <h2 class="row justify-content-center mt-5">Mau Mau: A Short History</h2>
+                <h2 id="lHistory" class="row justify-content-center mt-5"></h2>
                 <br>
                 <div class="row pl-5 pr-5 mb-5">
-                     <p>Originating in Germany, the rules of Mau Mau have existed since at least the 1930's. Known as "Neuner" or "Neunerl" in Austria and Bavaria, the game's popularity throughout the years has lead to numerous regional and national variants, including "Prší" in the Czech Republic and "Pesten" in the Netherlands.
-                     Other related card games include "Switch" and "Crazy Eights", which are popular in both the United Kingdom and the US, respectively.
+                     <p id="lHistory1">
                      </p>
                     </div>
             </div>
         </div>
         <!--Contact form container-->
-        <div id="contactContainer" class="container mt-5">
+        <div id="contactContainer" class="container mt-2">
             <span class="row"></span>
             <h2 id="lDifficulties1" class="row justify-content-center mt-5">Encountering difficulties?</h2>
             <br>
@@ -92,7 +78,7 @@
 
                     <!--Contact form header-->
 
-                    <form action="mail.php" method="post">
+                    <form>
                         <div class="card border-primary rounded-0">
                             <div class="card-header p-0">
                                 <div class="bg-dark text-white text-center py-2">
@@ -126,12 +112,12 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fa fa-comment text-dark"></i></div>
                                         </div>
-                                        <textarea class="form-control" name="message" placeholder="Message" required></textarea>
+                                        <textarea id="message" class="form-control" name="message" placeholder="Message" required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="text-center">
-                                    <input type="submit" value="Send" class="btn btn-success btn-block rounded-0 py-2 ">
+                                    <input type="submit" value="Send" onclick="alert(`Error: Message was too amazing, could not comprehend. Stopped execution.`)" class="btn btn-success btn-block rounded-0 py-2 ">
                                 </div>
                             </div>
                         </div>
