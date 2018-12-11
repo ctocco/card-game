@@ -108,14 +108,14 @@ function renderPlayerOne() {
     playerOneContainer.removeChild(playerOneContainer.firstChild);
   }
 
-  playerOne.cards.forEach(function(element) {
+  playerOne.cards.forEach(function (element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
       element.suit,
       element.value,
       "handPlayerOne",
-      "styleImage"
+      "styleImage",
     );
 
     playerOneContainer.appendChild(card);
@@ -151,7 +151,7 @@ function renderPlayerTwo() {
     playerTwoContainer.removeChild(playerTwoContainer.firstChild);
   }
 
-  playerTwo.cards.forEach(function(element) {
+  playerTwo.cards.forEach(function (element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
@@ -232,8 +232,8 @@ function nextTurnPlayerOne() {
     let elementList = parentNode.querySelectorAll(".playable");
     let elementListArray = Array.from(elementList);
 
-    elementListArray.forEach(function(el) {
-      el.addEventListener("click", function() {
+    elementListArray.forEach(function (el) {
+      el.addEventListener("click", function () {
         let index = playerOne.cards.findIndex(x => x.name == this.id);
         let spliced = playerOne.cards.splice(index, 1);
         deck.dealt_cards.push(spliced[0]);
@@ -263,7 +263,7 @@ function nextTurnPlayerOne() {
   }
 
   let endTurnOne = document.getElementById("endTurnOne");
-  endTurnOne.addEventListener("click", function() {
+  endTurnOne.addEventListener("click", function () {
     renderPlayerOne();
     renderPlayerTwo();
     nextTurnPlayerTwo();
@@ -304,8 +304,8 @@ function nextTurnPlayerTwo() {
     let elementList = parentNode.querySelectorAll(".playable");
     let elementListArray = Array.from(elementList);
 
-    elementListArray.forEach(function(el) {
-      el.addEventListener("click", function() {
+    elementListArray.forEach(function (el) {
+      el.addEventListener("click", function () {
         let index = playerTwo.cards.findIndex(x => x.name == this.id);
         let spliced = playerTwo.cards.splice(index, 1);
         deck.dealt_cards.push(spliced[0]);
@@ -335,7 +335,7 @@ function nextTurnPlayerTwo() {
   }
 
   let endTurnTwo = document.getElementById("endTurnTwo");
-  endTurnTwo.addEventListener("click", function() {
+  endTurnTwo.addEventListener("click", function () {
     renderPlayerOne();
     renderPlayerTwo();
     nextTurnPlayerOne();
@@ -360,11 +360,11 @@ function restackDeck() {
     deck.deck.splice(index, 1);
 
     //delete the double cards that equal to the players current hand cards
-    playerOne.cards.forEach(function(el) {
+    playerOne.cards.forEach(function (el) {
       let index = deck.deck.findIndex(x => x.name == el.name);
       deck.deck.splice(index, 1);
     });
-    playerTwo.cards.forEach(function(el) {
+    playerTwo.cards.forEach(function (el) {
       let index = deck.deck.findIndex(x => x.name == el.name);
       deck.deck.splice(index, 1);
     });
