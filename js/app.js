@@ -202,6 +202,8 @@ function removeButton() {
 }
 
 function nextTurnPlayerOne() {
+  restackDeck();
+
   if (
     playerOne.cards.findIndex(
       x => x.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit
@@ -255,6 +257,8 @@ function nextTurnPlayerOne() {
 }
 
 function nextTurnPlayerTwo() {
+  restackDeck();
+
   if (
     playerTwo.cards.findIndex(
       x => x.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit
@@ -305,4 +309,28 @@ function nextTurnPlayerTwo() {
     alert(`${playerTwo.name} won`);
   }
   counterPlayerTwo++;
+}
+
+function restackDeck() {
+  if (deck.deck.length == 0) {
+    deck.generate_deck();
+
+    //delete the double card that equals the top card of the discarded pile
+    let index = deck.deck.findIndex(
+      x => x.name == deck.dealt_cards[deck.dealt_cards.length - 1].name
+    );
+    deck.deck.splice(index, 1);
+
+    //delete the double cards that equal to the players current hand cards
+    playerOne.cards.forEach(function(el) {
+      let index = deck.deck.findIndex(x => x.name == el.name);
+      deck.deck.splice(index, 1);
+    });
+    playerTwo.cards.forEach(function(el) {
+      let index = deck.deck.findIndex(x => x.name == el.name);
+      deck.deck.splice(index, 1);
+    });
+
+    deck.shuffle();
+  }
 }
