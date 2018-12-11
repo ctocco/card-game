@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 #helpContainer {
     background-color: #fffafa;
 }
@@ -13,3 +17,31 @@
     background-color: #fffafa;
 }
 
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: goldenrod;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+
+i {
+    font-size: 1.5rem;
+    padding: .2rem;
+}
+
+i:hover {
+    color: goldenrod;
+}

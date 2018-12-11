@@ -1,3 +1,7 @@
+let counterPlayerOne = 0;
+let counterPlayerTwo = 0;
+
+// Deck setup and methods
 //Classes
 class Deck {
   constructor() {
@@ -59,17 +63,6 @@ class Player {
     return drawn_card;
   }
 
-  playerOneDiscard(q) {
-    // let indexArray = getAllIndexes(
-    //   playerOne.cards,
-    //   deck.dealt_cards[deck.dealt_cards.length - 1].suit,
-    //   deck.dealt_cards[deck.dealt_cards.length - 1].value
-    // );
-
-    let spliced = playerOne.cards.splice(q, 1);
-    deck.dealt_cards.push(spliced[0]);
-  }
-
   add_hand() {
     for (let i = 0; i < 5; i++) {
       let drawn_card = deck.deck.shift();
@@ -102,18 +95,9 @@ playerOne.add_hand();
 renderPlayerOne();
 playerTwo.add_hand();
 renderPlayerTwo();
-
-// document.getElementById("container").addEventListener("click", function() {
-//   playerOne.playerOneDiscard();
-//   renderPlayerOne();
-//   renderDiscarded();
-// });
-
-// searchValidCardsPlayerOne(); // !!
-console.log(deck);
-console.log(playerOne);
-console.log(playerTwo);
-
+setTimeout(() => {
+  nextTurnPlayerOne();
+}, 2000);
 
 //__________________________________________________________________________________________________________________________________
 //Rendering Functions
@@ -124,7 +108,7 @@ function renderPlayerOne() {
     playerOneContainer.removeChild(playerOneContainer.firstChild);
   }
 
-  playerOne.cards.forEach(function (element) {
+  playerOne.cards.forEach(function(element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
@@ -136,15 +120,34 @@ function renderPlayerOne() {
 
     playerOneContainer.appendChild(card);
 
-    card.textContent = element.name.replace(/_/g, " ");
+    // card.textContent = element.name.replace(/_/g, " ");
     card.id = element.name;
-    card.setAttribute("onclick", "reply_click(this.id)"); //adding onclick Event HTML
-    card.setAttribute("style", "background-image: url(../img/" + element.name + ".jpg);"); //adding Card Image
+
+    if (
+      card.classList.contains(
+        deck.dealt_cards[deck.dealt_cards.length - 1].suit
+      ) ||
+      card.classList.contains(
+        deck.dealt_cards[deck.dealt_cards.length - 1].value
+      )
+    ) {
+      card.classList.add("playable");
+    }
+
+    card.setAttribute(
+      "style",
+      "background-image: url(../img/" + element.name + ".jpg);"
+    ); //adding Card Image
   });
 }
 
 function renderPlayerTwo() {
-  playerTwo.cards.forEach(function (element) {
+  let playerTwoContainer = document.getElementById("playerTwo");
+  while (playerTwoContainer.firstChild) {
+    playerTwoContainer.removeChild(playerTwoContainer.firstChild);
+  }
+
+  playerTwo.cards.forEach(function(element) {
     let card = document.createElement("div");
     card.classList.add(
       "exampleCard",
@@ -153,20 +156,42 @@ function renderPlayerTwo() {
       "handPlayerTwo",
       "styleImage"
     );
-    let playerTwoContainer = document.getElementById("playerTwo");
+
     playerTwoContainer.appendChild(card);
-    card.textContent = element.name.replace(/_/g, " ");
-    card.setAttribute("onclick", "reply_click(this.id)"); //adding onclick Event HTML
-    card.setAttribute("style", "background-image: url(../img/" + element.name + ".jpg);"); //adding Card Image
+    // card.textContent = element.name.replace(/_/g, " ");
+    card.id = element.name;
+
+    if (
+      card.classList.contains(
+        deck.dealt_cards[deck.dealt_cards.length - 1].suit
+      ) ||
+      card.classList.contains(
+        deck.dealt_cards[deck.dealt_cards.length - 1].value
+      )
+    ) {
+      card.classList.add("playable");
+    }
+
+    card.setAttribute(
+      "style",
+      "background-image: url(../img/" + element.name + ".jpg);"
+    ); //adding Card Image
   });
 }
 
 function renderDiscarded() {
   let discardedPile = document.getElementById("discarded");
+  discardedPile.classList.add("styleImage");
   const lastCard = deck.dealt_cards.length - 1;
-  discardedPile.textContent = deck.dealt_cards[lastCard].name;
+  discardedPile.setAttribute(
+    "style",
+    "background-image: url(img/" + deck.dealt_cards[lastCard].name + ".jpg);"
+  );
+  // discardedPile.textContent = deck.dealt_cards[lastCard].name.replace(
+  //   /_/g,
+  //   " "
+  // );
 }
-
 
 //__________________________________________________________________________________________________________________________________
 //Functions
@@ -176,19 +201,108 @@ function removeButton() {
   startButton.classList.add("hide");
 }
 
-function getAllIndexes(arr, suit, value) {
-  let indexes = [],
-    i;
-  for (i = 0; i < arr.length; i++)
-    if (arr[i].suit === suit || arr[i].value === value) indexes.push(i);
-  return indexes;
+function nextTurnPlayerOne() {
+  if (
+    playerOne.cards.findIndex(
+      x => x.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit
+    ) === -1 &&
+    playerOne.cards.findIndex(
+      x => x.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
+    ) === -1
+  ) {
+    setTimeout(() => {
+      playerOne.draw();
+      renderPlayerOne();
+      renderPlayerTwo();
+      renderDiscarded();
+      nextTurnPlayerTwo();
+    }, 1000);
+  } else {
+    let parentNode = document.getElementById("playerOne");
+    let elementList = parentNode.querySelectorAll(".playable");
+    let elementListArray = Array.from(elementList);
+
+    elementListArray.forEach(function(el) {
+      el.addEventListener("click", function() {
+        let index = playerOne.cards.findIndex(x => x.name == this.id);
+        let spliced = playerOne.cards.splice(index, 1);
+        deck.dealt_cards.push(spliced[0]);
+        renderPlayerOne();
+        renderPlayerTwo();
+        renderDiscarded();
+
+        // special value cards
+        if (spliced[0].value == "8") {
+          nextTurnPlayerOne();
+        } else if (spliced[0].value == "7") {
+          playerTwo.draw();
+          playerTwo.draw();
+          renderPlayerTwo();
+          nextTurnPlayerTwo();
+        } else {
+          nextTurnPlayerTwo();
+        }
+      });
+    });
+  }
+
+  if (playerOne.cards.length == 0) {
+    alert(`${playerOne.name} won`);
+  } else if (playerTwo.cards.length == 0) {
+    alert(`${playerTwo.name} won`);
+  }
+  counterPlayerOne++;
 }
 
-function reply_click(theId) {
-  let index = playerOne.cards.findIndex(x => x.name == theId);
-  console.log(index);
-  let spliced = playerOne.cards.splice(index, 1);
-  deck.dealt_cards.push(spliced[0]);
-  renderPlayerOne();
-  renderDiscarded();
+function nextTurnPlayerTwo() {
+  if (
+    playerTwo.cards.findIndex(
+      x => x.suit === deck.dealt_cards[deck.dealt_cards.length - 1].suit
+    ) === -1 &&
+    playerTwo.cards.findIndex(
+      x => x.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
+    ) === -1
+  ) {
+    setTimeout(() => {
+      playerTwo.draw();
+      renderPlayerOne();
+      renderPlayerTwo();
+      renderDiscarded();
+      nextTurnPlayerOne();
+    }, 1000);
+  } else {
+    let parentNode = document.getElementById("playerTwo");
+    let elementList = parentNode.querySelectorAll(".playable");
+    let elementListArray = Array.from(elementList);
+
+    elementListArray.forEach(function(el) {
+      el.addEventListener("click", function() {
+        let index = playerTwo.cards.findIndex(x => x.name == this.id);
+        let spliced = playerTwo.cards.splice(index, 1);
+        deck.dealt_cards.push(spliced[0]);
+        renderPlayerOne();
+        renderPlayerTwo();
+        renderDiscarded();
+
+        // special value cards
+        if (spliced[0].value == "8") {
+          nextTurnPlayerTwo();
+        } else if (spliced[0].value == "7") {
+          playerOne.draw();
+          playerOne.draw();
+          renderPlayerOne();
+          nextTurnPlayerOne();
+        } else {
+          nextTurnPlayerOne();
+        }
+      });
+    });
+  }
+
+  if (playerOne.cards.length == 0) {
+    alert(`${playerOne.name} won`);
+  } else if (playerTwo.cards.length == 0) {
+    alert(`${playerTwo.name} won`);
+  }
+  counterPlayerTwo++;
 }
