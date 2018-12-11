@@ -27,16 +27,20 @@ body {
 .exampleCard,
 .my-flex-item {
   /* border: 2px solid orange; */
-  min-width: 100px;
-  min-height: auto;
-  margin: 0 10px 0 10px;
+  display: block;
+  max-width: 255px;
+  max-height: 255px;
+  min-width: 127px;
+  min-height: 127px;
+  width: auto;
+  height: auto;
   background: orange;
+  margin: 0em 1em 0em 1em;
   -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   border-radius: 7%;
-
-
+  
 }
 
 .covered {
