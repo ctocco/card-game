@@ -1,199 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="https://bootswatch.com/4/sketchy/bootstrap.min.css"
-    />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/maumau.css" />
-    <title>MauMau</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css" />
 
-  <body onload="displayNames()">
-    <!-- NAV BAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="index.html">The Game Center</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarColor01"
-        aria-controls="navbarColor01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/maumau.css" />
+  <title>MauMau</title>
+</head>
 
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="help.html">Help</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item dropdown"></li>
-        </ul>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-primary active">
-            <input type="checkbox" checked="" autocomplete="off" /> DE
-          </label>
-          <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off" /> EN
-          </label>
-        </div>
+<body onload="displayNames()">
+  <!-- NAV BAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="index.html">The Game Center</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="help.html">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item"><a id="lImpressum" class="nav-link" href="impressum.html"></a></li>
+        <li class="nav-item dropdown"></li>
+      </ul>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="checkbox" checked="" autocomplete="off" /> DE
+        </label>
+        <label class="btn btn-primary">
+          <input type="checkbox" autocomplete="off" /> EN
+        </label>
       </div>
-    </nav>
-    <!-- NAV BAR END -->
+    </div>
+  </nav>
+  <!-- NAV BAR END -->
 
-    <!-- top container with reset and MAU buttons -->
-    <div class="container-top">
-      <div
-        class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between"
-      >
-        <h1 class="text-center">Mau Mau</h1>
-        <h2 id="turn"></h2>
-        <div
-          class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between"
-        >
-          <div id="mau" class="align-items-center">
-            <button type="button" class="btn btn-danger btn-sm">
-              <a class="nav-link" href="#">Mau</a>
-            </button>
-          </div>
-          <div>
-            <button
-              type="button"
-              class="btn btn-success btn-sm reset"
-              id="reset"
-            >
-              <a class="nav-link" href="#">Reset</a>
-            </button>
-          </div>
+  <!-- top container with reset and MAU buttons -->
+  <div class="container-top">
+    <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+      <h1 class="text-center">Mau Mau</h1>
+      <h2 id="turn"></h2>
+      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+        <div id="mau" class="align-items-center">
+          <button type="button" class="btn btn-danger btn-sm">
+            <a class="nav-link" href="#">Mau</a>
+          </button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-success btn-sm reset" id="reset">
+            <a class="nav-link" href="#">Reset</a>
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!---->
+  <!---->
 
-    <!-- Player one container with end turn and name -->
-    <div class="cover-card">
-      <div class="container-fluid" id="container">
-        <div
-          class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between"
-        >
-          <div
-            class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between "
-          >
-            <h2 id="playerOneHeader" class="text-left mt-2">Player 1:</h2>
-            <div class="d-flex"></div>
+  <!-- Player one container with end turn and name -->
+  <div class="cover-card">
+    <div class="container-fluid" id="container">
+      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+        <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between ">
+          <h2 id="playerOneHeader" class="text-left mt-2">Player 1:</h2>
+          <div class="d-flex"></div>
 
-            <!-- player one input -->
-            <!--
+          <!-- player one input -->
+          <!--
               <form id="form-1" class="form-inline my-2 my-lg-0">
                 <input id="inputPlayer1" class="form-control mr-sm-2" type="text" placeholder="Enter name of player 1">
                 <button id="btnClick1" class="btn btn-secondary my-2 my-sm-0 mr-5" type="submit">Enter</button>
               </form>
             -->
-          </div>
-
-          <div>
-            <button
-              type="button"
-              class="btn btn-warning btn-sm endTurn"
-              id="endTurnOne"
-            >
-              <a class="nav-link" href="#">End Turn</a>
-            </button>
-          </div>
         </div>
-      </div>
-      <!-- Card CONTAINERS -->
 
-      <!-- player1 -->
-
-      <div
-        id="playerOne"
-        class="d-flex flex-row my-flex-container p-2 covered"
-      ></div>
-    </div>
-    <!-- draw pile container -->
-    <div
-      id="deckContainer"
-      class="d-flex flex-row my-flex-container justify-content-center align-items-center p-2"
-    >
-      <div class="p-2 my-flex-item" id="deck">Draw Pile</div>
-      <div class="p-2 my-flex-item" id="discarded"></div>
-    </div>
-
-    <!-- Player two Container -->
-
-    <div class="cover-card2">
-      <div class="container-fluid " id="container">
-        <div
-          id="playerTwo"
-          class="d-flex flex-row-reverse my-flex-container p-2 "
-        ></div>
-      </div>
-
-      <!-- Player two Name and Buttons -->
-
-      <div
-        class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between"
-      >
         <div>
-          <button
-            type="button"
-            class="btn btn-warning btn-sm endTurn"
-            id="endTurnTwo"
-          >
+          <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnOne">
             <a class="nav-link" href="#">End Turn</a>
           </button>
         </div>
-        <div
-          class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between"
-        >
-          <h2 id="playerTwoHeader" class="text-right mt-2">Player 2:</h2>
+      </div>
+    </div>
+    <!-- Card CONTAINERS -->
 
-          <!-- player two input form -->
-          <!--
+    <!-- player1 -->
+
+    <div id="playerOne" class="d-flex flex-row my-flex-container p-2 covered"></div>
+  </div>
+  <!-- draw pile container -->
+  <div id="deckContainer" class="d-flex flex-row my-flex-container justify-content-center align-items-center p-2">
+    <div class="p-2 my-flex-item" id="deck">Draw Pile</div>
+    <div class="p-2 my-flex-item" id="discarded"></div>
+  </div>
+
+  <!-- Player two Container -->
+
+  <div class="cover-card2">
+    <div class="container-fluid " id="container">
+      <div id="playerTwo" class="d-flex flex-row-reverse my-flex-container p-2 "></div>
+    </div>
+
+    <!-- Player two Name and Buttons -->
+
+    <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+      <div>
+        <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnTwo">
+          <a class="nav-link" href="#">End Turn</a>
+        </button>
+      </div>
+      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+        <h2 id="playerTwoHeader" class="text-right mt-2">Player 2:</h2>
+
+        <!-- player two input form -->
+        <!--
             <form id="form-2" class="form-inline my-2 my-lg-0">
               <input id="inputPlayer2" class="form-control mr-sm-2" type="text" placeholder="Enter name of player 2">
               <button class="btn btn-secondary my-2 my-sm-0" type="submit">Enter</button>
             </form>
           -->
-        </div>
       </div>
     </div>
+  </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/app.js"></script>
-    <script src="js/ui.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+
 </html>

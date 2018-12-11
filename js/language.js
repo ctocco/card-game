@@ -19,6 +19,7 @@ function switchLanguage(){
             let lHome = document.getElementById("lHome");
             let lHelp = document.getElementById("lHelp");
             let lAbout = document.getElementById("lAbout");
+            let lImpressum = document.getElementById("lImpressum");
             let lTitle1 = document.getElementById("lTitle1");
             let lTitle2 = document.getElementById("lTitle2");
             let lTitle3 = document.getElementById("lTitle3");
@@ -36,6 +37,7 @@ function switchLanguage(){
                 lTitle1.innerText = 'The Game Center';
                 lTitle2.innerText = 'The Game Center';
                 lTitle3.innerText = 'THE GAME CENTER';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -54,6 +56,7 @@ function switchLanguage(){
                 lTitle2.innerText = 'Das Spiel Center';
                 lTitle3.innerText = 'DAS SPIEL CENTER';
                 lHome.innerText = 'Start';
+                lImpressum.innerText = 'Impressum';
                 lHelp.innerText = 'Hilfe';
                 lAbout.innerText = 'Über Uns';
                 lContent1.innerText = 'Willkommen zu unserer kleinen Kollektion von wundervollen Kartenspielen. Ein Spaß für die ganze Familie';
@@ -70,6 +73,7 @@ function switchLanguage(){
                 lTitle1.innerText = 'The Game Center';
                 lTitle2.innerText = 'The Game Center';
                 lTitle3.innerText = 'THE GAME CENTER';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -90,6 +94,7 @@ function switchLanguage(){
             let lHome = document.getElementById("lHome");
             let lHelp = document.getElementById("lHelp");
             let lAbout = document.getElementById("lAbout");
+            let lImpressum = document.getElementById("lImpressum");
             let lRules = document.getElementById("lRules");
             let lRules1 = document.getElementById("lRules1");
             let lRules2 = document.getElementById("lRules2");
@@ -108,6 +113,7 @@ function switchLanguage(){
             case "EN":
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -130,7 +136,9 @@ function switchLanguage(){
                 //change Content
                 lTitle1.innerText = 'Das Spiel Center';
                 lHome.innerText = 'Start';
+                lImpressum.innerText = 'Impressum';
                 lHelp.innerText = 'Hilfe';
+                lAbout.innerText = 'Über Uns';
                 lRules.innerText = 'Basis Regeln für Mau Mau';
                 lRules1.innerText = `Das Spiel wird mit einem regülarem Kartendeck gespielt. Jeder Spieler zieht 5 Karten. Der Rest wird verdeckt auf in die Mitte gelegt als Ziehstapel. Am Anfang wird die oberste Karte offen in die Mitte gelegt als Start-Karte, danach dürfen die Spieler ihre Karten spielen.`;
                 lRules2.innerText = `Man kann nur Karten spielen die entweder die selbe Augenzahl wie die aufgedeckte Karte aufweisen oder demselben Set(Herz,Karo,Pik und Kreuz) angehören. Wenn kein Spielzug möglich ist muss eine Karte gezogen werden. Wenn der Spieler die gezogene Karte spielen kann darf er sie sofort ausspielen, wenn nicht muss der Spieler seinen Zug beenden. Wenn der Ziehstapel leer ist werden alle gespielten Karten bis auf die letzte neu gemischt und als neuer Stapel platziert`;
@@ -149,8 +157,10 @@ function switchLanguage(){
             default:
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
+                lAbout.innerText = 'About';
                 lRules.innerText = 'The basic rules of Mau Mau';
                 lRules1.innerText = `The game is played with a regular deck of playing cards. The players are dealt each a hand of cards (usually 5). The rest are placed face down as the drawing stack. At the beginning of the game the topmost card is revealed, then the players each get a turn to play cards.`;
                 lRules2.innerText = `One can play a card if it corresponds to the suit or value of the open card. E.g. on a 10 of spades, only other spades can be played or other 10s. If a player is not able to, they draw one card from the stack. If he can play this card, he may do so, otherwise he keeps the drawn card and passes his turn. If the drawing stack is empty, the playing stack (except for the topmost card) is shuffled and turned over to serve as new drawing stack.`;
@@ -174,6 +184,7 @@ function switchLanguage(){
             let lHome = document.getElementById("lHome");
             let lHelp = document.getElementById("lHelp");
             let lAbout = document.getElementById("lAbout");
+            let lImpressum = document.getElementById("lImpressum");
             let lContent1 = document.getElementById("lContent1");
             let lContent2 = document.getElementById("lContent2");
             let lText1 = document.getElementById("lText1");
@@ -193,6 +204,7 @@ function switchLanguage(){
             case "EN":
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -211,6 +223,7 @@ function switchLanguage(){
                 //change Content
                 lTitle1.innerText = 'Das Spiel Center';
                 lHome.innerText = 'Start';
+                lImpressum.innerText = 'Impressum';
                 lHelp.innerText = 'Hilfe';
                 lAbout.innerText = 'Über Uns';
                 lContent1.innerText = '- UNSERE MISSION -';
@@ -227,6 +240,7 @@ function switchLanguage(){
             default:
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
@@ -241,6 +255,104 @@ function switchLanguage(){
                 lText4.innerText = lorem2;
                 lText5.innerText = lorem2;
                 break;}
+        }
+        else if (page=='impressum'){
+            //Get Elements
+            let lTitle1 = document.getElementById("lTitle1");
+            let lHome = document.getElementById("lHome");
+            let lHelp = document.getElementById("lHelp");
+            let lAbout = document.getElementById("lAbout");
+            let lImpressum1 = document.getElementById("lImpressum1");
+            let lImpressum = document.getElementById("lImpressum");
+            let lAdress = document.getElementById("lAdress");
+            let lAdress1 = document.getElementById("lAdress1");
+            let lAdress2 = document.getElementById("lAdress2");
+            let lAdress3 = document.getElementById("lAdress3");
+            let lContact = document.getElementById("lContact");
+            let lContact1 = document.getElementById("lContact1");
+            let lContent = document.getElementById("lContent");
+            let lContent1 = document.getElementById("lContent1");
+            let lLinks = document.getElementById("lLinks");
+            let lLinks1 = document.getElementById("lLinks1");
+            let lCopyright = document.getElementById("lCopyright");
+            let lCopyright1 = document.getElementById("lCopyright1");
+            let lDisclaimer = document.getElementById("lDisclaimer");
 
+            switch (language) {
+            case "EN":
+                //change Content
+                lImpressum.innerText = 'Imprint';
+                lHome.innerText = 'Home';
+                lHelp.innerText = 'Help';
+                lAbout.innerText = 'About';
+                lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
+                lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = `Imprint`;
+                lAdress.innerText = `Adress`;
+                lAdress1.innerText = `Digital Career Institute`;
+                lAdress2.innerText = `Vulkanstraße 1`;
+                lAdress3.innerText = `10367 Berlin`;
+                lContact.innerText = `Contact`;
+                lContact1.innerText = `maumauers@gmail.com`;
+                lContent.innerText = `Liability for contents`;
+                lContent1.innerText = `As a service provider, we are responsible in accordance with § 7 paragraph 1 of TMG for our own contents on these sites under the general laws. However, in accordance with §§ 8 to 10 TMG (German Teleservices Act), we - as service providers - are not obliged to monitor transmitted or stored information from third parties or to investigate circumstances that indicate illegal activity.
+                Obligation to remove or block the use of information under the general laws remains unaffected. Nevertheless, liability in this regard is possible only from the moment that knowledge of the specific breach of law is obtained. We will remove the content as soon as we become aware of the relevant infringement.`;
+                lLinks.innerText = `Liability for links`;
+                lLinks1.innerText = `Our site contains links to external third-party websites over which we have no control. Therefore, we cannot accept any responsibility for this external content. The respective service provider or operator of the sites is always responsible for the contents of linked sites. The linked sites were checked at the time of linking for any infringement. Illegal contents were not noticeable at the time of linking.
+                However, permanent monitoring of the content of linked sites is unreasonable without concrete evidence of infringement. We will remove the content as soon as we become aware of the infringement.`;
+                lCopyright.innerText = `Copyright`;
+                lCopyright1.innerText = `The content created by the site operator, as well as posting on these sites are subject to German copyright. Reproduction, editing, distribution or any kind of use outside the scope of copyright require the written consent of the author or editor. Downloads and copies of this site are permitted only for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyright of third parties is respected. In particular, third-party content is marked as such. However, should you become aware of any copyright infringement, we would request that you notify us accordingly. We will remove such content as soon as we become aware of the infringement.`;
+                break;
+            case "DE":
+                //change Content
+                lHome.innerText = 'Start';
+                lImpressum.innerText = 'Impressum';
+                lHelp.innerText = 'Hilfe';
+                lAbout.innerText = 'Über Uns';
+                lDisclaimer.innerText = `!Dieses Impressum ist nur ein Platzhalter!`;
+                lTitle1.innerText = 'Das Spiel Center';
+                lImpressum.innerText = `Impressum`;
+                lAdress.innerText = `Adresse`;
+                lAdress1.innerText = `Digital Career Institute`;
+                lAdress2.innerText = `Vulkanstraße 1`;
+                lAdress3.innerText = `10367 Berlin`;
+                lContact.innerText = `Kontakt`;
+                lContact1.innerText = `maumauers@gmail.com`;
+                lContent.innerText = `Haftung für Inhalte`;
+                lContent1.innerText = `Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.`;
+                lLinks.innerText = `Haftung für Links`;
+                lLinks1.innerText = `Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+                Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechts-verletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.`;
+                lCopyright.innerText = `Urheberrecht`;
+                lCopyright1.innerText = `Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+                Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.`;
+                break;
+            default:
+                //change Content
+                lImpressum.innerText = 'Imprint';
+                lHome.innerText = 'Home';
+                lHelp.innerText = 'Help';
+                lAbout.innerText = 'About';
+
+                lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
+                lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = `Imprint`;
+                lAdress.innerText = `Adress`;
+                lAdress1.innerText = `Digital Career Institute`;
+                lAdress2.innerText = `Vulkanstraße 1`;
+                lAdress3.innerText = `10367 Berlin`;
+                lContact.innerText = `Contact`;
+                lContact1.innerText = `maumauers@gmail.com`;
+                lContent.innerText = `Liability for contents`;
+                lContent1.innerText = `As a service provider, we are responsible in accordance with § 7 paragraph 1 of TMG for our own contents on these sites under the general laws. However, in accordance with §§ 8 to 10 TMG (German Teleservices Act), we - as service providers - are not obliged to monitor transmitted or stored information from third parties or to investigate circumstances that indicate illegal activity.
+                Obligation to remove or block the use of information under the general laws remains unaffected. Nevertheless, liability in this regard is possible only from the moment that knowledge of the specific breach of law is obtained. We will remove the content as soon as we become aware of the relevant infringement.`;
+                lLinks.innerText = `Liability for links`;
+                lLinks1.innerText = `Our site contains links to external third-party websites over which we have no control. Therefore, we cannot accept any responsibility for this external content. The respective service provider or operator of the sites is always responsible for the contents of linked sites. The linked sites were checked at the time of linking for any infringement. Illegal contents were not noticeable at the time of linking.
+                However, permanent monitoring of the content of linked sites is unreasonable without concrete evidence of infringement. We will remove the content as soon as we become aware of the infringement.`;
+                lCopyright.innerText = `Copyright`;
+                lCopyright1.innerText = `The content created by the site operator, as well as posting on these sites are subject to German copyright. Reproduction, editing, distribution or any kind of use outside the scope of copyright require the written consent of the author or editor. Downloads and copies of this site are permitted only for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyright of third parties is respected. In particular, third-party content is marked as such. However, should you become aware of any copyright infringement, we would request that you notify us accordingly. We will remove such content as soon as we become aware of the infringement.`;
+                break;
+            }
         };
-}
+};
