@@ -371,7 +371,6 @@ function restackDeck() {
       let index = deck.deck.findIndex(x => x.name == el.name);
       deck.deck.splice(index, 1);
     });
-
     deck.shuffle();
   }
 }

@@ -109,3 +109,9 @@ body {
 .hideStyle {
   background-image: url(../img/cardbackvintage.jpg) !important;
 }
+
+.containerCardBack {
+  background-image: url(../img/cardbackvintage.jpg) !important;
+  background-image: no-repeat center center fixed;
+  background-size: 100% 100%;
+}
