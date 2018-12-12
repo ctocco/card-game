@@ -288,7 +288,7 @@ function switchLanguage(){
                 lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
                 lTitle1.innerText = 'The Game Center';
                 lImpressum.innerText = `Imprint`;
-                lAdress.innerText = `Adress`;
+                lAdress.innerText = `Address`;
                 lAdress1.innerText = `Digital Career Institute`;
                 lAdress2.innerText = `Vulkanstraße 1`;
                 lAdress3.innerText = `10367 Berlin`;
@@ -338,7 +338,7 @@ function switchLanguage(){
                 lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
                 lTitle1.innerText = 'The Game Center';
                 lImpressum.innerText = `Imprint`;
-                lAdress.innerText = `Adress`;
+                lAdress.innerText = `Address`;
                 lAdress1.innerText = `Digital Career Institute`;
                 lAdress2.innerText = `Vulkanstraße 1`;
                 lAdress3.innerText = `10367 Berlin`;
