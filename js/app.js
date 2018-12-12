@@ -1,6 +1,7 @@
 let counterPlayerOne = 0;
 let counterPlayerTwo = 0;
 
+//__________________________________________________________________________________________________________________________________
 // Deck setup and methods
 //Classes
 class Deck {
@@ -50,6 +51,7 @@ class Deck {
   }
 }
 
+//__________________________________________________________________________________________________________________________________
 // player setup and methods
 class Player {
   constructor(name) {
@@ -81,13 +83,18 @@ let suits = ["Clubs", "Diamonds", "Spades", "Hearts"];
 let deck = new Deck();
 let playerOne = new Player("Deck1");
 let playerTwo = new Player("Deck2");
+
+//Misc
+let storedName1 = localStorage.getItem("pOne");
+let storedName2 = localStorage.getItem("pTwo");
 let playerTurn = 'playerOne';
+
 
 //Rendering Variables
 
 //__________________________________________________________________________________________________________________________________
 // Game Setup
-
+function gameSetup(){
 deck.generate_deck();
 deck.shuffle();
 deck.first_discard();
@@ -99,9 +106,15 @@ renderPlayerTwo();
 setTimeout(() => {
   readyPhase();
 }, 2000);
+}
+
+gameSetup();
+
 
 //__________________________________________________________________________________________________________________________________
-//Rendering Functions
+//Render Player 1
+
+
 function renderPlayerOne() {
   //remove all children
   let playerOneContainer = document.getElementById("playerOne");
@@ -146,6 +159,9 @@ function renderPlayerOne() {
   });
 }
 
+//__________________________________________________________________________________________________________________________________
+//Render Player 2
+
 function renderPlayerTwo() {
   let playerTwoContainer = document.getElementById("playerTwo");
   while (playerTwoContainer.firstChild) {
@@ -187,6 +203,8 @@ function renderPlayerTwo() {
     }
   });
 }
+//__________________________________________________________________________________________________________________________________
+//Render Discarded
 
 function renderDiscarded() {
   let discardedPile = document.getElementById("discarded");
@@ -203,12 +221,15 @@ function renderDiscarded() {
 }
 
 //__________________________________________________________________________________________________________________________________
-//Functions
+//Remove Button?
 
 //This Button will only appear when you have one or two cards in your deck *not finished*
 function removeButton() {
   startButton.classList.add("hide");
 }
+
+//__________________________________________________________________________________________________________________________________
+//Next Turn Player One
 
 function nextTurnPlayerOne() {
   restackDeck();
@@ -267,13 +288,9 @@ function nextTurnPlayerOne() {
       });
     });
   }
-
-  if (playerOne.cards.length == 0) {
-    alert(`${playerOne.name} won`);
-  } else if (playerTwo.cards.length == 0) {
-    alert(`${playerTwo.name} won`);
-  }
 }
+//__________________________________________________________________________________________________________________________________
+//Next Turn Player Two
 
 function nextTurnPlayerTwo() {
   restackDeck();
@@ -332,16 +349,10 @@ function nextTurnPlayerTwo() {
       });
     });
   }
-
-  // let endTurnTwo = document.getElementById("endTurnTwo");
-  // endTurnTwo.addEventListener("click", function() {
-  //   playerTwo.draw();
-  //   renderPlayerOne();
-  //   renderPlayerTwo();
-  //   nextTurnPlayerOne();
-  // });
   counterPlayerTwo++;
 }
+//__________________________________________________________________________________________________________________________________
+//Restack Function
 
 function restackDeck() {
   if (deck.deck.length == 0) {
@@ -366,6 +377,8 @@ function restackDeck() {
     deck.shuffle();
   }
 }
+//__________________________________________________________________________________________________________________________________
+//Special Cards Functions
 
 // Jack functions player one
 function playerOneWishHearts() {
@@ -472,12 +485,14 @@ function toggleBoth() {
 
 function readyPhase() {
   if (playerOne.cards.length == 0) {
-    alert(`${playerOne.name} won`);
+    alert(`${storedName1} won`);
+    location.reload();
   } else if (playerTwo.cards.length == 0) {
-    alert(`${playerTwo.name} won`);
+    alert(`${storedName2} won`);
   }
+  renderPlayerOne();
+  renderPlayerTwo();
   toggleBoth();
-
   function createModal() {
     let readyModal = document.getElementById("readyModal");
     readyModal.innerHTML = `<button id="readyModalButton" type="button" class="btn btn-success">Next Turn?</button>`;
