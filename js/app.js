@@ -362,6 +362,7 @@ function restackDeck() {
       let index = deck.deck.findIndex(x => x.name == el.name);
       deck.deck.splice(index, 1);
     });
+
     deck.shuffle();
   }
 }
@@ -469,32 +470,34 @@ function toggleBoth() {
 }
 
 
-function readyPhase(){
+function readyPhase() {
   if (playerOne.cards.length == 0) {
     alert(`${playerOne.name} won`);
   } else if (playerTwo.cards.length == 0) {
     alert(`${playerTwo.name} won`);
   }
   toggleBoth();
-  function createModal(){
+
+  function createModal() {
     let readyModal = document.getElementById("readyModal");
     readyModal.innerHTML = `<button id="readyModalButton" type="button" class="btn btn-success">Next Turn?</button>`;
   }
   createModal();
   let getModalButton = document.getElementById("readyModalButton");
-  getModalButton.addEventListener("click", function() {
-  if(playerTurn == 'playerOne'){
-    changePlayerTwo();
-    nextTurnPlayerTwo();
-    playerTurn = 'playerTwo';
-    readyModal.innerHTML = ``;
-  } else if (playerTurn == 'playerTwo'){
-    changePlayerOne();
-    nextTurnPlayerOne();
-    playerTurn = 'playerOne';
-    readyModal.innerHTML = ``;
-  }
-})}
+  getModalButton.addEventListener("click", function () {
+    if (playerTurn == 'playerOne') {
+      changePlayerTwo();
+      nextTurnPlayerTwo();
+      playerTurn = 'playerTwo';
+      readyModal.innerHTML = ``;
+    } else if (playerTurn == 'playerTwo') {
+      changePlayerOne();
+      nextTurnPlayerOne();
+      playerTurn = 'playerOne';
+      readyModal.innerHTML = ``;
+    }
+  })
+}
 
 // next turn button
 let endTurnOneApp = document.getElementById("endTurnOne");
