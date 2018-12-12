@@ -33,7 +33,6 @@
         <li class="nav-item">
           <a class="nav-link" href="about.html">About</a>
         </li>
-        <li class="nav-item"><a id="lImpressum" class="nav-link" href="impressum.html"></a></li>
         <li class="nav-item dropdown"></li>
       </ul>
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -44,12 +43,13 @@
           <input type="checkbox" autocomplete="off" /> EN
         </label>
       </div>
+    </div>
   </nav>
   <!-- NAV BAR END -->
 
   <!-- top container with reset and MAU buttons -->
   <div class="container-top">
-    <div class="d-flex flex-wrap flex-row my-flex-container-top playerOne p-2 justify-content-between">
+    <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
       <h1 class="text-center">Mau Mau</h1>
       <h2 id="turn"></h2>
       <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
@@ -65,7 +65,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!---->
@@ -91,9 +90,6 @@
           <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnOne">
             <a class="nav-link" href="#">End Turn</a>
           </button>
-          <button type="button" class="btn btn-info btn-sm hideCard" id="hideCard1">
-            <a class="nav-link" href="#">Hide Cards</a>
-          </button>
         </div>
       </div>
     </div>
@@ -105,28 +101,30 @@
   </div>
   <!-- draw pile container -->
   <div id="deckContainer" class="d-flex flex-row my-flex-container justify-content-center align-items-center p-2">
-    <div class="p-2 my-flex-item containerCardBack" id="deck"></div>
+    <div class="p-2 my-flex-item" id="deck">Draw Pile</div>
     <div class="p-2 my-flex-item" id="discarded"></div>
     <div id="readyModal"></div>
   </div>
 
-  <!-- Player two Name and Buttons -->
+  <!-- Player two Container -->
 
-  <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-    <div>
-      <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnTwo">
-        <a class="nav-link" href="#">End Turn</a>
-      </button>
-      <button type="button" class="btn btn-info btn-sm hideCard" id="hideCard2">
-        <a class="nav-link" href="#">Hide Cards</a>
-      </button>
-
+  <div class="cover-card2">
+    <div class="container-fluid " id="container">
+      <div id="playerTwo" class="d-flex flex-row-reverse my-flex-container p-2 "></div>
     </div>
+
+    <!-- Player two Name and Buttons -->
+
     <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-      <h2 id="playerTwoHeader" class="text-right">Player 2:</h2>
-
+      <div>
+        <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnTwo">
+          <a class="nav-link" href="#">End Turn</a>
+        </button>
+      </div>
+      <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+        <h2 id="playerTwoHeader" class="text-right">Player 2:</h2>
+      </div>
     </div>
-  </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
