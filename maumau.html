@@ -44,9 +44,6 @@
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
           </li>
-          <li class="nav-item">
-            <a id="lImpressum" class="nav-link" href="impressum.html"></a>
-          </li>
           <li class="nav-item dropdown"></li>
         </ul>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -120,13 +117,6 @@
             >
               <a class="nav-link" href="#">End Turn</a>
             </button>
-            <button
-              type="button"
-              class="btn btn-info btn-sm hideCard"
-              id="hideCard1"
-            >
-              <a class="nav-link" href="#">Hide Cards</a>
-            </button>
           </div>
         </div>
       </div>
@@ -142,10 +132,11 @@
     <!-- draw pile container -->
     <div
       id="deckContainer"
-      class="d-flex flex-row my-flex-container justify-content-center align-items-center p-2 "
+      class="d-flex flex-row my-flex-container justify-content-center align-items-center p-2"
     >
-      <div class="p-2 my-flex-item containerCardBack" id="deck"></div>
-      <div class="p-2 my-flex-item " id="discarded"></div>
+      <div class="p-2 my-flex-item" id="deck">Draw Pile</div>
+      <div class="p-2 my-flex-item" id="discarded"></div>
+      <div id="readyModal"></div>
     </div>
 
     <!-- Player two Container -->
@@ -170,13 +161,6 @@
             id="endTurnTwo"
           >
             <a class="nav-link" href="#">End Turn</a>
-          </button>
-          <button
-            type="button"
-            class="btn btn-info btn-sm hideCard"
-            id="hideCard2"
-          >
-            <a class="nav-link" href="#">Hide Cards</a>
           </button>
         </div>
         <div
