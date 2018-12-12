@@ -238,7 +238,7 @@ function nextTurnPlayerOne() {
 
   // Turn Display
   let turn = document.getElementById("turn");
-  turn.textContent = "Turn Player One";
+  turn.textContent = storedName1 + `'s turn`;
 
   if (
     playerOne.cards.findIndex(
@@ -299,7 +299,7 @@ function nextTurnPlayerTwo() {
 
   // Turn Display
   let turn = document.getElementById("turn");
-  turn.textContent = "Turn Player Two";
+  turn.textContent = storedName2 + `'s turn`;
 
   if (
     playerTwo.cards.findIndex(
