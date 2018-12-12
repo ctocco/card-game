@@ -217,7 +217,7 @@ function switchLanguage(){
                 lText2.innerText = lorem2;
                 lText3.innerText = lorem2;
                 lText4.innerText = `Hey my name is Marcel, before coding in js i gathered some experience in other languages for example Python. On this project i mainly worked on getting multiple languages to work but i also did some images, styling and worked on the game mechanics. In my freetime i like playing computer games and code stupid stuff.`;
-                lText5.innerText = lorem2;
+                lText5.innerText = `Hi, i'm Michael. Javascript is the first programming language i've attempted to learn, and over the past 6 months, i've gained some experience using technologies such as HTML, CSS/SASS, Bootstrap and jQuery. During this project, I mostly focused on the UI, styling and design. In my freetime I enjoy playing video games and plan to code some small game projects in the future.`;
                 break;
             case "DE":
                 //change Content
@@ -253,7 +253,7 @@ function switchLanguage(){
                 lText2.innerText = lorem2;
                 lText3.innerText = lorem2;
                 lText4.innerText = `Hey my name is Marcel, before coding in js i gathered some experience in other languages for example Python. On this project i mainly worked on getting multiple languages to work but i also did some images, styling and worked on the game mechanics. In my freetime i like playing computer games and code stupid stuff.`;
-                lText5.innerText = lorem2;
+                lText5.innerText = `Hi, i'm Michael. Javascript is the first programming language i've attempted to learn, and over the past 6 months, i've gained some experience using technologies such as HTML, CSS/SASS, Bootstrap and jQuery. During this project, I mostly focused on the UI, styling and design. In my freetime I enjoy playing video games and plan to code some small game projects in the future.`;
                 break;}
         }
         else if (page=='impressum'){
