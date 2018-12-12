@@ -81,6 +81,7 @@ let suits = ["Clubs", "Diamonds", "Spades", "Hearts"];
 let deck = new Deck();
 let playerOne = new Player("Deck1");
 let playerTwo = new Player("Deck2");
+let playerTurn = 'playerOne';
 
 //Rendering Variables
 
@@ -96,7 +97,7 @@ renderPlayerOne();
 playerTwo.add_hand();
 renderPlayerTwo();
 setTimeout(() => {
-  nextTurnPlayerOne();
+  readyPhase();
 }, 2000);
 
 //__________________________________________________________________________________________________________________________________
@@ -180,6 +181,10 @@ function renderPlayerTwo() {
       "style",
       "background-image: url(../img/" + element.name + ".jpg);"
     ); //adding Card Image
+
+    if (element.value == "J") {
+      card.classList.add("playable");
+    }
   });
 }
 
@@ -207,6 +212,8 @@ function removeButton() {
 
 function nextTurnPlayerOne() {
   restackDeck();
+  endTurnOne.disabled = false;
+  endTurnTwo.disabled = true;
 
   // Turn Display
   let turn = document.getElementById("turn");
@@ -218,14 +225,15 @@ function nextTurnPlayerOne() {
     ) === -1 &&
     playerOne.cards.findIndex(
       x => x.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
-    ) === -1
+    ) === -1 &&
+    playerOne.cards.findIndex(x => x.value === "J") === -1
   ) {
     setTimeout(() => {
       playerOne.draw();
       renderPlayerOne();
       renderPlayerTwo();
       renderDiscarded();
-      nextTurnPlayerTwo();
+      readyPhase();
     }, 1000);
   } else {
     let parentNode = document.getElementById("playerOne");
@@ -238,9 +246,7 @@ function nextTurnPlayerOne() {
         let spliced = playerOne.cards.splice(index, 1);
         deck.dealt_cards.push(spliced[0]);
         renderPlayerOne();
-        renderPlayerTwo();
         renderDiscarded();
-
         // special value cards
         if (spliced[0].value == "8") {
           nextTurnPlayerOne();
@@ -248,7 +254,7 @@ function nextTurnPlayerOne() {
           playerTwo.draw();
           playerTwo.draw();
           renderPlayerTwo();
-          nextTurnPlayerTwo();
+          readyPhase();
         } else if (spliced[0].value == "J") {
           let container = document.createElement("div");
 
@@ -256,29 +262,23 @@ function nextTurnPlayerOne() {
 
           document.getElementById("playerOne").appendChild(container);
         } else {
-          nextTurnPlayerTwo();
+          readyPhase();
         }
       });
     });
   }
-
-  let endTurnOne = document.getElementById("endTurnOne");
-  endTurnOne.addEventListener("click", function () {
-    renderPlayerOne();
-    renderPlayerTwo();
-    nextTurnPlayerTwo();
-  });
 
   if (playerOne.cards.length == 0) {
     alert(`${playerOne.name} won`);
   } else if (playerTwo.cards.length == 0) {
     alert(`${playerTwo.name} won`);
   }
-  counterPlayerOne++;
 }
 
 function nextTurnPlayerTwo() {
   restackDeck();
+  endTurnOne.disabled = true;
+  endTurnTwo.disabled = false;
 
   // Turn Display
   let turn = document.getElementById("turn");
@@ -290,14 +290,15 @@ function nextTurnPlayerTwo() {
     ) === -1 &&
     playerTwo.cards.findIndex(
       x => x.value === deck.dealt_cards[deck.dealt_cards.length - 1].value
-    ) === -1
+    ) === -1 &&
+    playerTwo.cards.findIndex(x => x.value === "J") === -1
   ) {
     setTimeout(() => {
       playerTwo.draw();
       renderPlayerOne();
       renderPlayerTwo();
       renderDiscarded();
-      nextTurnPlayerOne();
+      readyPhase();
     }, 1000);
   } else {
     let parentNode = document.getElementById("playerTwo");
@@ -309,7 +310,6 @@ function nextTurnPlayerTwo() {
         let index = playerTwo.cards.findIndex(x => x.name == this.id);
         let spliced = playerTwo.cards.splice(index, 1);
         deck.dealt_cards.push(spliced[0]);
-        renderPlayerOne();
         renderPlayerTwo();
         renderDiscarded();
 
@@ -319,8 +319,7 @@ function nextTurnPlayerTwo() {
         } else if (spliced[0].value == "7") {
           playerOne.draw();
           playerOne.draw();
-          renderPlayerOne();
-          nextTurnPlayerOne();
+          readyPhase();
         } else if (spliced[0].value == "J") {
           let container = document.createElement("div");
 
@@ -328,24 +327,19 @@ function nextTurnPlayerTwo() {
 
           document.getElementById("playerTwo").appendChild(container);
         } else {
-          nextTurnPlayerOne();
+          readyPhase();
         }
       });
     });
   }
 
-  let endTurnTwo = document.getElementById("endTurnTwo");
-  endTurnTwo.addEventListener("click", function () {
-    renderPlayerOne();
-    renderPlayerTwo();
-    nextTurnPlayerOne();
-  });
-
-  if (playerOne.cards.length == 0) {
-    alert(`${playerOne.name} won`);
-  } else if (playerTwo.cards.length == 0) {
-    alert(`${playerTwo.name} won`);
-  }
+  // let endTurnTwo = document.getElementById("endTurnTwo");
+  // endTurnTwo.addEventListener("click", function() {
+  //   playerTwo.draw();
+  //   renderPlayerOne();
+  //   renderPlayerTwo();
+  //   nextTurnPlayerOne();
+  // });
   counterPlayerTwo++;
 }
 
@@ -376,8 +370,7 @@ function restackDeck() {
 // Jack functions player one
 function playerOneWishHearts() {
   deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Hearts";
-  renderPlayerTwo();
-  nextTurnPlayerTwo();
+  readyPhase();
   while (buttonContainer.firstChild) {
     buttonContainer.removeChild(buttonContainer.firstChild);
   }
@@ -385,8 +378,7 @@ function playerOneWishHearts() {
 
 function playerOneWishDiamonds() {
   deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Diamonds";
-  renderPlayerTwo();
-  nextTurnPlayerTwo();
+  readyPhase();
   while (buttonContainer.firstChild) {
     buttonContainer.removeChild(buttonContainer.firstChild);
   }
@@ -394,8 +386,7 @@ function playerOneWishDiamonds() {
 
 function playerOneWishClubs() {
   deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Clubs";
-  renderPlayerTwo();
-  nextTurnPlayerTwo();
+  readyPhase();
   while (buttonContainer.firstChild) {
     buttonContainer.removeChild(buttonContainer.firstChild);
   }
@@ -403,8 +394,7 @@ function playerOneWishClubs() {
 
 function playerOneWishSpades() {
   deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Spades";
-  renderPlayerTwo();
-  nextTurnPlayerTwo();
+  readyPhase();
   while (buttonContainer.firstChild) {
     buttonContainer.removeChild(buttonContainer.firstChild);
   }
@@ -413,8 +403,7 @@ function playerOneWishSpades() {
 // Jack functions player two
 function playerTwoWishHearts() {
   deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Hearts";
-  renderPlayerOne();
-  nextTurnPlayerOne();
+  readyPhase();
   while (buttonContainer2.firstChild) {
     buttonContainer2.removeChild(buttonContainer2.firstChild);
   }
@@ -422,8 +411,7 @@ function playerTwoWishHearts() {
 
 function playerTwoWishDiamonds() {
   deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Diamonds";
-  renderPlayerOne();
-  nextTurnPlayerOne();
+  readyPhase();
   while (buttonContainer2.firstChild) {
     buttonContainer2.removeChild(buttonContainer2.firstChild);
   }
@@ -431,8 +419,7 @@ function playerTwoWishDiamonds() {
 
 function playerTwoWishClubs() {
   deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Clubs";
-  renderPlayerOne();
-  nextTurnPlayerOne();
+  readyPhase();
   while (buttonContainer2.firstChild) {
     buttonContainer2.removeChild(buttonContainer2.firstChild);
   }
@@ -440,9 +427,89 @@ function playerTwoWishClubs() {
 
 function playerTwoWishSpades() {
   deck.dealt_cards[deck.dealt_cards.length - 1].suit = "Spades";
-  renderPlayerOne();
-  nextTurnPlayerOne();
+  readyPhase();
   while (buttonContainer2.firstChild) {
     buttonContainer2.removeChild(buttonContainer2.firstChild);
   }
 }
+
+function changePlayerOne() {
+  let changeBack = document.getElementById("playerOne");
+  let nodeList = changeBack.querySelectorAll("div");
+
+  let arrayList = Array.from(nodeList);
+  arrayList.forEach(function (element) {
+    element.classList.toggle("hideStyle");
+  });
+}
+
+function changePlayerTwo() {
+  let changeBack = document.getElementById("playerTwo");
+  let nodeList = changeBack.querySelectorAll("div");
+
+  let arrayList = Array.from(nodeList);
+  arrayList.forEach(function (element) {
+    element.classList.toggle("hideStyle");
+  });
+}
+
+function toggleBoth() {
+  let changeBack1 = document.getElementById("playerOne");
+  let changeBack2 = document.getElementById("playerTwo");
+  let nodeList1 = changeBack1.querySelectorAll("div");
+  let nodeList2 = changeBack2.querySelectorAll("div");
+
+  let arrayList1 = Array.from(nodeList1);
+  arrayList1.forEach(function (element) {
+    element.classList.add("hideStyle");
+  });
+  let arrayList2 = Array.from(nodeList2);
+  arrayList2.forEach(function (element) {
+    element.classList.add("hideStyle");
+  });
+}
+
+
+function readyPhase() {
+  if (playerOne.cards.length == 0) {
+    alert(`${playerOne.name} won`);
+  } else if (playerTwo.cards.length == 0) {
+    alert(`${playerTwo.name} won`);
+  }
+  toggleBoth();
+
+  function createModal() {
+    let readyModal = document.getElementById("readyModal");
+    readyModal.innerHTML = `<button id="readyModalButton" type="button" class="btn btn-success">Next Turn?</button>`;
+  }
+  createModal();
+  let getModalButton = document.getElementById("readyModalButton");
+  getModalButton.addEventListener("click", function () {
+    if (playerTurn == 'playerOne') {
+      changePlayerTwo();
+      nextTurnPlayerTwo();
+      playerTurn = 'playerTwo';
+      readyModal.innerHTML = ``;
+    } else if (playerTurn == 'playerTwo') {
+      changePlayerOne();
+      nextTurnPlayerOne();
+      playerTurn = 'playerOne';
+      readyModal.innerHTML = ``;
+    }
+  })
+}
+
+// next turn button
+let endTurnOneApp = document.getElementById("endTurnOne");
+endTurnOneApp.addEventListener("click", function () {
+  playerOne.draw();
+  renderPlayerOne();
+  readyPhase();
+});
+
+let endTurnTwoApp = document.getElementById("endTurnTwo");
+endTurnTwoApp.addEventListener("click", function () {
+  playerTwo.draw();
+  renderPlayerTwo();
+  readyPhase();
+});
