@@ -110,6 +110,11 @@ body {
   background-image: url(../img/cardbackvintage.jpg) !important;
 }
 
-.hideButton {
+.hideBtn {
   display: none;
+}
+
+.containerCardBack {
+  background-image: no-repeat center center fixed;
+  background-size: 100% 100%;
 }
