@@ -109,3 +109,7 @@ body {
 .hideStyle {
   background-image: url(../img/cardbackvintage.jpg) !important;
 }
+
+.hideButton {
+  display: none;
+}
