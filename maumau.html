@@ -70,25 +70,36 @@
   <!---->
 
   <!-- Player one container with end turn and name -->
-  <div class="cover-card">
-    <div class="container-fluid" id="container">
+  <div class="cover-card flex-wrap">
+
+    <div class="container-fluid flex-wrap" id="container">
+
+      <!-- div for header and draw card -->
       <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+
+        <!-- div for the header -->
         <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between ">
           <h2 id="playerOneHeader" class="text-left mt-2">Player 1:</h2>
           <div class="d-flex"></div>
-
-
         </div>
 
+        <!-- Div for the button -->
         <div>
           <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnOne">
             <a class="nav-link" href="#">Draw a Card</a>
           </button>
         </div>
+
       </div>
     </div>
-    <div id="playerOne" class="d-flex flex-row my-flex-container p-2 covered"></div>
+
+    <!-- this is the player cards 1 deck generated -->
+
+    <div id="playerOne" class="d-flex flex-wrap flex-row my-flex-container p-2 covered"></div>
+
+    <!-- div cover card -->
   </div>
+
   <!-- draw pile container -->
   <div id="deckContainer" class="d-flex flex-row my-flex-container justify-content-center align-items-center p-2">
     <div class="p-2 my-flex-item hideStyle" id="deck"></div>
