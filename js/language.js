@@ -234,7 +234,7 @@ function switchLanguage(){
                 lText1.innerText = lorem1;
                 lText2.innerText = lorem2;
                 lText3.innerText = lorem2;
-                lText4.innerText = `Hi mein Name ist Marcel, bevor ich mit Javascript angefangen habe, konnte ich bereits einige Erfahrungen in anderen Sprachen sammeln z.B. Python. Bei diesem Projekt habe ich mich größtenteils um den Support mehrerer Sprachen gekümmert aber auch einige Grafiken erstellt und mich um die Spiellogik als solches. Meine Freizeit verbringe ich gerne mit Computerspielen oder mit dem Coden von nutzlosen Sachen.`;
+                lText4.innerText = `Hi mein Name ist Marcel, bevor ich mit Javascript angefangen habe, konnte ich bereits einige Erfahrungen in anderen Sprachen sammeln z.B. Python. Bei diesem Projekt habe ich mich größtenteils um den Support mehrerer Sprachen gekümmert aber auch einige Grafiken erstellt und um die Spiellogik als solches. Meine Freizeit verbringe ich gerne mit Computerspielen oder mit dem Coden von nutzlosen Sachen.`;
                 lText5.innerText = lorem2;
                 break;
             default:
