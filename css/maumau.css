@@ -15,24 +15,14 @@ body {
   height: 22vh;
 }
 
-.my-flex-container-top {
-  /* border: 2px solid red; */
-  height: auto;
-}
-
-.my-flex-column {
-  border: 2px solid blue;
-}
-
+/* Styling for the cards */
 .exampleCard,
 .my-flex-item {
-  /* border: 2px solid orange; */
-  position: relative;
-  display: block;
+  margin: 10px 10px !important;
   max-width: 255px;
   max-height: 255px;
   min-width: 127px;
-  min-height: 127px;
+  min-height: 180px;
   width: auto;
   height: auto;
   background: orange;
@@ -41,34 +31,27 @@ body {
   -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   border-radius: 7%;
-  /* z-index: -1; */
 }
 
-/* .zIndex {
-  position: relative;
-  z-index: -1;
+.backgroundCard {
+  background-image: url("/img/coverBackground.png");
+  height: auto;
 }
-
-.covered {
-  position: relative;
-  z-index: 1000;
-  background: #000;
-  margin: 10px;
-} */
 
 /* Styling for the draw pile and deck  */
 
 #discarded,
 #deck {
-  min-height: 100%;
+  min-height: 180px;
+
 }
 
 /* styling for the mau mau button */
-#mau,
-#maumau {
+#mau {
   margin: 0 10px;
 }
 
+/* This is the background for dealt cards */
 .styleImage {
   background-image: no-repeat center center fixed;
   background-size: 100% 100%;
@@ -76,13 +59,13 @@ body {
   line-height: 750%;
   color: rgb(0, 38, 255);
   z-index: 100;
-  /* This hides the cards under the cover card */
-  /* z-index: -1; */
+
 }
 
 /* experimenting with putting a cover over the cards when it is not the player's turn */
 
 .cover-card {
+  height: auto !important;
   background-image: url("/img/coverBackground.png");
   z-index: 40;
   margin: 10px 20px;
@@ -91,23 +74,35 @@ body {
   box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
 }
 
-.cover-card2 {
+.flexBackgroundCard {
+  height: auto;
   background-image: url("/img/coverBackground.png");
   z-index: 1000;
-  margin: 10px 20px;
-  -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  min-height: 180px !important;
+  /* -webkit-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
   -moz-box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
-  box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36);
+  box-shadow: 14px -1px 23px -14px rgba(0, 0, 0, 0.36); */
 }
 
+/* hover over the card effect */
 .playable:hover {
   -webkit-box-shadow: 0px 0px 30px 10px #f0de92;
   -moz-box-shadow: 0px 0px 30px 10px #f0de92;
   box-shadow: 0px 0px 30px 10px #f0de92;
 }
 
+/* card back styling when not the player's turn and also deck background*/
 .hideStyle {
   background-image: url(../img/cardbackvintage.jpg) !important;
   background-image: no-repeat center center fixed;
   background-size: 100% 100%;
 }
+
+/* covered class no longer in use */
+
+/* .covered {
+  position: relative;
+  z-index: 1000;
+  background: #000;
+  margin: 10px;
+} */

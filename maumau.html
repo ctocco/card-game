@@ -97,7 +97,7 @@
 
     <!-- this is the player cards 1 deck generated -->
 
-    <div id="playerOne" class="d-flex flex-wrap flex-row my-flex-container p-2 covered"></div>
+    <div id="playerOne" class="d-flex flex-wrap flex-row my-flex-container p-2 covered flexBackgroundCard"></div>
 
     <!-- div cover card -->
   </div>
@@ -117,28 +117,29 @@
 
   <!-- Player two Container -->
 
-  <div class="cover-card2">
+  <div class="cover-card">
 
     <div class="container-fluid" id="container">
       <!-- div for Player 2 card -->
-      <div id="playerTwo" class="d-flex flex-row-reverse my-flex-container p-2 "></div>
+      <div id="playerTwo" class="d-flex flex-row-reverse my-flex-container p-2 flexBackgroundCard flex-wrap"></div>
     </div>
 
     <!-- Div for Draw a card-->
 
-    <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between"><div>
+    <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
+      <div>
         <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnTwo">
           <a class="nav-link" href="#">Draw a Card</a>
         </button>
-    </div>
+      </div>
 
       <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
         <h2 id="playerTwoHeader" class="text-right">Player 2:</h2>
-        </div>
       </div>
-  
-  <!-- closing div for container fluid -->
     </div>
+
+    <!-- closing div for container fluid -->
+  </div>
   <!-- closing div for cover card -->
   </div>
 
