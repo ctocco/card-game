@@ -515,7 +515,7 @@ function readyPhase() {
   // }
   function createModal() {
     let readyModal = document.getElementById("readyModal");
-    readyModal.innerHTML = `<button id="readyModalButton" type="button" class="btn btn-success">Next Turn / Nächster Zug</button>`;
+    readyModal.innerHTML = `<button id="readyModalButton" type="button" class="btn btn-success">Next Turn</button>`;
   }
   createModal();
   let getModalButton = document.getElementById("readyModalButton");
