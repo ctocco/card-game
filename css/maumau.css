@@ -87,21 +87,21 @@ body {
 
 /* hover over the card effect */
 
-@keyframes shadow-pulse
-{
-     0% {
-          box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
-     }
-     100% {
-          box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.1);
-     }
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .playable:hover {
   /* -webkit-box-shadow: 0px 0px 30px 10px #f0de92;
   -moz-box-shadow: 0px 0px 30px 10px #f0de92;
   box-shadow: 0px 0px 30px 10px #f0de92; */
-    animation: shadow-pulse 1s infinite;
+  animation: shadow-pulse 1s infinite;
 }
 
 

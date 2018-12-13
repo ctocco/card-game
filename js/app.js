@@ -94,17 +94,17 @@ let playerTurn = 'playerOne';
 
 //__________________________________________________________________________________________________________________________________
 // Game Setup
-function gameSetup(){
+function gameSetup() {
 
-deck.generate_deck();
-deck.shuffle();
-deck.first_discard();
-renderDiscarded();
-playerOne.add_hand();
-renderPlayerOne();
-playerTwo.add_hand();
-renderPlayerTwo();
-readyPhase();
+  deck.generate_deck();
+  deck.shuffle();
+  deck.first_discard();
+  renderDiscarded();
+  playerOne.add_hand();
+  renderPlayerOne();
+  playerTwo.add_hand();
+  renderPlayerTwo();
+  readyPhase();
 }
 
 gameSetup();
@@ -487,12 +487,32 @@ function readyPhase() {
   renderPlayerTwo();
   toggleBoth();
   if (playerOne.cards.length == 0) {
-    alert(`${storedName1} won`);
-    location.reload();
+    bootbox.alert({
+      message: `
+      <div class="alert alert-dismissible alert-success mt-3">
+  
+  <strong>Well done!</strong> <h1>${storedName1} won!</h1>
+</div>`,
+      className: 'bb-alternate-modal'
+    })
   } else if (playerTwo.cards.length == 0) {
-    alert(`${storedName2} won`);
-    location.reload();
+    bootbox.alert({
+      message: `
+      <div class="alert alert-dismissible alert-success mt-3">
+  
+  <strong>Well done!</strong> <h1>${storedName2} won!</h1>
+</div>`,
+      className: 'bb-alternate-modal'
+    });
   }
+  // old style alert 
+
+  //   alert(`${storedName1} won`);
+  //   location.reload();
+  // } else if (playerTwo.cards.length == 0) {
+  //   alert(`${storedName2} won`);
+  //   location.reload();
+  // }
   function createModal() {
     let readyModal = document.getElementById("readyModal");
     readyModal.innerHTML = `<button id="readyModalButton" type="button" class="btn btn-success">Next Turn?</button>`;

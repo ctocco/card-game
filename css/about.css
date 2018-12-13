@@ -46,7 +46,10 @@ div {
 }
 
 /* below are the course pictures for the members */
-#member1 {}
+#member1 {
+    background-image: url(/img/julian.jpg) !important;
+
+}
 
 #member2 {
     background-image: url(/img/claudiocrop.jpg) !important;
