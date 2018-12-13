@@ -20,6 +20,6 @@ function displayNames() {
   let storedName1 = localStorage.getItem("pOne");
   let storedName2 = localStorage.getItem("pTwo");
 
-  document.getElementById("playerOneHeader").innerHTML = "Player 1: " + storedName1;
-  document.getElementById("playerTwoHeader").innerHTML = "Player 2: " + storedName2;
+  document.getElementById("playerOneHeader").innerText = storedName1;
+  document.getElementById("playerTwoHeader").innerText = storedName2;
 }

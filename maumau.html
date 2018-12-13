@@ -5,15 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="js/language.js"></script>
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css" />
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/maumau.css" />
-  <title>MauMau</title>
+  <title id="lTitle1"></title>
 </head>
 
-<body onload="page='maumau'; displayNames();">
+<body onload="page='maumau'; switchLanguage(); displayNames();">
   <!-- NAV BAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="index.html">The Game Center</a>
@@ -25,13 +26,13 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html"><span class="sr-only">(current)</span></a>
+          <a id="lHome" class="nav-link" href="index.html"><span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="help.html"></a>
+          <a id="lHelp" class="nav-link" href="help.html"></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html"></a>
+          <a id="lAbout" class="nav-link" href="about.html"></a>
         </li>
         <li class="nav-item">
           <a id="lImpressum" class="nav-link" href="impressum.html"></a></li>
@@ -50,7 +51,7 @@
   <!-- top container with reset and MAU buttons -->
   <div class="container-top">
     <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-      <h1 class="text-center">Mau Mau</h1>
+      <h1 id="lGameName" class="text-center">Mau Mau</h1>
       <h2 id="turn"></h2>
       <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
         <div id="mau" class="align-items-center">
@@ -60,7 +61,7 @@
         </div>
         <div>
           <button onclick="window.location.reload();" type="button" class="btn btn-success btn-sm reset" id="reset">
-            <a class="nav-link" href="#">Reset</a>
+            <a id="lReset" class="nav-link" href="#"></a>
           </button>
         </div>
       </div>
@@ -79,14 +80,14 @@
 
         <!-- div for the header -->
         <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between ">
-          <h2 id="playerOneHeader" class="text-left mt-2">Player 1:</h2>
+          <h2 id="playerOneHeader" class="text-left mt-2"></h2>
           <div class="d-flex"></div>
         </div>
 
         <!-- Div for the button -->
         <div>
           <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnOne">
-            <a class="nav-link" href="#">Draw a Card</a>
+            <a id="lDraw1" class="nav-link" href="#"></a>
           </button>
         </div>
 
@@ -127,12 +128,12 @@
     <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
       <div>
         <button type="button" class="btn btn-warning btn-sm endTurn" id="endTurnTwo">
-          <a class="nav-link" href="#">Draw a Card</a>
+          <a id="lDraw2" class="nav-link" href="#"></a>
         </button>
       </div>
 
       <div class="d-flex flex-row my-flex-container-top playerOne p-2 justify-content-between">
-        <h2 id="playerTwoHeader" class="text-right">Player 2:</h2>
+        <h2 id="playerTwoHeader" class="text-right"></h2>
       </div>
     </div>
 

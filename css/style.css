@@ -80,6 +80,6 @@ div {
     }
 }
 
-#start:hover {
+#start:hover,#start1:hover {
     animation: shadow-pulse 1s infinite;
 }

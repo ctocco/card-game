@@ -28,8 +28,10 @@ function switchLanguage() {
         let lContent1 = document.getElementById("lContent1");
         let lContent2 = document.getElementById("lContent2");
         let lContent3 = document.getElementById("lContent3");
+        let lContent4 = document.getElementById("lContent4");
         let lLearnMore = document.getElementById("lLearnMore");
         let lStart = document.getElementById("start");
+        let lStart1 = document.getElementById("start1");
         let lModalContent = document.getElementById("exampleModalLabel");
         let lSave = document.getElementById("lSave");
         let lClose = document.getElementById("lClose");
@@ -46,8 +48,10 @@ function switchLanguage() {
                 lContent1.innerText = 'Welcome to a collection of wonderful card games for you to enjoy at home';
                 lContent2.innerText = 'If you want to learn more about the history and the rules of the games just click below';
                 lContent3.innerText = 'Dare to win?';
+                lContent4.innerText = 'Dare to win?';
                 lLearnMore.innerText = 'Learn more';
                 lStart.innerText = 'Enter Game';
+                lStart1.innerText = 'Enter Game';
                 lModalContent.innerText = 'Please enter the name of each player';
                 lClose.innerText = 'Close';
                 lSave.innerText = 'Save changes';
@@ -64,8 +68,10 @@ function switchLanguage() {
                 lContent1.innerText = 'Willkommen zu unserer kleinen Kollektion von wundervollen Kartenspielen. Ein Spaß für die ganze Familie';
                 lContent2.innerText = 'Wenn ihr mehr über die Historie der Spiele erfahren wollt klickt hier:';
                 lContent3.innerText = 'Einen Versuch starten?';
+                lContent4.innerText = 'Einen Versuch starten?';
                 lLearnMore.innerText = 'Mehr';
                 lStart.innerText = 'Spiel Starten';
+                lStart1.innerText = 'Spiel Starten';
                 lModalContent.innerText = 'Bitte Namen eingeben:';
                 lClose.innerText = 'Schliessen';
                 lSave.innerText = 'Speichern';
@@ -82,8 +88,10 @@ function switchLanguage() {
                 lContent1.innerText = 'Welcome to a collection of wonderful card games for you to enjoy at home';
                 lContent2.innerText = 'If you want to learn more about the history and the rules of the games just click below';
                 lContent3.innerText = 'Dare to win?';
+                lContent4.innerText = 'Dare to win?';
                 lLearnMore.innerText = 'Learn more';
                 lStart.innerText = 'Enter Game';
+                lStart1.innerText = 'Enter Game';
                 lModalContent.innerText = 'Please enter the name of each player';
                 lClose.innerText = 'Close';
                 lSave.innerText = 'Save changes';
@@ -292,7 +300,7 @@ function switchLanguage() {
                 lAbout.innerText = 'About';
                 lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
                 lTitle1.innerText = 'The Game Center';
-                lImpressum.innerText = `Imprint`;
+                lImpressum1.innerText = `Imprint`;
                 lAdress.innerText = `Address`;
                 lAdress1.innerText = `Digital Career Institute`;
                 lAdress2.innerText = `Vulkanstraße 1`;
@@ -316,7 +324,7 @@ function switchLanguage() {
                 lAbout.innerText = 'Über Uns';
                 lDisclaimer.innerText = `!Dieses Impressum ist nur ein Platzhalter!`;
                 lTitle1.innerText = 'Das Spiel Center';
-                lImpressum.innerText = `Impressum`;
+                lImpressum1.innerText = `Impressum`;
                 lAdress.innerText = `Adresse`;
                 lAdress1.innerText = `Digital Career Institute`;
                 lAdress2.innerText = `Vulkanstraße 1`;
@@ -339,10 +347,9 @@ function switchLanguage() {
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
                 lAbout.innerText = 'About';
-
                 lDisclaimer.innerText = `!This Imprint is just a placeholder!`;
                 lTitle1.innerText = 'The Game Center';
-                lImpressum.innerText = `Imprint`;
+                lImpressum1.innerText = `Imprint`;
                 lAdress.innerText = `Address`;
                 lAdress1.innerText = `Digital Career Institute`;
                 lAdress2.innerText = `Vulkanstraße 1`;
@@ -357,6 +364,61 @@ function switchLanguage() {
                 However, permanent monitoring of the content of linked sites is unreasonable without concrete evidence of infringement. We will remove the content as soon as we become aware of the infringement.`;
                 lCopyright.innerText = `Copyright`;
                 lCopyright1.innerText = `The content created by the site operator, as well as posting on these sites are subject to German copyright. Reproduction, editing, distribution or any kind of use outside the scope of copyright require the written consent of the author or editor. Downloads and copies of this site are permitted only for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyright of third parties is respected. In particular, third-party content is marked as such. However, should you become aware of any copyright infringement, we would request that you notify us accordingly. We will remove such content as soon as we become aware of the infringement.`;
+                break;
+        }
+    }else if (page == 'maumau') {
+        //Get Elements
+        let lHome = document.getElementById("lHome");
+        let lHelp = document.getElementById("lHelp");
+        let lAbout = document.getElementById("lAbout");
+        let lImpressum = document.getElementById("lImpressum");
+        let lTitle1 = document.getElementById("lTitle1");
+        let lGameName = document.getElementById("lGameName");
+        let lReset = document.getElementById("lReset");
+        let lDraw1 = document.getElementById("lDraw1");
+        let lDraw2 = document.getElementById("lDraw2");
+
+        // Just Text Vars
+        let lGame = `Mau Mau`;
+        let lDrawCardEn = `Draw a Card`;
+        let lDrawCardDe = `Karte ziehen`;
+
+        switch (language) {
+            case "EN":
+                //change Content
+                lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
+                lHome.innerText = 'Home';
+                lHelp.innerText = 'Help';
+                lAbout.innerText = 'About';
+                lGameName.innerText = `${lGame}`;
+                lReset.innerText = `Reset`;
+                lDraw1.innerText = `${lDrawCardEn}`;
+                lDraw2.innerText = `${lDrawCardEn}`;
+                break;
+            case "DE":
+                //change Content
+                lTitle1.innerText = 'Das Spiel Center';
+                lHome.innerText = 'Start';
+                lImpressum.innerText = 'Impressum';
+                lHelp.innerText = 'Hilfe';
+                lAbout.innerText = 'Über Uns';
+                lGameName.innerText = `${lGame}`;
+                lReset.innerText = `Zurücksetzen`;
+                lDraw1.innerText = `${lDrawCardDe}`;
+                lDraw2.innerText = `${lDrawCardDe}`;
+                break;
+            default:
+                //change Content
+                lTitle1.innerText = 'The Game Center';
+                lImpressum.innerText = 'Imprint';
+                lHome.innerText = 'Home';
+                lHelp.innerText = 'Help';
+                lAbout.innerText = 'About';
+                lGameName.innerText = `${lGame}`;
+                lReset.innerText = `Reset`;
+                lDraw1.innerText = `${lDrawCardEn}`;
+                lDraw2.innerText = `${lDrawCardEn}`;
                 break;
         }
     };
