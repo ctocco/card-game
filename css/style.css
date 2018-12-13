@@ -57,3 +57,17 @@ div {
 .btn btn-success btn-lg {
     text-align: center;
 }
+
+@keyframes shadow-pulse
+{
+     0% {
+          box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+     }
+     100% {
+          box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+     }
+}
+
+#start:hover {
+    animation: shadow-pulse 1s infinite;
+}
