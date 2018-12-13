@@ -57,3 +57,12 @@ div {
 .btn btn-success btn-lg {
     text-align: center;
 }
+
+#buttonDE,#buttonEN{
+    color: #fff;
+    background-color: #333;
+    border-color: #333;
+}
+#buttonDE:hover,#buttonEN:hover{
+    border: solid #fff4e0 2px;
+}

@@ -4,16 +4,18 @@ let page; //gets set onload in html
 //For info i use the l prefix for variables and id's in most cases just for quick indication i know its tedious
 
 //Storing Language to LS
+
 function saveLanguage() {
     localStorage.setItem("Language", language);
     switchLanguage();
 }
 
+
+
 //Switching Language
 function switchLanguage() {
 
     language = localStorage.getItem("Language"); //Getting Language from LS
-
     if (page == 'index') {
         //Get Elements
         let lHome = document.getElementById("lHome");

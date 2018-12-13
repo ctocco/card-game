@@ -484,15 +484,16 @@ function toggleBoth() {
 
 
 function readyPhase() {
+  renderPlayerOne();
+  renderPlayerTwo();
+  toggleBoth();
   if (playerOne.cards.length == 0) {
     alert(`${storedName1} won`);
     location.reload();
   } else if (playerTwo.cards.length == 0) {
     alert(`${storedName2} won`);
+    location.reload();
   }
-  renderPlayerOne();
-  renderPlayerTwo();
-  toggleBoth();
   function createModal() {
     let readyModal = document.getElementById("readyModal");
     readyModal.innerHTML = `<button id="readyModalButton" type="button" class="btn btn-success">Next Turn?</button>`;
