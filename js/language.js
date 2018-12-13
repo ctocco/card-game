@@ -373,6 +373,7 @@ function switchLanguage() {
         let lAbout = document.getElementById("lAbout");
         let lImpressum = document.getElementById("lImpressum");
         let lTitle1 = document.getElementById("lTitle1");
+        let lTitle2 = document.getElementById("lTitle2");
         let lGameName = document.getElementById("lGameName");
         let lReset = document.getElementById("lReset");
         let lDraw1 = document.getElementById("lDraw1");
@@ -387,6 +388,7 @@ function switchLanguage() {
             case "EN":
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lTitle2.innerText = 'The Game Center';
                 lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
@@ -399,6 +401,7 @@ function switchLanguage() {
             case "DE":
                 //change Content
                 lTitle1.innerText = 'Das Spiel Center';
+                lTitle2.innerText = 'Das Spiel Center';
                 lHome.innerText = 'Start';
                 lImpressum.innerText = 'Impressum';
                 lHelp.innerText = 'Hilfe';
@@ -411,6 +414,7 @@ function switchLanguage() {
             default:
                 //change Content
                 lTitle1.innerText = 'The Game Center';
+                lTitle2.innerText = 'The Game Center';
                 lImpressum.innerText = 'Imprint';
                 lHome.innerText = 'Home';
                 lHelp.innerText = 'Help';
