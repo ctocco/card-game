@@ -22,7 +22,7 @@ div {
     background-size: cover;
 }
 
-/* dummy pictures  */
+/* dummy pictures incase pictures don't load */
 .imgMember {
     height: 150px;
     width: 150px;
@@ -32,30 +32,37 @@ div {
     object-fit: contain;
 }
 
-
-.imgMember1 {
+/* this is the standard formatting for the pictures */
+#member1,
+#member2,
+#member3,
+#member4 {
     height: 150px;
     width: 150px;
-    background-image: url(/img/claudiocrop.jpg);
-    border-radius: 50%;
-    margin: 0 auto;
-
-}
-
-#member1 {
-    height: 150px;
-    width: 150px;
-    background-image: url(/img/claudiocrop.jpg);
     border-radius: 50%;
     margin: 0 auto;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+/* below are the course pictures for the members */
+#member1 {}
+
+#member2 {
+    background-image: url(/img/claudiocrop.jpg) !important;
+}
+
+#member3 {
+    background-image: url(/img/marcelcrop.jpg) !important;
+}
+
+#member4 {
+    background-image: url(/img/michaelcrop.jpg) !important;
+}
+
 
 .imgContainer {
     height: 200px;
-
 }
 
 .paddingTopRemove {

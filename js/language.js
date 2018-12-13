@@ -4,34 +4,34 @@ let page; //gets set onload in html
 //For info i use the l prefix for variables and id's in most cases just for quick indication i know its tedious
 
 //Storing Language to LS
-function saveLanguage(){
+function saveLanguage() {
     localStorage.setItem("Language", language);
     switchLanguage();
 }
 
 //Switching Language
-function switchLanguage(){
+function switchLanguage() {
 
     language = localStorage.getItem("Language"); //Getting Language from LS
 
-        if (page=='index'){
-            //Get Elements
-            let lHome = document.getElementById("lHome");
-            let lHelp = document.getElementById("lHelp");
-            let lAbout = document.getElementById("lAbout");
-            let lImpressum = document.getElementById("lImpressum");
-            let lTitle1 = document.getElementById("lTitle1");
-            let lTitle2 = document.getElementById("lTitle2");
-            let lTitle3 = document.getElementById("lTitle3");
-            let lContent1 = document.getElementById("lContent1");
-            let lContent2 = document.getElementById("lContent2");
-            let lContent3 = document.getElementById("lContent3");
-            let lLearnMore = document.getElementById("lLearnMore");
-            let lStart = document.getElementById("start");
-            let lModalContent = document.getElementById("exampleModalLabel");
-            let lSave = document.getElementById("lSave");
-            let lClose = document.getElementById("lClose");
-            switch (language) {
+    if (page == 'index') {
+        //Get Elements
+        let lHome = document.getElementById("lHome");
+        let lHelp = document.getElementById("lHelp");
+        let lAbout = document.getElementById("lAbout");
+        let lImpressum = document.getElementById("lImpressum");
+        let lTitle1 = document.getElementById("lTitle1");
+        let lTitle2 = document.getElementById("lTitle2");
+        let lTitle3 = document.getElementById("lTitle3");
+        let lContent1 = document.getElementById("lContent1");
+        let lContent2 = document.getElementById("lContent2");
+        let lContent3 = document.getElementById("lContent3");
+        let lLearnMore = document.getElementById("lLearnMore");
+        let lStart = document.getElementById("start");
+        let lModalContent = document.getElementById("exampleModalLabel");
+        let lSave = document.getElementById("lSave");
+        let lClose = document.getElementById("lClose");
+        switch (language) {
             case "EN":
                 //change Content
                 lTitle1.innerText = 'The Game Center';
@@ -85,31 +85,31 @@ function switchLanguage(){
                 lModalContent.innerText = 'Please enter the name of each player';
                 lClose.innerText = 'Close';
                 lSave.innerText = 'Save changes';
-                break;}
-
+                break;
         }
-        else if (page=='help'){
-            //Get Elements
-            let lTitle1 = document.getElementById("lTitle1");
-            let lHome = document.getElementById("lHome");
-            let lHelp = document.getElementById("lHelp");
-            let lAbout = document.getElementById("lAbout");
-            let lImpressum = document.getElementById("lImpressum");
-            let lRules = document.getElementById("lRules");
-            let lRules1 = document.getElementById("lRules1");
-            let lRules2 = document.getElementById("lRules2");
-            let lRules3 = document.getElementById("lRules3");
-            let lSpecial = document.getElementById("lSpecial");
-            let lSpecial1 = document.getElementById("lSpecial1");
-            let lSpecial2 = document.getElementById("lSpecial2");
-            let lHistory = document.getElementById("lHistory");
-            let lHistory1 = document.getElementById("lHistory1");
-            let lHeader = document.getElementById("lHeader");
-            let lDifficulties1 = document.getElementById("lDifficulties1");
-            let lDifficulties2 = document.getElementById("lDifficulties2");
-            let lContact = document.getElementById("lContact");
 
-            switch (language) {
+    } else if (page == 'help') {
+        //Get Elements
+        let lTitle1 = document.getElementById("lTitle1");
+        let lHome = document.getElementById("lHome");
+        let lHelp = document.getElementById("lHelp");
+        let lAbout = document.getElementById("lAbout");
+        let lImpressum = document.getElementById("lImpressum");
+        let lRules = document.getElementById("lRules");
+        let lRules1 = document.getElementById("lRules1");
+        let lRules2 = document.getElementById("lRules2");
+        let lRules3 = document.getElementById("lRules3");
+        let lSpecial = document.getElementById("lSpecial");
+        let lSpecial1 = document.getElementById("lSpecial1");
+        let lSpecial2 = document.getElementById("lSpecial2");
+        let lHistory = document.getElementById("lHistory");
+        let lHistory1 = document.getElementById("lHistory1");
+        let lHeader = document.getElementById("lHeader");
+        let lDifficulties1 = document.getElementById("lDifficulties1");
+        let lDifficulties2 = document.getElementById("lDifficulties2");
+        let lContact = document.getElementById("lContact");
+
+        switch (language) {
             case "EN":
                 //change Content
                 lTitle1.innerText = 'The Game Center';
@@ -127,7 +127,7 @@ function switchLanguage(){
                 lHistory.innerText = `Mau Mau: A Short History`;
                 lHistory1.innerText = `Originating in Germany, the rules of Mau Mau have existed since at least the 1930's. Known as "Neuner" or "Neunerl" in Austria and Bavaria, the game's popularity throughout the years has lead to numerous regional and national variants, including "Prší" in the Czech Republic and "Pesten" in the Netherlands.
                 Other related card games include "Switch" and "Crazy Eights", which are popular in both the United Kingdom and the US, respectively.`;
-                lHeader.innerText = 'Mau Mau: Rules'; 
+                lHeader.innerText = 'Mau Mau: Rules';
                 lDifficulties1.innerText = 'Encountering difficulties?';
                 lDifficulties2.innerText = 'Feel free to drop us a message!';
                 lContact.innerText = 'Contact Us';
@@ -149,7 +149,7 @@ function switchLanguage(){
                 lHistory.innerText = `Mau Mau: Ein wenig Geschichte`;
                 lHistory1.innerText = `Mau Mau hat seinen Ursprung in Deutschland und die Regeln des Spiels existieren in ihrer heutigen Form mindestens seit den 30er Jahren. In Österreich und Bayern ist das Spiel als "Neuner" oder "Neunerl" bekannt. Es enstanden auch lokale Versionen des Spiels im Zuge seiner Popularität. Zum Beispiel: "Prší" in der Tschechischen Republik und "Pesten" in der Niederlande. Ähnliche Kartenspiele wie "Switch" und "Crazy Eights" feiern größere Popularität im Vereinigten Königreich und der USA.`;
                 lAbout.innerText = 'Über Uns';
-                lHeader.innerText = 'Mau Mau: Regeln'; 
+                lHeader.innerText = 'Mau Mau: Regeln';
                 lDifficulties1.innerText = 'Schwierigkeiten?';
                 lDifficulties2.innerText = 'Schreibe Uns!';
                 lContact.innerText = 'Kontaktieren Sie uns!';
@@ -171,36 +171,36 @@ function switchLanguage(){
                 lHistory.innerText = `Mau Mau: A Short History`;
                 lHistory1.innerText = `Originating in Germany, the rules of Mau Mau have existed since at least the 1930's. Known as "Neuner" or "Neunerl" in Austria and Bavaria, the game's popularity throughout the years has lead to numerous regional and national variants, including "Prší" in the Czech Republic and "Pesten" in the Netherlands.
                 Other related card games include "Switch" and "Crazy Eights", which are popular in both the United Kingdom and the US, respectively.`;
-                lHeader.innerText = 'Mau Mau: Rules'; 
+                lHeader.innerText = 'Mau Mau: Rules';
                 lDifficulties1.innerText = 'Encountering difficulties?';
                 lDifficulties2.innerText = 'Feel free to drop us a message!';
                 lContact.innerText = 'Contact Us';
-                break;}
-
+                break;
         }
-        else if (page=='about'){
-            //Get Elements
-            let lTitle1 = document.getElementById("lTitle1");
-            let lHome = document.getElementById("lHome");
-            let lHelp = document.getElementById("lHelp");
-            let lAbout = document.getElementById("lAbout");
-            let lImpressum = document.getElementById("lImpressum");
-            let lContent1 = document.getElementById("lContent1");
-            let lContent2 = document.getElementById("lContent2");
-            let lText1 = document.getElementById("lText1");
-            let lText2 = document.getElementById("lText2");
-            let lText3 = document.getElementById("lText3");
-            let lText4 = document.getElementById("lText4");
-            let lText5 = document.getElementById("lText5");
-            let lLocation = document.getElementById("lLocation");
-            let lTalent1 = document.getElementById("lTalent1");
-            let lTalent2 = document.getElementById("lTalent2");
 
-            //below are lorems for filling it now remove later pls
-            let lorem1 = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita atque quo facere excepturi vitae animi at aut debitis, cum sunt quasi commodi praesentium vel minima quaerat ratione modi earum. Molestiae, nobis. Quae eveniet magni nulla cupiditate doloremque provident rem illo earum numquam. Non aperiam quos dolores nesciunt natus, odit cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita atque quo facere excepturi vitae animi at aut debitis, cum sunt quasi commodi praesentium vel minima quaerat ratione modi earum. Molestiae, nobis. Quae eveniet magni nulla cupiditate doloremque provident rem illo earum numquam. Non aperiam quos dolores nesciunt natus, odit cumque.'
-            let lorem2 = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita atque quo facere excepturi vitae animi at aut debitis, cum sunt quasi commodi praesentium vel minima quaerat ratione modi earum. Molestiae, nobis. Quae eveniet magni nulla cupiditate doloremque provident rem illo earum numquam. Non aperiam quos dolores nesciunt natus, odit cumque.'
+    } else if (page == 'about') {
+        //Get Elements
+        let lTitle1 = document.getElementById("lTitle1");
+        let lHome = document.getElementById("lHome");
+        let lHelp = document.getElementById("lHelp");
+        let lAbout = document.getElementById("lAbout");
+        let lImpressum = document.getElementById("lImpressum");
+        let lContent1 = document.getElementById("lContent1");
+        let lContent2 = document.getElementById("lContent2");
+        let lText1 = document.getElementById("lText1");
+        let lText2 = document.getElementById("lText2");
+        let lText3 = document.getElementById("lText3");
+        let lText4 = document.getElementById("lText4");
+        let lText5 = document.getElementById("lText5");
+        let lLocation = document.getElementById("lLocation");
+        let lTalent1 = document.getElementById("lTalent1");
+        let lTalent2 = document.getElementById("lTalent2");
 
-            switch (language) {
+        //below are lorems for filling it now remove later pls
+
+        let lorem2 = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita atque quo facere excepturi vitae animi at aut debitis, cum sunt quasi commodi praesentium vel minima quaerat ratione modi earum. Molestiae, nobis. Quae eveniet magni nulla cupiditate doloremque provident rem illo earum numquam. Non aperiam quos dolores nesciunt natus, odit cumque.'
+
+        switch (language) {
             case "EN":
                 //change Content
                 lTitle1.innerText = 'The Game Center';
@@ -213,9 +213,10 @@ function switchLanguage(){
                 lTalent1.innerText = 'The Talent';
                 lTalent2.innerText = 'Fun and Funtionality';
                 lLocation.innerText = 'Location';
-                lText1.innerText = lorem1;
+                lText1.innerText = `Based in Berlin, our team currently consists of four members and is comprised of both front-end and back-end developers. Working together since 2018, we're dedicated to bringing fun and functionality throughout each of our projects and creations. We enjoy the challenge of finding solutions to problems and will be there to timely address your requests, delivering quality products so that you can focus on what you do best.
+                Please contact if you have any questions and we’ll be happy to help!`;
                 lText2.innerText = lorem2;
-                lText3.innerText = lorem2;
+                lText3.innerText = "Hello, my name is Claudio and I’m a Front-end developer with a specialisation in Javascript. I have a background in Business (Marketing). As part of my degree I developed an appreciation for design while I did a student exchange at the Politecnico di Milano in Communication Design. I’m also a keen musician and in the future I would like to merge my interest in music with programming.";
                 lText4.innerText = `Hey my name is Marcel, before coding in js i gathered some experience in other languages for example Python. On this project i mainly worked on getting multiple languages to work but i also did some images, styling and worked on the game mechanics. In my freetime i like playing computer games and code stupid stuff.`;
                 lText5.innerText = `Hi, i'm Michael. Javascript is the first programming language i've attempted to learn, and over the past 6 months, i've gained some experience using technologies such as HTML, CSS/SASS, Bootstrap and jQuery. During this project, I mostly focused on the UI, styling and design. In my freetime I enjoy playing video games and plan to code some small game projects in the future.`;
                 break;
@@ -231,11 +232,12 @@ function switchLanguage(){
                 lTalent1.innerText = 'Die Magier';
                 lTalent2.innerText = 'Spaß und Funktionalität';
                 lLocation.innerText = 'Ort';
-                lText1.innerText = lorem1;
+                lText1.innerText = `Unser Team mit Sitz in Berlin besteht derzeit aus vier Mitgliedern und besteht aus Frontend und Backend Entwicklern. Seit 2018 arbeiten wir zusammen und haben uns zum Ziel gesetzt, Spaß und Funktionalität in jedes unserer Projekte und Kreationen zu bringen. Wir freuen uns über die Herausforderung, Lösungen für Probleme zu finden, und werden rechtzeitig auf Ihre Wünsche eingehen und Qualitätsprodukte liefern, damit Sie sich auf das konzentrieren können, was Sie am besten können.
+                Bei Fragen wenden Sie sich bitte an uns und wir helfen Ihnen gerne weiter!`;
                 lText2.innerText = lorem2;
-                lText3.innerText = lorem2;
-                lText4.innerText = `Hi mein Name ist Marcel, bevor ich mit Javascript angefangen habe, konnte ich bereits einige Erfahrungen in anderen Sprachen sammeln z.B. Python. Bei diesem Projekt habe ich mich größtenteils um den Support mehrerer Sprachen gekümmert aber auch einige Grafiken erstellt und mich um die Spiellogik als solches. Meine Freizeit verbringe ich gerne mit Computerspielen oder mit dem Coden von nutzlosen Sachen.`;
-                lText5.innerText = lorem2;
+                lText3.innerText = "Hallo, mein Name ist Claudio und ich bin ein Frontend-Entwickler mit einer Spezialisierung auf Javascript. Ich habe einen Hintergrund in Business (Marketing). Im Rahmen meines Studiums habe ich während eines Schüleraustauschs am Politecnico di Milano in Kommunikationsdesign ein Verständnis für Design entwickelt. Ich bin auch ein begeisterter Musiker und möchte in Zukunft mein Interesse an Musik mit dem Programm verbinden.";
+                lText4.innerText = `Hi mein Name ist Marcel, bevor ich mit Javascript angefangen habe, konnte ich bereits einige Erfahrungen in anderen Sprachen sammeln z.B. Python. Bei diesem Projekt habe ich mich größtenteils um den Support mehrerer Sprachen gekümmert aber auch einige Grafiken erstellt und um die Spiellogik als solches. Meine Freizeit verbringe ich gerne mit Computerspielen oder mit dem Coden von nutzlosen Sachen.`;
+                lText5.innerText = "Hallo, ich bin Michael. Javascript ist die erste Programmiersprache, die ich zu erlernen versucht habe, und in den letzten 6 Monaten habe ich einige Erfahrungen mit Technologien wie HTML, CSS/SASS, Bootstrap und jQuery gesammelt. Während dieses Projekts habe ich mich hauptsächlich auf die Benutzeroberfläche, das Styling und das Design konzentriert. In meiner Freizeit spiele ich gerne Videospiele und plane, in Zukunft einige Kleinspielprojekte zu programmieren.";
                 break;
             default:
                 //change Content
@@ -249,36 +251,37 @@ function switchLanguage(){
                 lTalent1.innerText = 'The Talent';
                 lTalent2.innerText = 'Fun and Funtionality';
                 lLocation.innerText = 'Location';
-                lText1.innerText = lorem1;
+                lText1.innerText = `Based in Berlin, our team currently consists of four members and is comprised of both front-end and back-end developers. Working together since 2018, we're dedicated to bringing fun and functionality throughout each of our projects and creations. We enjoy the challenge of finding solutions to problems and will be there to timely address your requests, delivering quality products so that you can focus on what you do best.
+                Please contact if you have any questions and we’ll be happy to help!`;
                 lText2.innerText = lorem2;
-                lText3.innerText = lorem2;
+                lText3.innerText = "Hello, my name is Claudio and I’m a Front-end developer with a specialisation in Javascript. I have a background in Business (Marketing). As part of my degree I developed an appreciation for design while I did a student exchange at the Politecnico di Milano in Communication Design. I’m also a keen musician and in the future I would like to merge my interest in music with programming.";
                 lText4.innerText = `Hey my name is Marcel, before coding in js i gathered some experience in other languages for example Python. On this project i mainly worked on getting multiple languages to work but i also did some images, styling and worked on the game mechanics. In my freetime i like playing computer games and code stupid stuff.`;
                 lText5.innerText = `Hi, i'm Michael. Javascript is the first programming language i've attempted to learn, and over the past 6 months, i've gained some experience using technologies such as HTML, CSS/SASS, Bootstrap and jQuery. During this project, I mostly focused on the UI, styling and design. In my freetime I enjoy playing video games and plan to code some small game projects in the future.`;
-                break;}
+                break;
         }
-        else if (page=='impressum'){
-            //Get Elements
-            let lTitle1 = document.getElementById("lTitle1");
-            let lHome = document.getElementById("lHome");
-            let lHelp = document.getElementById("lHelp");
-            let lAbout = document.getElementById("lAbout");
-            let lImpressum1 = document.getElementById("lImpressum1");
-            let lImpressum = document.getElementById("lImpressum");
-            let lAdress = document.getElementById("lAdress");
-            let lAdress1 = document.getElementById("lAdress1");
-            let lAdress2 = document.getElementById("lAdress2");
-            let lAdress3 = document.getElementById("lAdress3");
-            let lContact = document.getElementById("lContact");
-            let lContact1 = document.getElementById("lContact1");
-            let lContent = document.getElementById("lContent");
-            let lContent1 = document.getElementById("lContent1");
-            let lLinks = document.getElementById("lLinks");
-            let lLinks1 = document.getElementById("lLinks1");
-            let lCopyright = document.getElementById("lCopyright");
-            let lCopyright1 = document.getElementById("lCopyright1");
-            let lDisclaimer = document.getElementById("lDisclaimer");
+    } else if (page == 'impressum') {
+        //Get Elements
+        let lTitle1 = document.getElementById("lTitle1");
+        let lHome = document.getElementById("lHome");
+        let lHelp = document.getElementById("lHelp");
+        let lAbout = document.getElementById("lAbout");
+        let lImpressum1 = document.getElementById("lImpressum1");
+        let lImpressum = document.getElementById("lImpressum");
+        let lAdress = document.getElementById("lAdress");
+        let lAdress1 = document.getElementById("lAdress1");
+        let lAdress2 = document.getElementById("lAdress2");
+        let lAdress3 = document.getElementById("lAdress3");
+        let lContact = document.getElementById("lContact");
+        let lContact1 = document.getElementById("lContact1");
+        let lContent = document.getElementById("lContent");
+        let lContent1 = document.getElementById("lContent1");
+        let lLinks = document.getElementById("lLinks");
+        let lLinks1 = document.getElementById("lLinks1");
+        let lCopyright = document.getElementById("lCopyright");
+        let lCopyright1 = document.getElementById("lCopyright1");
+        let lDisclaimer = document.getElementById("lDisclaimer");
 
-            switch (language) {
+        switch (language) {
             case "EN":
                 //change Content
                 lImpressum.innerText = 'Imprint';
@@ -353,6 +356,6 @@ function switchLanguage(){
                 lCopyright.innerText = `Copyright`;
                 lCopyright1.innerText = `The content created by the site operator, as well as posting on these sites are subject to German copyright. Reproduction, editing, distribution or any kind of use outside the scope of copyright require the written consent of the author or editor. Downloads and copies of this site are permitted only for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyright of third parties is respected. In particular, third-party content is marked as such. However, should you become aware of any copyright infringement, we would request that you notify us accordingly. We will remove such content as soon as we become aware of the infringement.`;
                 break;
-            }
-        };
+        }
+    };
 };
