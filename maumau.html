@@ -13,7 +13,7 @@
   <title>MauMau</title>
 </head>
 
-<body onload="displayNames()">
+<body onload="page='maumau'; displayNames();">
   <!-- NAV BAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="index.html">The Game Center</a>
@@ -61,7 +61,7 @@
           </button>
         </div>
         <div>
-          <button type="button" class="btn btn-success btn-sm reset" id="reset">
+          <button onclick="window.location.reload();" type="button" class="btn btn-success btn-sm reset" id="reset">
             <a class="nav-link" href="#">Reset</a>
           </button>
         </div>
