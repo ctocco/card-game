@@ -25,26 +25,24 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.html"><span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="help.html">Help</a>
+          <a class="nav-link" href="help.html"></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="about.html"></a>
         </li>
         <li class="nav-item">
           <a id="lImpressum" class="nav-link" href="impressum.html"></a></li>
         <li class="nav-item dropdown"></li>
       </ul>
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-primary active">
-          <input type="checkbox" checked="" autocomplete="off" /> DE
-        </label>
-        <label class="btn btn-primary">
-          <input type="checkbox" autocomplete="off" /> EN
-        </label>
-      </div>
+          <label id="buttonDE" class="btn" onclick="language='DE'; saveLanguage();">DE
+          </label>
+          <label id="buttonEN" class="btn" onclick="language='EN'; saveLanguage();">EN
+          </label>
+        </div>
     </div>
   </nav>
   <!-- NAV BAR END -->

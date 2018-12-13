@@ -95,6 +95,7 @@ let playerTurn = 'playerOne';
 //__________________________________________________________________________________________________________________________________
 // Game Setup
 function gameSetup(){
+
 deck.generate_deck();
 deck.shuffle();
 deck.first_discard();
@@ -103,9 +104,7 @@ playerOne.add_hand();
 renderPlayerOne();
 playerTwo.add_hand();
 renderPlayerTwo();
-setTimeout(() => {
-  readyPhase();
-}, 2000);
+readyPhase();
 }
 
 gameSetup();
